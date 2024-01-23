@@ -6,8 +6,8 @@ using TMPro;
 
 public class WeatherUI : MonoBehaviour
 {
-    public TextMeshProUGUI weatherText; // TextMeshProUGUI를 사용하는 경우
-    int date = 0; // 이벤트를 하나씩 넘길 때마다 date++
+    public TextMeshProUGUI weatherText;
+    private int date = 0; // 이벤트를 하나씩 넘길 때마다 date++
 
     void Start()
     {       

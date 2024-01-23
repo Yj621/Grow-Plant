@@ -7,7 +7,7 @@ using TMPro;
 public class DateUI : MonoBehaviour
 {
     public TextMeshProUGUI dayText;
-    private int dayCount = 0;
+    private int dateCount = 0;
     public WeatherUI weatherUI;
 
     void Start()
@@ -32,8 +32,8 @@ public class DateUI : MonoBehaviour
 
     void UpdateDayText()
     {
-        dayCount = weatherUI.GetDateCount() + 1;
+        dateCount = weatherUI.GetDateCount() + 1;
         // UI에 현재 일 수를 표시하는 메서드
-        dayText.text = dayCount.ToString() + "일차";
+        dayText.text = dateCount.ToString() + "일차";
     }
 }
