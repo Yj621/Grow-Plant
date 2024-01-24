@@ -6,7 +6,7 @@ using TMPro;
 
 public class EventTextUI : MonoBehaviour
 {
-    public TextMeshProUGUI dayText;
+    public TextMeshProUGUI eventText;
     private int dateCount = 0;
     public WeatherUI weatherUI;
 
@@ -19,15 +19,15 @@ public class EventTextUI : MonoBehaviour
     {
 
     }
-    public void OpenEvent()
+    void OpenEvent()
     {
-        string filePath = "Assets/Scripts/event.txt";
+        string filePath = "Assets/TextFiles/event.txt";
         string[] textLines = System.IO.File.ReadAllLines(filePath);
 
         dateCount = weatherUI.GetDateCount();
         string textValue = textLines[dateCount];
 
-
+        eventText.text = textValue;
 
     }
 }

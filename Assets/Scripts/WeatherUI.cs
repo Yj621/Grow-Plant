@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI; // UI 네임스페이스 추가
+using UnityEngine.UI;
 using System.IO;
 using TMPro;
 
@@ -11,7 +11,7 @@ public class WeatherUI : MonoBehaviour
 
     void Start()
     {       
-        string filePath = "Assets/Scripts/weather.txt";
+        string filePath = "Assets/TextFiles/weather.txt";
         string[] textLines = System.IO.File.ReadAllLines(filePath);
 
         string textValue = textLines[date];
