@@ -350,6 +350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67f44c27dffa4bedb15e7f48ad2fb2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  perspectiveZoomSpeed: 0.5
+  orthoZoomSpeed: 0.5
 --- !u!1 &775216603
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +600,18 @@ MonoBehaviour:
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
     IsHidden: 0
+  - Type: 0
+    Name: 
+    GameObject: {fileID: 983562697}
+    Ordinal: 4
+    Priority: 0
+    IconType: 169530
+    IconTexture: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
 --- !u!4 &953602536
 Transform:
   m_ObjectHideFlags: 0
@@ -701,7 +715,7 @@ Transform:
   m_GameObject: {fileID: 983562697}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.23, y: 6.14, z: 10.15}
+  m_LocalPosition: {x: 0.58, y: 6.14, z: 9.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -807,7 +821,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.11291022, y: -0.30058166, z: -0.03586203, w: 0.9463699}
   m_LocalPosition: {x: 0, y: 0, z: 9.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

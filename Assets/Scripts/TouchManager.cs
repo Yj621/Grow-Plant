@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TouchManager : MonoBehaviour
-{    public float perspectiveZoomSpeed = 0.5f;  //줌인,줌아웃할때 속도(perspective모드 용)      
-    public float orthoZoomSpeed = 0.5f;      //줌인,줌아웃할때 속도(OrthoGraphic모드 용)  
+{    public float perspectiveZoomSpeed = 0.1f;  //줌인,줌아웃할때 속도(perspective모드 용)      
+    public float orthoZoomSpeed = 0.1f;      //줌인,줌아웃할때 속도(OrthoGraphic모드 용)  
 
+    public float moveSpeed = 0.1f;  // 카메라 이동 속도
 
     void Update()
     {
@@ -38,63 +39,20 @@ public class TouchManager : MonoBehaviour
                 GetComponent<Camera>().fieldOfView = Mathf.Clamp(GetComponent<Camera>().fieldOfView, 0.1f, 179.9f);
             }
         }
+        else if (Input.touchCount == 1) // 싱글 터치로 카메라 이동
+        {
+            Touch touch = Input.GetTouch(0);
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Moved:
+                    // 터치 델타를 기반으로 이동 벡터 계산
+                    Vector2 touchDelta = touch.deltaPosition;
+                    
+                    // 터치 델타 및 이동 속도를 곱하여 카메라 이동
+                    transform.Translate(-touchDelta.x * moveSpeed, -touchDelta.y * moveSpeed, 0);
+                    break;
+            }
+        }
     }
 }
-//     private Vector2 nowPos, prePos;
-//     private Vector2 movePosDiff;
-
-//     // 터치 드래그 값을 가져오는 메서드
-//     private Vector2 getTouchDragValue()
-//     {
-//         movePosDiff = Vector3.zero;
-
-//         if (Input.touchCount == 1)
-//         {
-//             Touch touch = Input.GetTouch(0);
-//             if (touch.phase == TouchPhase.Began)
-//             {
-//                 prePos = touch.position - touch.deltaPosition;
-//             }
-//             else if (touch.phase == TouchPhase.Moved)
-//             {
-//                 nowPos = touch.position - touch.deltaPosition;
-//                 movePosDiff = (Vector2)(prePos - nowPos) * Time.deltaTime;
-//                 prePos = touch.position - touch.deltaPosition;
-//             }
-//         }
-//         return movePosDiff;
-//     }
-
-//     float m_fSpeed = 0.1f;       // 변경 속도를 설정합니다
-//     float m_fFieldOfView = 60f;  // 카메라의 FieldOfView의 기본값을 60으로 정합니다.
-
-//     void Update()
-//     {
-//         CheckTouch();
-//     }
-
-//     void CheckTouch()
-//     {
-//         if (Input.touchCount == 2)
-//         {
-//             Vector2 vecPreTouchPos0 = Input.touches[0].position - Input.touches[0].deltaPosition;
-//             Vector2 vecPreTouchPos1 = Input.touches[1].position - Input.touches[1].deltaPosition;
-
-//             // 이전 두 터치의 차이
-//             float fPreDis = (vecPreTouchPos0 - vecPreTouchPos1).magnitude;
-//             // 현재 두 터치의 차이
-//             float fToucDis = (Input.touches[0].position - Input.touches[1].position).magnitude;
-
-//             // 이전 두 터치의 거리와 지금 두 터치의 거리의 차이
-//             float fDis = fPreDis - fToucDis;
-
-//             // 이전 두 터치의 거리와 지금 두 터치의 거리의 차이를 FleldOfView를 차감합니다.
-//             m_fFieldOfView += (fDis * m_fSpeed);
-
-//             // 최대는 100, 최소는 20으로 더이상 증가 혹은 감소가 되지 않도록 합니다.
-//             m_fFieldOfView = Mathf.Clamp(m_fFieldOfView, 20.0f, 100.0f);
-
-//             Camera.main.fieldOfView = m_fFieldOfView;
-//         }
-//     }
-// }
