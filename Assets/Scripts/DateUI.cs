@@ -34,6 +34,6 @@ public class DateUI : MonoBehaviour
     {
         dateCount = weatherUI.GetDateCount() + 1;
         // UI에 현재 일 수를 표시하는 메서드
-        dayText.text = dateCount.ToString() + "일차";
+        dayText.text = dateCount.ToString() + "DAY";
     }
 }
