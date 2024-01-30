@@ -7,6 +7,13 @@ public class EventButtonUI : MonoBehaviour
 {
     public GameObject popupWindow;
     public GameObject blockingPanel;
+    public Transform eventCanvas; // EventCanvas? ?? ?? ??
+
+    // ?? ?? ?? ?? ??? ??? ???? ?? ??
+    private bool isPopupOpen = false;
+    
+    // ?? ? ????? ??? ??
+    private GameObject popupInstance;
 
     void Start()
     {
@@ -18,11 +25,46 @@ public class EventButtonUI : MonoBehaviour
 
     public void OpenPopupWindow()
     {
-        // 화면의 중앙 위치 계산
-        Vector3 centerScreenPosition = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+        // ?? ?? ?? ????? ??? ??
+        if (isPopupOpen)
+        {
+            return;
+        }
 
-        // 화면 중앙에 팝업 생성
-        GameObject popupInstance = Instantiate(popupWindow, centerScreenPosition, Quaternion.identity);
-        popupWindow.SetActive(true);
+        // ?? ?? ???? ???
+        if (eventCanvas != null)
+        {
+            // ?? ??? ????? ??
+            Vector3 centerScreenPosition = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+
+            // ?? ?? EventCanvas? ???? ??
+            popupInstance = Instantiate(popupWindow, centerScreenPosition, Quaternion.identity, eventCanvas);
+            popupInstance.SetActive(true);
+
+            // isPopupOpen ?? ????
+            isPopupOpen = true;
+        }
+        else
+        {
+            Debug.LogError("Null eventCanvas");
+        }
+    }
+
+    public void ClosePopupWindow()
+    {
+        // ?? ?? ?? ?? ??? ??? ??
+        if (!isPopupOpen)
+        {
+            return;
+        }
+
+        // ?? ?? ????
+        if (popupInstance != null)
+        {
+            popupInstance.SetActive(false);
+        }
+
+        // isPopupOpen ?? ????
+        isPopupOpen = false;
     }
 }
