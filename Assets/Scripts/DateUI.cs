@@ -18,15 +18,12 @@ public class DateUI : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            IncreaseDayCount();
-        }
     }
 
-    void IncreaseDayCount()
+    public void IncreaseDateCount()
     {
         // 일 수를 증가시키는 메서드를 만들 '예정'
+        dateCount = weatherUI.GetDateCount();
         UpdateDayText();
     }
 

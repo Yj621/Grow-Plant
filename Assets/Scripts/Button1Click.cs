@@ -9,14 +9,15 @@ public class Button1Click : MonoBehaviour
     public TextMeshProUGUI button1Text;
     private int dateCount = 0;
     public WeatherUI weatherUI;
-
+    private int waterCount = 0;
+    
     void Start()
     {
         dateCount = weatherUI.GetDateCount() + 1;
         string filePath = "Assets/TextFiles/button1Text.txt";
         string[] textLines = System.IO.File.ReadAllLines(filePath);
         string textValue;
-        if(dateCount == 8)
+        if(dateCount == 8)              //dateCount는 일차를 나타냄. 8일차, 16일차에는 txt파일의 각각 2번째 줄과 3번째 줄의 내용을 넣음.
         {
             textValue = textLines[1];
         }
@@ -46,6 +47,16 @@ public class Button1Click : MonoBehaviour
     
     public void Button1OnClick()
     {
-        //버튼을 클릭하면 date++, 점수 더하기, waterCount++ (5가 쌓일 시 식물 죽음 * 단, 연속이 아니면 카운트 초기화)
+        weatherUI.SetDateCount();
+        waterCount++;
+        if (waterCount >= 5)
+        {
+            // 식물이 죽으면 쓸 메서드 '예정'
+        }
+        //버튼을 클릭하면 date++, 점수 더하기, 팝업창 닫기, waterCount++ (5가 쌓일 시 식물 죽음 * 단, 연속이 아니면 카운트 초기화)
+    }
+    public int getwaterCount()
+    {
+        return waterCount; //다른 버튼이 눌릴 시 waterCount를 0으로 초기화시키시 위한 생성자
     }
 }
