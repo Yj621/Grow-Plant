@@ -17,16 +17,13 @@ public class DateUI : MonoBehaviour
 
     void Update()
     {
-        // 예를 들어, 사용자가 어떤 이벤트를 트리거할 때마다 일 수를 증가시킬 수 있습니다.
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            IncreaseDayCount();
-        }
+        
     }
 
-    void IncreaseDayCount()
+    public void IncreaseDateCount()
     {
         // 일 수를 증가시키는 메서드를 만들 '예정'
+        dateCount = weatherUI.GetDateCount();
         UpdateDayText();
     }
 
