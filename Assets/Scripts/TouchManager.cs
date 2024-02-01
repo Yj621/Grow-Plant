@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TouchManager : MonoBehaviour
-{    public float perspectiveZoomSpeed = 0.0001f;  //줌인,줌아웃할때 속도(perspective모드 용)      
-    public float orthoZoomSpeed = 0.0001f;      //줌인,줌아웃할때 속도(OrthoGraphic모드 용)  
+{    
+    private float perspectiveZoomSpeed = 0.0001f;  //줌인,줌아웃할때 속도(perspective모드 용)      
+    private float orthoZoomSpeed = 0.0001f;      //줌인,줌아웃할때 속도(OrthoGraphic모드 용)  
 
-    public float moveSpeed = 0.001f;  // 카메라 이동 속도
+    private float moveSpeed = 0.001f;  // 카메라 이동 속도
 
     void Update()
     {
