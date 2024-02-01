@@ -9,10 +9,14 @@ public class Button1Click : MonoBehaviour
     public TextMeshProUGUI button1Text;
     private int dateCount = 0;
     public WeatherUI weatherUI;
+    private EventButtonUI eventButtonUI;
     private int waterCount = 0;
+
     
     void Start()
     {
+        eventButtonUI = FindAnyObjectByType<EventButtonUI>();
+
         dateCount = weatherUI.GetDateCount() + 1;
         string filePath = "Assets/TextFiles/button1Text.txt";
         string[] textLines = System.IO.File.ReadAllLines(filePath);
@@ -51,9 +55,12 @@ public class Button1Click : MonoBehaviour
         waterCount++;
         if (waterCount >= 5)
         {
-            // 식물이 죽으면 쓸 메서드 '예정'
+            Debug.Log("Die");
         }
         //버튼을 클릭하면 date++, 점수 더하기, 팝업창 닫기, waterCount++ (5가 쌓일 시 식물 죽음 * 단, 연속이 아니면 카운트 초기화)
+        
+        //창닫기
+        eventButtonUI.ClosePopupWindow();
     }
     public int getwaterCount()
     {

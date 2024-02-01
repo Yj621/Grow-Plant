@@ -9,10 +9,8 @@ public class EventButtonUI : MonoBehaviour
     public GameObject blockingPanel;
     public Transform eventCanvas; // EventCanvas? ?? ?? ??
 
-    // ?? ?? ?? ?? ??? ??? ???? ?? ??
     private bool isPopupOpen = false;
     
-    // ?? ? ????? ??? ??
     private GameObject popupInstance;
 
     void Start()
@@ -25,23 +23,18 @@ public class EventButtonUI : MonoBehaviour
 
     public void OpenPopupWindow()
     {
-        // ?? ?? ?? ????? ??? ??
         if (isPopupOpen)
         {
             return;
         }
 
-        // ?? ?? ???? ???
         if (eventCanvas != null)
         {
-            // ?? ??? ????? ??
             Vector3 centerScreenPosition = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
 
-            // ?? ?? EventCanvas? ???? ??
             popupInstance = Instantiate(popupWindow, centerScreenPosition, Quaternion.identity, eventCanvas);
             popupInstance.SetActive(true);
 
-            // isPopupOpen ?? ????
             isPopupOpen = true;
         }
         else
@@ -52,19 +45,15 @@ public class EventButtonUI : MonoBehaviour
 
     public void ClosePopupWindow()
     {
-        // ?? ?? ?? ?? ??? ??? ??
         if (!isPopupOpen)
         {
             return;
         }
-
-        // ?? ?? ????
         if (popupInstance != null)
         {
             popupInstance.SetActive(false);
         }
 
-        // isPopupOpen ?? ????
         isPopupOpen = false;
     }
 }
