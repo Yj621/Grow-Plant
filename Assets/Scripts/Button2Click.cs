@@ -23,7 +23,8 @@ public class Button2Click : MonoBehaviour
         string filePath = "Assets/TextFiles/button2Text.txt";
         string[] textLines = System.IO.File.ReadAllLines(filePath);
         string textValue;
-        if (dateCount == 7)  //dateCount는 일차를 나타냄. 7일차, 8일차에는 txt파일의 각각 2번째 줄과 3번째 줄의 내용을 넣음.
+        if (dateCount == 7)  //dateCount는 일차를 나타냄.
+                             //7일차, 8일차, 16일차에는 txt파일의 각각 2번째 줄, 3번째 줄, 4번째 줄의 내용을 넣음.
         {
             textValue = textLines[1];
         }

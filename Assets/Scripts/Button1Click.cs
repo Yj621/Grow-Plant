@@ -10,7 +10,7 @@ public class Button1Click : MonoBehaviour
     private int dateCount = 0;
     public WeatherUI weatherUI;
     private EventButtonUI eventButtonUI;
-    private int waterCount = 0;
+    private static int waterCount;
 
 
     void Start()
@@ -53,6 +53,7 @@ public class Button1Click : MonoBehaviour
     {
         weatherUI.SetDateCount();
         waterCount++;
+       
         if (waterCount >= 5)
         {
             Debug.Log("Die");

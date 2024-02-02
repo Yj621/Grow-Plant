@@ -22,23 +22,7 @@ public class Button3Click : MonoBehaviour
         dateCount = weatherUI.GetDateCount() + 1;
         string filePath = "Assets/TextFiles/button3Text.txt";
         string[] textLines = System.IO.File.ReadAllLines(filePath);
-        string textValue;
-        if (dateCount == 7)  //dateCount는 일차를 나타냄. 7일차, 8일차에는 txt파일의 각각 2번째 줄과 3번째 줄의 내용을 넣음.
-        {
-            textValue = textLines[1];
-        }
-        else if (dateCount == 8)
-        {
-            textValue = textLines[2];
-        }
-        else if (dateCount == 16)
-        {
-            textValue = textLines[3];
-        }
-        else
-        {
-            textValue = textLines[0];
-        }
+        string textValue = textLines[dateCount];
 
         if (button3Text != null)
         {
