@@ -12,7 +12,7 @@ public class Button1Click : MonoBehaviour
     private EventButtonUI eventButtonUI;
     private int waterCount = 0;
 
-    
+
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
@@ -21,11 +21,11 @@ public class Button1Click : MonoBehaviour
         string filePath = "Assets/TextFiles/button1Text.txt";
         string[] textLines = System.IO.File.ReadAllLines(filePath);
         string textValue;
-        if(dateCount == 8)              //dateCount는 일차를 나타냄. 8일차, 16일차에는 txt파일의 각각 2번째 줄과 3번째 줄의 내용을 넣음.
+        if (dateCount == 8)  //dateCount는 일차를 나타냄. 8일차, 16일차에는 txt파일의 각각 2번째 줄과 3번째 줄의 내용을 넣음.
         {
             textValue = textLines[1];
         }
-        else if(dateCount == 16)
+        else if (dateCount == 16)
         {
             textValue = textLines[2];
         }
@@ -46,9 +46,9 @@ public class Button1Click : MonoBehaviour
 
     void Update()
     {
-        
+
     }
-    
+
     public void Button1OnClick()
     {
         weatherUI.SetDateCount();
@@ -58,12 +58,14 @@ public class Button1Click : MonoBehaviour
             Debug.Log("Die");
         }
         //버튼을 클릭하면 date++, 점수 더하기, 팝업창 닫기, waterCount++ (5가 쌓일 시 식물 죽음 * 단, 연속이 아니면 카운트 초기화)
-        
+
         //창닫기
         eventButtonUI.ClosePopupWindow();
     }
-    public int getwaterCount()
+
+    public int initWaterCount()
     {
-        return waterCount; //다른 버튼이 눌릴 시 waterCount를 0으로 초기화시키시 위한 생성자
+        waterCount = 0;
+        return waterCount; //다른 버튼이 눌릴 시 waterCount를 0으로 초기화
     }
 }

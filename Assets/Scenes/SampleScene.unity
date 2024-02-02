@@ -128,6 +128,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7759214612434626643, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
   m_PrefabInstance: {fileID: 755397453}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &82705932 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6000015867480281405, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+  m_PrefabInstance: {fileID: 755397453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82705930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1251e7a76f07ac54fabfad02697eca5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &154114089
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +183,7 @@ MonoBehaviour:
     IsHidden: 0
   - Type: 0
     Name: 
-    GameObject: {fileID: 321659212}
+    GameObject: {fileID: 0}
     Ordinal: 1
     Priority: 0
     IconType: 161000
@@ -781,113 +792,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &321659212
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 321659216}
-  - component: {fileID: 321659215}
-  - component: {fileID: 321659214}
-  - component: {fileID: 321659213}
-  m_Layer: 5
-  m_Name: EventCanvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &321659213
+--- !u!114 &329596225 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 387355507535807708, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+  m_PrefabInstance: {fileID: 755397453}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321659212}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &321659214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321659212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &321659215
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321659212}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &321659216
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321659212}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2142645568}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
 --- !u!1 &352276157 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3995101939318820163, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
   m_PrefabInstance: {fileID: 755397453}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &352276162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352276157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375b12c7e92b9c4189ff4bd10ae81ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button2Text: {fileID: 661451604}
+  weatherUI: {fileID: 201051685}
+  button1Click: {fileID: 82705932}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,18 +930,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherObjectTransform: {fileID: 1928893179}
+--- !u!114 &661451604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2247521725419316336, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+  m_PrefabInstance: {fileID: 755397453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &755397453
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 321659216}
+    m_TransformParent: {fileID: 775216607}
     m_Modifications:
     - target: {fileID: 598971944506675459, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2052194371}
+    - target: {fileID: 3604748963087201229, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604748963087201229, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604748963087201229, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352276162}
+    - target: {fileID: 3604748963087201229, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604748963087201229, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Button2OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604748963087201229, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Button2Click, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604748963087201229, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3978047669358694131, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: weatherUI
       value: 
@@ -1017,7 +991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5466544185190696650, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6000015867480281405, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: weatherUI
@@ -1103,10 +1077,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8696860344104769534, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696860344104769534, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696860344104769534, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 786270582}
+    - target: {fileID: 8696860344104769534, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696860344104769534, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Button3OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696860344104769534, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Button3Click, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696860344104769534, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3995101939318820163, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 352276162}
+    - targetCorrespondingSourceObject: {fileID: 1521654427624125179, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 786270582}
   m_SourcePrefab: {fileID: 100100000, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
 --- !u!1 &775216603
 GameObject:
@@ -1207,6 +1215,7 @@ RectTransform:
   - {fileID: 1430888114}
   - {fileID: 179923403}
   - {fileID: 816050306}
+  - {fileID: 2142645568}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1219,6 +1228,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1521654427624125179, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
   m_PrefabInstance: {fileID: 755397453}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &786270582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786270577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa48b0648ad07d4da2a94c3ccd9506c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button3Text: {fileID: 329596225}
+  weatherUI: {fileID: 201051685}
+  button1Click: {fileID: 82705932}
 --- !u!1 &816050305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,7 +1878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupWindow: {fileID: 2142645567}
   blockingPanel: {fileID: 0}
-  eventCanvas: {fileID: 321659216}
+  eventCanvas: {fileID: 775216607}
 --- !u!114 &2052194372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1964,7 +1988,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 321659216}
   - {fileID: 775216607}
   - {fileID: 932026660}
   - {fileID: 1928893179}

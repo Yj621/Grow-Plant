@@ -1,0 +1,70 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class Button3Click : MonoBehaviour
+{
+    public TextMeshProUGUI button3Text;
+    private int dateCount = 0;
+    public WeatherUI weatherUI;
+    public Button1Click button1Click;
+    private EventButtonUI eventButtonUI;
+    
+
+
+
+    void Start()
+    {
+        eventButtonUI = FindAnyObjectByType<EventButtonUI>();
+
+        dateCount = weatherUI.GetDateCount() + 1;
+        string filePath = "Assets/TextFiles/button3Text.txt";
+        string[] textLines = System.IO.File.ReadAllLines(filePath);
+        string textValue;
+        if (dateCount == 7)  //dateCount는 일차를 나타냄. 7일차, 8일차에는 txt파일의 각각 2번째 줄과 3번째 줄의 내용을 넣음.
+        {
+            textValue = textLines[1];
+        }
+        else if (dateCount == 8)
+        {
+            textValue = textLines[2];
+        }
+        else if (dateCount == 16)
+        {
+            textValue = textLines[3];
+        }
+        else
+        {
+            textValue = textLines[0];
+        }
+
+        if (button3Text != null)
+        {
+            button3Text.text = textValue;
+        }
+        else
+        {
+            Debug.LogError("button3Text가 할당되지 않았습니다.");
+        }
+    }
+
+    void Update()
+    {
+
+    }
+
+    public void Button3OnClick()
+    {
+        weatherUI.SetDateCount();
+        
+       
+        //버튼을 클릭하면 date++, 점수 더하기
+        //waterCount 초기화
+        button1Click.initWaterCount();
+
+        //창닫기
+        eventButtonUI.ClosePopupWindow();
+    }
+}
