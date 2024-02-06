@@ -10,18 +10,13 @@ public class WeatherUI : MonoBehaviour
     private int date = 0; // ÀÌº¥Æ®¸¦ ÇÏ³ª¾¿ ³Ñ±æ ¶§¸¶´Ù date++
     string originWeatherText;
     public DateUI dateUI;
-
     void Start()
     {
         originWeatherText = weatherText.text;  // "³¯¾¾ : "¸¦ ÀúÀåÇÏ´Â º¯¼ö
-        string[] weatherArr = {
-            "¸¼À½", "¸¼À½", "Èå¸²", "ºñ", "ºñ", "¸¼À½", "¸¼À½", "¸¼À½", "°ÇÁ¶ÇÔ",
-            "¸¼À½", "¸¼À½", "Èå¸²", "ÅÂÇ³", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½",
-            "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "Èå¸²", "´«", "¸¼À½", "¸¼À½",
-            "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½"
-        };
+        string filePath = "Assets/TextFiles/weather.txt";
+        string[] textLines = System.IO.File.ReadAllLines(filePath);
 
-        string textValue = weatherArr[date];
+        string textValue = textLines[date];
 
         if (weatherText != null)
         {
@@ -30,7 +25,7 @@ public class WeatherUI : MonoBehaviour
         }
         else
         {
-            Debug.LogError("weatherArr°¡ ÇÒ´çµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("weatherText°¡ ÇÒ´çµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
         }
     }
 
@@ -44,12 +39,8 @@ public class WeatherUI : MonoBehaviour
         date += 1;
 
         // ÀÌº¥Æ®¸¦ ÇÏ³ª¾¿ ³Ñ±æ ¶§¸¶´Ù ÅØ½ºÆ® ¾÷µ¥ÀÌÆ®
-        string[] textLines = new string[] {
-            "¸¼À½", "¸¼À½", "Èå¸²", "ºñ", "ºñ", "¸¼À½", "¸¼À½", "¸¼À½", "°ÇÁ¶ÇÔ",
-            "¸¼À½", "¸¼À½", "Èå¸²", "ÅÂÇ³", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½",
-            "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "Èå¸²", "´«", "¸¼À½", "¸¼À½",
-            "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½"
-        };
+        string filePath = "Assets/TextFiles/weather.txt";
+        string[] textLines = System.IO.File.ReadAllLines(filePath);
 
         // °æ°è¸¦ ÃÊ°úÇÏÁö ¾Êµµ·Ï Á¶°Ç Ãß°¡
         if (date < textLines.Length)

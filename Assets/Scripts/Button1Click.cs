@@ -12,28 +12,26 @@ public class Button1Click : MonoBehaviour
     private EventButtonUI eventButtonUI;
     private static int waterCount;
 
+
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
 
         dateCount = weatherUI.GetDateCount() + 1;
-        string[] button1Arr = {
-            "물을 준다",
-            "냉/난방기 때문인 것 같다. 끄자",
-            "식물을 옮긴다"
-        };
+        string filePath = "Assets/TextFiles/button1Text.txt";
+        string[] textLines = System.IO.File.ReadAllLines(filePath);
         string textValue;
         if (dateCount == 8)  //dateCount는 일차를 나타냄. 8일차, 16일차에는 txt파일의 각각 2번째 줄과 3번째 줄의 내용을 넣음.
         {
-            textValue = button1Arr[1];
+            textValue = textLines[1];
         }
         else if (dateCount == 16)
         {
-            textValue = button1Arr[2];
+            textValue = textLines[2];
         }
         else
         {
-            textValue = button1Arr[0];
+            textValue = textLines[0];
         }
 
         if (button1Text != null)
