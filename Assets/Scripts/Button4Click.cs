@@ -10,6 +10,8 @@ public class Button4Click : MonoBehaviour
     private int dateCount = 0;
     public WeatherUI weatherUI;
     public Button1Click button1Click;
+    public Button2Click button2Click;
+
     private EventButtonUI eventButtonUI;
     public Button button4;
 
@@ -21,14 +23,14 @@ public class Button4Click : MonoBehaviour
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         dateCount = weatherUI.GetDateCount() + 1;
         string[] button4Arr = {
-            "ÀÀ¿øÇÑ´Ù", "Á÷Á¢ Á×ÀÎ´Ù", "°¡ÁöÄ¡±â ÇÑ´Ù",
-            "½Ä¹°À» ¿Å±ä´Ù", "¿µ¾çÁ¦¸¦ ÁØ´Ù"
+            "ì‘ì›í•œë‹¤", "ì§ì ‘ ì£½ì¸ë‹¤", "ê°€ì§€ì¹˜ê¸° í•œë‹¤",
+            "ì‹ë¬¼ì„ ì˜®ê¸´ë‹¤", "ì˜ì–‘ì œë¥¼ ì¤€ë‹¤"
         };
 
         string textValue;
         bool isButtonInteractable = false;
-        if (dateCount == 3)  //dateCount´Â ÀÏÂ÷¸¦ ³ªÅ¸³¿.
-                             //4¹øÂ° ¹öÆ°ÀÌ ÀÖ´Â ÀÏÂ÷¿¡´Â ¹öÆ°ÀÌ È°¼ºÈ­, ¾Æ´Ñ ³¯¿¡´Â ºñÈ°¼ºÈ­
+        if (dateCount == 3)  //dateCountëŠ” ì¼ì°¨ë¥¼ ë‚˜íƒ€ëƒ„.
+                             //4ë²ˆì§¸ ë²„íŠ¼ì´ ìˆëŠ” ì¼ì°¨ì—ëŠ” ë²„íŠ¼ì´ í™œì„±í™”, ì•„ë‹Œ ë‚ ì—ëŠ” ë¹„í™œì„±í™”
         {
             textValue = button4Arr[0];
             isButtonInteractable = true;
@@ -62,18 +64,18 @@ public class Button4Click : MonoBehaviour
         if (button4Text != null)
         {
             button4Text.text = textValue;
-            button4 = GetComponent<Button>(); //button4¸¦ Ã£¾Æ¼­ ÇÒ´ç
+            button4 = GetComponent<Button>(); //button4ë¥¼ ì°¾ì•„ì„œ í• ë‹¹
             if (button4 != null)
             {
-                //ÀÏÂ÷¿¡ µû¶ó¼­ ¹öÆ°ÀÌ È°¼ºÈ­ or ºñÈ°¼ºÈ­
+                //ì¼ì°¨ì— ë”°ë¼ì„œ ë²„íŠ¼ì´ í™œì„±í™” or ë¹„í™œì„±í™”
                 button4.interactable = isButtonInteractable;
-                button4.image.enabled = isButtonInteractable; //Source Image ºñÈ°¼ºÈ­
-                button4Text.enabled = isButtonInteractable;   //³²¾ÆÀÖ´Â text ºñÈ°¼ºÈ­
+                button4.image.enabled = isButtonInteractable; //Source Image ë¹„í™œì„±í™”
+                button4Text.enabled = isButtonInteractable;   //ë‚¨ì•„ìˆëŠ” text ë¹„í™œì„±í™”
             }
         }
         else
         {
-            Debug.LogError("button4Text°¡ ÇÒ´çµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("button4Textê°€ í• ë‹¹ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
         }
     }
 
@@ -81,11 +83,14 @@ public class Button4Click : MonoBehaviour
     {
         weatherUI.SetDateCount();
 
-        //¹öÆ°À» Å¬¸¯ÇÏ¸é date++, Á¡¼ö ´õÇÏ±â
-        //waterCount ÃÊ±âÈ­
+        //ë²„íŠ¼ì„ í´ë¦­í•˜ë©´ date++, ì ìˆ˜ ë”í•˜ê¸°
+        //waterCount ì´ˆê¸°í™”
         button1Click.initWaterCount();
 
-        //Ã¢´İ±â
+        //NeglectCount ì´ˆê¸°í™”
+        button2Click.initNeglectCount();
+
+        //ì°½ë‹«ê¸°
         eventButtonUI.ClosePopupWindow();
         fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
     }

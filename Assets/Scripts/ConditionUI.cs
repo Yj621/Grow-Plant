@@ -13,45 +13,45 @@ public class ConditionUI : MonoBehaviour
     {
         if (conditionPoint <= 0)
         {
-            //½Ä¹° Á×¾úÀ» ¶§ ½ÇÇàÇÒ ¸Þ¼­µå È£Ãâ
+            //ì‹ë¬¼ ì£½ì—ˆì„ ë•Œ ì‹¤í–‰í•  ë©”ì„œë“œ í˜¸ì¶œ
         }
         else
         {
             if (conditionPoint > 90 && conditionPoint <= 100)
             {
-                conditionText.text += "Á¤¸» ¸¹ÀÌ ÁÁÀ½";
+                conditionText.text += "ì •ë§ ë§Žì´ ì¢‹ìŒ";
             }
             if (conditionPoint > 80 && conditionPoint <= 90)
             {
-                conditionText.text += "¸Å¿ì ÁÁÀ½";
+                conditionText.text += "ë§¤ìš° ì¢‹ìŒ";
             }
             if (conditionPoint > 70 && conditionPoint <= 80)
             {
-                conditionText.text += "ÁÁÀ½";
+                conditionText.text += "ì¢‹ìŒ";
             }
             if (conditionPoint > 60 && conditionPoint <= 70)
             {
-                conditionText.text += "ÁÁ¾ÆÁö·Á ÇÔ";
+                conditionText.text += "ì¢‹ì•„ì§€ë ¤ í•¨";
             }
             if (conditionPoint > 40 && conditionPoint <= 60)
             {
-                conditionText.text += "º¸Åë";
+                conditionText.text += "ë³´í†µ";
             }
             if (conditionPoint > 30 && conditionPoint <= 40)
             {
-                conditionText.text += "³ªºüÁö·Á ÇÔ";
+                conditionText.text += "ë‚˜ë¹ ì§€ë ¤ í•¨";
             }
             if (conditionPoint > 20 && conditionPoint <= 30)
             {
-                conditionText.text += "³ª»Ý";
+                conditionText.text += "ë‚˜ì¨";
             }
             if (conditionPoint > 10 && conditionPoint <= 20)
             {
-                conditionText.text += "¸Å¿ì ³ª»Ý";
+                conditionText.text += "ë§¤ìš° ë‚˜ì¨";
             }
             if (conditionPoint > 30 && conditionPoint <= 40)
             {
-                conditionText.text += "Á×À¸·Á ÇÔ";
+                conditionText.text += "ì£½ìœ¼ë ¤ í•¨";
             }
         }
     }

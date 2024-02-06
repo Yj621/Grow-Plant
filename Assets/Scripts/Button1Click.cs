@@ -10,6 +10,8 @@ public class Button1Click : MonoBehaviour
     private int dateCount = 0;
     public WeatherUI weatherUI;
     private EventButtonUI eventButtonUI;
+    public Button2Click button2Click;
+
     private static int waterCount;
 
     FadeInOut fadeInOut;
@@ -20,12 +22,12 @@ public class Button1Click : MonoBehaviour
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         dateCount = weatherUI.GetDateCount() + 1;
         string[] button1Arr = {
-            "¹°À» ÁØ´Ù",
-            "³Ã/³­¹æ±â ¶§¹®ÀÎ °Í °°´Ù. ²ôÀÚ",
-            "½Ä¹°À» ¿Å±ä´Ù"
+            "ë¬¼ì„ ì¤€ë‹¤",
+            "ëƒ‰/ë‚œë°©ê¸° ë•Œë¬¸ì¸ ê²ƒ ê°™ë‹¤. ë„ì",
+            "ì‹ë¬¼ì„ ì˜®ê¸´ë‹¤"
         };
         string textValue;
-        if (dateCount == 8)  //dateCount´Â ÀÏÂ÷¸¦ ³ªÅ¸³¿. 8ÀÏÂ÷, 16ÀÏÂ÷¿¡´Â txtÆÄÀÏÀÇ °¢°¢ 2¹øÂ° ÁÙ°ú 3¹øÂ° ÁÙÀÇ ³»¿ëÀ» ³ÖÀ½.
+        if (dateCount == 8)  //dateCountëŠ” ì¼ì°¨ë¥¼ ë‚˜íƒ€ëƒ„. 8ì¼ì°¨, 16ì¼ì°¨ì—ëŠ” txtíŒŒì¼ì˜ ê°ê° 2ë²ˆì§¸ ì¤„ê³¼ 3ë²ˆì§¸ ì¤„ì˜ ë‚´ìš©ì„ ë„£ìŒ.
         {
             textValue = button1Arr[1];
         }
@@ -44,7 +46,7 @@ public class Button1Click : MonoBehaviour
         }
         else
         {
-            Debug.LogError("button1Text°¡ ÇÒ´çµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("button1Textê°€ í• ë‹¹ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
         }
     }
 
@@ -58,20 +60,26 @@ public class Button1Click : MonoBehaviour
         weatherUI.SetDateCount();
         waterCount++;
 
+        Debug.Log("waterCount : "+waterCount);
         if (waterCount >= 5)
         {
             Debug.Log("Die");
+            UI.diePanel.SetActive(true);
         }
-        //¹öÆ°À» Å¬¸¯ÇÏ¸é date++, Á¡¼ö ´õÇÏ±â, ÆË¾÷Ã¢ ´İ±â, waterCount++ (5°¡ ½×ÀÏ ½Ã ½Ä¹° Á×À½ * ´Ü, ¿¬¼ÓÀÌ ¾Æ´Ï¸é Ä«¿îÆ® ÃÊ±âÈ­)
+        //ë²„íŠ¼ì„ í´ë¦­í•˜ë©´ date++, ì ìˆ˜ ë”í•˜ê¸°, íŒì—…ì°½ ë‹«ê¸°, waterCount++ (5ê°€ ìŒ“ì¼ ì‹œ ì‹ë¬¼ ì£½ìŒ * ë‹¨, ì—°ì†ì´ ì•„ë‹ˆë©´ ì¹´ìš´íŠ¸ ì´ˆê¸°í™”)
 
-        //Ã¢´İ±â
+        //NeglectCount ì´ˆê¸°í™”
+        button2Click.initNeglectCount();
+
+        //ì°½ë‹«ê¸°
         eventButtonUI.ClosePopupWindow();
         fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
+        
     }
 
     public int initWaterCount()
     {
         waterCount = 0;
-        return waterCount; //´Ù¸¥ ¹öÆ°ÀÌ ´­¸± ½Ã waterCount¸¦ 0À¸·Î ÃÊ±âÈ­
+        return waterCount; //ë‹¤ë¥¸ ë²„íŠ¼ì´ ëˆŒë¦´ ì‹œ waterCountë¥¼ 0ìœ¼ë¡œ ì´ˆê¸°í™”
     }
 }

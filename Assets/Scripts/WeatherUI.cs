@@ -7,30 +7,30 @@ using TMPro;
 public class WeatherUI : MonoBehaviour
 {
     public TextMeshProUGUI weatherText;
-    private int date = 0; // ÀÌº¥Æ®¸¦ ÇÏ³ª¾¿ ³Ñ±æ ¶§¸¶´Ù date++
+    private int date = 0; // ì´ë²¤íŠ¸ë¥¼ í•˜ë‚˜ì”© ë„˜ê¸¸ ë•Œë§ˆë‹¤ date++
     string originWeatherText;
     public DateUI dateUI;
 
     void Start()
     {
-        originWeatherText = weatherText.text;  // "³¯¾¾ : "¸¦ ÀúÀåÇÏ´Â º¯¼ö
+        originWeatherText = weatherText.text;  // "ë‚ ì”¨ : "ë¥¼ ì €ìž¥í•˜ëŠ” ë³€ìˆ˜
         string[] weatherArr = {
-            "¸¼À½", "¸¼À½", "Èå¸²", "ºñ", "ºñ", "¸¼À½", "¸¼À½", "¸¼À½", "°ÇÁ¶ÇÔ",
-            "¸¼À½", "¸¼À½", "Èå¸²", "ÅÂÇ³", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½",
-            "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "Èå¸²", "´«", "¸¼À½", "¸¼À½",
-            "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½"
+            "ë§‘ìŒ", "ë§‘ìŒ", "íë¦¼", "ë¹„", "ë¹„", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ê±´ì¡°í•¨",
+            "ë§‘ìŒ", "ë§‘ìŒ", "íë¦¼", "íƒœí’", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ",
+            "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "íë¦¼", "ëˆˆ", "ë§‘ìŒ", "ë§‘ìŒ",
+            "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ"
         };
 
         string textValue = weatherArr[date];
 
         if (weatherText != null)
         {
-            // ±âÁ¸ ÅØ½ºÆ® ÃÊ±âÈ­ ÈÄ »õ·Î¿î ÅØ½ºÆ® ¼³Á¤
+            // ê¸°ì¡´ í…ìŠ¤íŠ¸ ì´ˆê¸°í™” í›„ ìƒˆë¡œìš´ í…ìŠ¤íŠ¸ ì„¤ì •
             weatherText.text += textValue;
         }
         else
         {
-            Debug.LogError("weatherArr°¡ ÇÒ´çµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("weatherArrê°€ í• ë‹¹ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
         }
     }
 
@@ -43,33 +43,33 @@ public class WeatherUI : MonoBehaviour
     {
         date += 1;
 
-        // ÀÌº¥Æ®¸¦ ÇÏ³ª¾¿ ³Ñ±æ ¶§¸¶´Ù ÅØ½ºÆ® ¾÷µ¥ÀÌÆ®
+        // ì´ë²¤íŠ¸ë¥¼ í•˜ë‚˜ì”© ë„˜ê¸¸ ë•Œë§ˆë‹¤ í…ìŠ¤íŠ¸ ì—…ë°ì´íŠ¸
         string[] textLines = new string[] {
-            "¸¼À½", "¸¼À½", "Èå¸²", "ºñ", "ºñ", "¸¼À½", "¸¼À½", "¸¼À½", "°ÇÁ¶ÇÔ",
-            "¸¼À½", "¸¼À½", "Èå¸²", "ÅÂÇ³", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½",
-            "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "Èå¸²", "´«", "¸¼À½", "¸¼À½",
-            "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½", "¸¼À½"
+            "ë§‘ìŒ", "ë§‘ìŒ", "íë¦¼", "ë¹„", "ë¹„", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ê±´ì¡°í•¨",
+            "ë§‘ìŒ", "ë§‘ìŒ", "íë¦¼", "íƒœí’", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ",
+            "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "íë¦¼", "ëˆˆ", "ë§‘ìŒ", "ë§‘ìŒ",
+            "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ", "ë§‘ìŒ"
         };
 
-        // °æ°è¸¦ ÃÊ°úÇÏÁö ¾Êµµ·Ï Á¶°Ç Ãß°¡
+        // ê²½ê³„ë¥¼ ì´ˆê³¼í•˜ì§€ ì•Šë„ë¡ ì¡°ê±´ ì¶”ê°€
         if (date < textLines.Length)
         {
             string textValue = textLines[date];
 
             if (weatherText != null)
             {
-                // ±âÁ¸ ÅØ½ºÆ® ÃÊ±âÈ­ ÈÄ »õ·Î¿î ÅØ½ºÆ® Ãß°¡
+                // ê¸°ì¡´ í…ìŠ¤íŠ¸ ì´ˆê¸°í™” í›„ ìƒˆë¡œìš´ í…ìŠ¤íŠ¸ ì¶”ê°€
                 weatherText.text = originWeatherText;
                 weatherText.text += textValue;
             }
             else
             {
-                Debug.LogError("weatherText°¡ ÇÒ´çµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+                Debug.LogError("weatherTextê°€ í• ë‹¹ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
             }
         }
         else
         {
-            Debug.LogWarning("´õ ÀÌ»ó ÅØ½ºÆ®°¡ ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("ë” ì´ìƒ í…ìŠ¤íŠ¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
         }
         dateUI.IncreaseDateCount();
     }

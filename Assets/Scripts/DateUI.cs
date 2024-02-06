@@ -22,7 +22,7 @@ public class DateUI : MonoBehaviour
 
     public void IncreaseDateCount()
     {
-        // ÀÏ ¼ö¸¦ Áõ°¡½ÃÅ°´Â ¸Ş¼­µå¸¦ ¸¸µé '¿¹Á¤'
+        // ì¼ ìˆ˜ë¥¼ ì¦ê°€ì‹œí‚¤ëŠ” ë©”ì„œë“œë¥¼ ë§Œë“¤ 'ì˜ˆì •'
         dateCount = weatherUI.GetDateCount();
         UpdateDayText();
     }
@@ -30,7 +30,7 @@ public class DateUI : MonoBehaviour
     void UpdateDayText()
     {
         dateCount = weatherUI.GetDateCount() + 1;
-        // UI¿¡ ÇöÀç ÀÏ ¼ö¸¦ Ç¥½ÃÇÏ´Â ¸Ş¼­µå
+        // UIì— í˜„ì¬ ì¼ ìˆ˜ë¥¼ í‘œì‹œí•˜ëŠ” ë©”ì„œë“œ
         dayText.text = dateCount.ToString() + "DAY";
     }
 }

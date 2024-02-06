@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 3555899}
   - component: {fileID: 3555898}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button_Retry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3555899}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 775216609}
+        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+        m_MethodName: Retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3555899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,6 +622,18 @@ MonoBehaviour:
     Ordinal: 20
     Priority: 0
     IconType: 320000
+    IconTexture: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 0
+    Name: 
+    GameObject: {fileID: 816050305}
+    Ordinal: 21
+    Priority: 0
+    IconType: 168000
     IconTexture: {fileID: 0}
     IsIconRecursive: 0
     BackgroundType: 0
@@ -1499,6 +1523,10 @@ PrefabInstance:
       propertyPath: weatherUI
       value: 
       objectReference: {fileID: 201051685}
+    - target: {fileID: 6000015867480281405, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: button2Click
+      value: 
+      objectReference: {fileID: 352276162}
     - target: {fileID: 6102085343280213067, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -180
@@ -1804,6 +1832,7 @@ MonoBehaviour:
   button3Text: {fileID: 329596225}
   weatherUI: {fileID: 201051685}
   button1Click: {fileID: 82705932}
+  button2Click: {fileID: 352276162}
 --- !u!1 &816050305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,7 +1850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &816050306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2414,7 +2443,7 @@ GameObject:
   - component: {fileID: 1073885646}
   - component: {fileID: 1073885645}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button_Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2483,7 +2512,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1073885646}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 775216609}
+        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1073885646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2976,6 +3017,7 @@ MonoBehaviour:
   button4Text: {fileID: 2031294491}
   weatherUI: {fileID: 201051685}
   button1Click: {fileID: 82705932}
+  button2Click: {fileID: 352276162}
   button4: {fileID: 1856095898}
 --- !u!114 &1856095898
 MonoBehaviour:

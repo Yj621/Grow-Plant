@@ -8,6 +8,7 @@ public class Button2Click : MonoBehaviour
 {
     public TextMeshProUGUI button2Text;
     private int dateCount = 0;
+    private static int NeglectCount;
     public WeatherUI weatherUI;
     public Button1Click button1Click;
     private EventButtonUI eventButtonUI;
@@ -20,14 +21,14 @@ public class Button2Click : MonoBehaviour
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         dateCount = weatherUI.GetDateCount() + 1;
         string[] button2Arr = {
-            "³ÀµĞ´Ù",
-            "°¡½À±â¸¦ Æ°´Ù",
-            "½Àµµ°¡ ³ôÀº °Í °°´Ù. È®ÀÎÇØº¸ÀÚ",
-            "ÀÙÀ» ¸¸Á®º»´Ù"
+            "ëƒ…ë‘”ë‹¤",
+            "ê°€ìŠµê¸°ë¥¼ íŠ¼ë‹¤",
+            "ìŠµë„ê°€ ë†’ì€ ê²ƒ ê°™ë‹¤. í™•ì¸í•´ë³´ì",
+            "ìì„ ë§Œì ¸ë³¸ë‹¤"
         };
         string textValue;
-        if (dateCount == 7)  //dateCount´Â ÀÏÂ÷¸¦ ³ªÅ¸³¿.
-                             //7ÀÏÂ÷, 8ÀÏÂ÷, 16ÀÏÂ÷¿¡´Â txtÆÄÀÏÀÇ °¢°¢ 2¹øÂ° ÁÙ, 3¹øÂ° ÁÙ, 4¹øÂ° ÁÙÀÇ ³»¿ëÀ» ³ÖÀ½.
+        if (dateCount == 7)  //dateCountëŠ” ì¼ì°¨ë¥¼ ë‚˜íƒ€ëƒ„.
+                             //7ì¼ì°¨, 8ì¼ì°¨, 16ì¼ì°¨ì—ëŠ” txtíŒŒì¼ì˜ ê°ê° 2ë²ˆì§¸ ì¤„, 3ë²ˆì§¸ ì¤„, 4ë²ˆì§¸ ì¤„ì˜ ë‚´ìš©ì„ ë„£ìŒ.
         {
             textValue = button2Arr[1];
         }
@@ -50,20 +51,32 @@ public class Button2Click : MonoBehaviour
         }
         else
         {
-            Debug.LogError("button2Text°¡ ÇÒ´çµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("button2Textê°€ í• ë‹¹ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
         }
     }
 
     public void Button2OnClick()
     {
         weatherUI.SetDateCount();
-       
-        //¹öÆ°À» Å¬¸¯ÇÏ¸é date++, Á¡¼ö ´õÇÏ±â
-        //waterCount ÃÊ±âÈ­
+        
+        NeglectCount++;
+        Debug.Log("NeglectCount : "+NeglectCount);
+        if (NeglectCount >= 3)
+        {
+            Debug.Log("Die");
+            UI.diePanel.SetActive(true);
+        }
+        //ë²„íŠ¼ì„ í´ë¦­í•˜ë©´ date++, ì ìˆ˜ ë”í•˜ê¸°
+        //waterCount ì´ˆê¸°í™”
         button1Click.initWaterCount();
 
-        //Ã¢´İ±â
+        //ì°½ë‹«ê¸°
         eventButtonUI.ClosePopupWindow();
         fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
+    }
+    public int initNeglectCount()
+    {
+        NeglectCount = 0;
+        return NeglectCount; //ë‹¤ë¥¸ ë²„íŠ¼ì´ ëˆŒë¦´ ì‹œ NeglectCount 0ìœ¼ë¡œ ì´ˆê¸°í™”
     }
 }
