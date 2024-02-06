@@ -52,11 +52,6 @@ public class Button2Click : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     public void Button2OnClick()
     {
         weatherUI.SetDateCount();
