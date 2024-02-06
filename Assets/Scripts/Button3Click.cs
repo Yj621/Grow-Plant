@@ -12,13 +12,13 @@ public class Button3Click : MonoBehaviour
     public Button1Click button1Click;
     private EventButtonUI eventButtonUI;
     
-
+    FadeInOut fadeInOut;
 
 
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
-
+        fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         dateCount = weatherUI.GetDateCount() + 1;
         string filePath = "Assets/TextFiles/button3Text.txt";
         string[] textLines = System.IO.File.ReadAllLines(filePath);
@@ -50,5 +50,6 @@ public class Button3Click : MonoBehaviour
 
         //Ã¢´Ý±â
         eventButtonUI.ClosePopupWindow();
+        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
     }
 }

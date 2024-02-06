@@ -12,12 +12,13 @@ public class Button2Click : MonoBehaviour
     public Button1Click button1Click;
     private EventButtonUI eventButtonUI;
     
-     
+    FadeInOut fadeInOut;
 
 
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
+        fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
 
         dateCount = weatherUI.GetDateCount() + 1;
         string filePath = "Assets/TextFiles/button2Text.txt";
@@ -58,6 +59,7 @@ public class Button2Click : MonoBehaviour
 
     public void Button2OnClick()
     {
+
         weatherUI.SetDateCount();
        
         //버튼을 클릭하면 date++, 점수 더하기
@@ -66,5 +68,6 @@ public class Button2Click : MonoBehaviour
 
         //창닫기
         eventButtonUI.ClosePopupWindow();
+        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
     }
 }
