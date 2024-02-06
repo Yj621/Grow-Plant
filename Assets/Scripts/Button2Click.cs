@@ -12,33 +12,34 @@ public class Button2Click : MonoBehaviour
     public Button1Click button1Click;
     private EventButtonUI eventButtonUI;
     
-     
-
-
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
 
         dateCount = weatherUI.GetDateCount() + 1;
-        string filePath = "Assets/TextFiles/button2Text.txt";
-        string[] textLines = System.IO.File.ReadAllLines(filePath);
+        string[] button2Arr = {
+            "냅둔다",
+            "가습기를 튼다",
+            "습도가 높은 것 같다. 확인해보자",
+            "잎을 만져본다"
+        };
         string textValue;
         if (dateCount == 7)  //dateCount는 일차를 나타냄.
                              //7일차, 8일차, 16일차에는 txt파일의 각각 2번째 줄, 3번째 줄, 4번째 줄의 내용을 넣음.
         {
-            textValue = textLines[1];
+            textValue = button2Arr[1];
         }
         else if (dateCount == 8)
         {
-            textValue = textLines[2];
+            textValue = button2Arr[2];
         }
         else if (dateCount == 16)
         {
-            textValue = textLines[3];
+            textValue = button2Arr[3];
         }
         else
         {
-            textValue = textLines[0];
+            textValue = button2Arr[0];
         }
 
         if (button2Text != null)
