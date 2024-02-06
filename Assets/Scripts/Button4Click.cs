@@ -13,10 +13,12 @@ public class Button4Click : MonoBehaviour
     private EventButtonUI eventButtonUI;
     public Button button4;
 
+    FadeInOut fadeInOut;
+
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
-
+        fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         dateCount = weatherUI.GetDateCount() + 1;
         string[] button4Arr = {
             "응원한다", "직접 죽인다", "가지치기 한다",
@@ -79,12 +81,12 @@ public class Button4Click : MonoBehaviour
     {
         weatherUI.SetDateCount();
 
-
         //버튼을 클릭하면 date++, 점수 더하기
         //waterCount 초기화
         button1Click.initWaterCount();
 
         //창닫기
         eventButtonUI.ClosePopupWindow();
+        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
     }
 }

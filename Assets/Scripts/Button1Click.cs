@@ -12,10 +12,12 @@ public class Button1Click : MonoBehaviour
     private EventButtonUI eventButtonUI;
     private static int waterCount;
 
+    FadeInOut fadeInOut;
+
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
-
+        fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         dateCount = weatherUI.GetDateCount() + 1;
         string[] button1Arr = {
             "물을 준다",
@@ -64,6 +66,7 @@ public class Button1Click : MonoBehaviour
 
         //창닫기
         eventButtonUI.ClosePopupWindow();
+        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
     }
 
     public int initWaterCount()

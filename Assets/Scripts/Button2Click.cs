@@ -14,7 +14,6 @@ public class Button2Click : MonoBehaviour
     
     FadeInOut fadeInOut;
 
-
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
@@ -57,7 +56,6 @@ public class Button2Click : MonoBehaviour
 
     public void Button2OnClick()
     {
-
         weatherUI.SetDateCount();
        
         //버튼을 클릭하면 date++, 점수 더하기
