@@ -81,6 +81,7 @@ public class Button4Click : MonoBehaviour
 
     public void Button4OnClick()
     {
+        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
         weatherUI.SetDateCount();
 
         //버튼을 클릭하면 date++, 점수 더하기
@@ -92,6 +93,5 @@ public class Button4Click : MonoBehaviour
 
         //창닫기
         eventButtonUI.ClosePopupWindow();
-        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
     }
 }

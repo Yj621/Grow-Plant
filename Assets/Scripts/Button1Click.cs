@@ -57,6 +57,11 @@ public class Button1Click : MonoBehaviour
 
     public void Button1OnClick()
     {
+        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
+        Invoke("Second", 10);
+
+        Debug.Log("delay");
+
         weatherUI.SetDateCount();
         waterCount++;
 
@@ -72,14 +77,17 @@ public class Button1Click : MonoBehaviour
         button2Click.initNeglectCount();
 
         //창닫기
-        eventButtonUI.ClosePopupWindow();
-        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
-        
+        eventButtonUI.ClosePopupWindow();        
     }
 
     public int initWaterCount()
     {
         waterCount = 0;
         return waterCount; //다른 버튼이 눌릴 시 waterCount를 0으로 초기화
+    }
+
+    void Second()
+    {
+
     }
 }
