@@ -7,7 +7,7 @@ using TMPro;
 public class Button4Click : MonoBehaviour
 {
     public TextMeshProUGUI button4Text;
-    private int dateCount = 0;
+    public int dateCount = 0;
     public WeatherUI weatherUI;
     public Button1Click button1Click;
     public Button2Click button2Click;
@@ -93,5 +93,8 @@ public class Button4Click : MonoBehaviour
 
         //창닫기
         eventButtonUI.ClosePopupWindow();
+        
+        //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
+        GameManager.memoPanel.SetActive(true);
     }
 }

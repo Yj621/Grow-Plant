@@ -7,7 +7,7 @@ using TMPro;
 public class Button1Click : MonoBehaviour
 {
     public TextMeshProUGUI button1Text;
-    private int dateCount = 0;
+    public int dateCount = 0;
     public WeatherUI weatherUI;
     private EventButtonUI eventButtonUI;
     public Button2Click button2Click;
@@ -61,6 +61,8 @@ public class Button1Click : MonoBehaviour
         Invoke("Second", 10);
 
         Debug.Log("delay");
+        //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
+        GameManager.memoPanel.SetActive(true);
 
         weatherUI.SetDateCount();
         waterCount++;
@@ -69,7 +71,7 @@ public class Button1Click : MonoBehaviour
         if (waterCount >= 5)
         {
             Debug.Log("Die");
-            UI.diePanel.SetActive(true);
+            GameManager.diePanel.SetActive(true);
         }
         //버튼을 클릭하면 date++, 점수 더하기, 팝업창 닫기, waterCount++ (5가 쌓일 시 식물 죽음 * 단, 연속이 아니면 카운트 초기화)
 

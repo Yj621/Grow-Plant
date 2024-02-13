@@ -7,7 +7,7 @@ using TMPro;
 public class Button2Click : MonoBehaviour
 {
     public TextMeshProUGUI button2Text;
-    private int dateCount = 0;
+    public int dateCount = 0;
     private static int NeglectCount;
     public WeatherUI weatherUI;
     public Button1Click button1Click;
@@ -64,7 +64,7 @@ public class Button2Click : MonoBehaviour
         if (NeglectCount >= 3)
         {
             Debug.Log("Die");
-            UI.diePanel.SetActive(true);
+            GameManager.diePanel.SetActive(true);
         }
         //버튼을 클릭하면 date++, 점수 더하기
         //waterCount 초기화
@@ -73,6 +73,9 @@ public class Button2Click : MonoBehaviour
         //창닫기
         eventButtonUI.ClosePopupWindow();
         fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
+        
+        //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
+        GameManager.memoPanel.SetActive(true);
     }
     public int initNeglectCount()
     {

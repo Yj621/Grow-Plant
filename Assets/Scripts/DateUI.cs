@@ -7,7 +7,7 @@ using TMPro;
 public class DateUI : MonoBehaviour
 {
     public TextMeshProUGUI dayText;
-    private int dateCount = 0;
+    public int dateCount = 0;
     public WeatherUI weatherUI;
 
     void Start()

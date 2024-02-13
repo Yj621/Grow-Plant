@@ -7,7 +7,7 @@ public class EventButtonUI : MonoBehaviour
 {
     public GameObject popupWindow;
     public GameObject blockingPanel;
-    public Transform eventCanvas; // EventCanvas? ?? ?? ??
+    public Transform eventCanvas; // EventCanvas
 
     private bool isPopupOpen = false;
     

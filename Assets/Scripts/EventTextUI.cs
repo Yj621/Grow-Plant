@@ -7,7 +7,7 @@ using TMPro;
 public class EventTextUI : MonoBehaviour
 {
     public TextMeshProUGUI eventText;
-    private int dateCount = 0;
+    public int dateCount = 0;
     public WeatherUI weatherUI;
 
     void Start()
