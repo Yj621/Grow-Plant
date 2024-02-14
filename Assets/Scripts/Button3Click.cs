@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,9 +11,9 @@ public class Button3Click : MonoBehaviour
     public WeatherUI weatherUI;
     public Button1Click button1Click;
     public Button2Click button2Click;
-
     private EventButtonUI eventButtonUI;
-    
+    public ConditionUI conditionUI;
+
     FadeInOut fadeInOut;
 
 
@@ -45,18 +45,24 @@ public class Button3Click : MonoBehaviour
     public void Button3OnClick()
     {
         weatherUI.SetDateCount();
-        
-       
-        //버튼을 클릭하면 date++, 점수 더하기
+
+        //일차별 버튼2 점수
+        int[] btn3ScoreArr = {-999,-999,3,-50,5,10,20,20,20,10,         //-999는 즉사, 999는 히든엔딩
+            10,10,-999,10,10,0,10,10,10,10,10,999};                     //4일차 1번 버튼은 비가 들이쳐서 물을 많이 먹음 -50
+        //점수 더하기
+        conditionUI.GetCondPoint(btn3ScoreArr[dateCount - 1]);
+
         //waterCount 초기화
         button1Click.initWaterCount();
+
         //NeglectCount 초기화
         button2Click.initNeglectCount();
+
         //창닫기
         eventButtonUI.ClosePopupWindow();
         fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
 
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        GameManager.memoPanel.SetActive(true);
+        //GameManager.memoPanel.SetActive(true);
     }
 }

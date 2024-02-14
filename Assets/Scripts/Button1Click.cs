@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +11,7 @@ public class Button1Click : MonoBehaviour
     public WeatherUI weatherUI;
     private EventButtonUI eventButtonUI;
     public Button2Click button2Click;
+    public ConditionUI conditionUI;
 
     private static int waterCount;
 
@@ -62,7 +63,7 @@ public class Button1Click : MonoBehaviour
 
         Debug.Log("delay");
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        GameManager.memoPanel.SetActive(true);
+        //GameManager.memoPanel.SetActive(true);
 
         weatherUI.SetDateCount();
         waterCount++;
@@ -71,9 +72,14 @@ public class Button1Click : MonoBehaviour
         if (waterCount >= 5)
         {
             Debug.Log("Die");
-            GameManager.diePanel.SetActive(true);
+            //GameManager.diePanel.SetActive(true);
         }
-        //버튼을 클릭하면 date++, 점수 더하기, 팝업창 닫기, waterCount++ (5가 쌓일 시 식물 죽음 * 단, 연속이 아니면 카운트 초기화)
+
+        //일차별 버튼1 점수
+        int[] btn1ScoreArr = {5,5,5,-50,5,5,10,0,5,10,      //-999는 즉사
+            10,10,5,-999,10,10,10,10,10,10,10,5};           //4일차 1번 버튼은 습한데 물을 많이 줘서 비실해짐 -50
+        //점수 더하기
+        conditionUI.GetCondPoint(btn1ScoreArr[dateCount - 1]);
 
         //NeglectCount 초기화
         button2Click.initNeglectCount();

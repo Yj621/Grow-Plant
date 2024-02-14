@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +12,8 @@ public class Button2Click : MonoBehaviour
     public WeatherUI weatherUI;
     public Button1Click button1Click;
     private EventButtonUI eventButtonUI;
-    
+    public ConditionUI conditionUI;
+
     FadeInOut fadeInOut;
 
     void Start()
@@ -64,9 +65,15 @@ public class Button2Click : MonoBehaviour
         if (NeglectCount >= 3)
         {
             Debug.Log("Die");
-            GameManager.diePanel.SetActive(true);
+            //GameManager.diePanel.SetActive(true);
         }
-        //버튼을 클릭하면 date++, 점수 더하기
+
+        //일차별 버튼2 점수
+        int[] btn2ScoreArr = {0,0,0,10,-999,0,10,-999,0,0,        //-999는 즉사, 999는 히든엔딩
+            0,0,0,-999,0,10,0,0,0,0,0,0};                         //4일차 1번 버튼은 습한데 물을 많이 먹음 -50
+        //점수 더하기
+        conditionUI.GetCondPoint(btn2ScoreArr[dateCount - 1]);
+
         //waterCount 초기화
         button1Click.initWaterCount();
 
@@ -75,7 +82,7 @@ public class Button2Click : MonoBehaviour
         fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
         
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        GameManager.memoPanel.SetActive(true);
+        //GameManager.memoPanel.SetActive(true);
     }
     public int initNeglectCount()
     {
