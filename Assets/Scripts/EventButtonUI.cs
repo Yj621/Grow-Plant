@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EventButtonUI : MonoBehaviour
 {
     public GameObject popupWindow;
-    public GameObject blockingPanel;
+    public GameObject blockingButton;
     public Transform eventCanvas; // EventCanvas
 
     private bool isPopupOpen = false;
@@ -17,8 +17,8 @@ public class EventButtonUI : MonoBehaviour
     {
         if (popupWindow != null)
             popupWindow.SetActive(false);
-        if (blockingPanel != null)
-            blockingPanel.SetActive(false);
+        if (blockingButton != null)
+            blockingButton.SetActive(false);
     }
 
     public void OpenPopupWindow()
@@ -51,9 +51,10 @@ public class EventButtonUI : MonoBehaviour
         }
         if (popupInstance != null)
         {
-            popupInstance.SetActive(false);
+            Destroy(popupInstance);
         }
 
         isPopupOpen = false;
     }
+
 }

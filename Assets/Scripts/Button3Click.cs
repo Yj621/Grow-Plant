@@ -13,6 +13,7 @@ public class Button3Click : MonoBehaviour
     public Button2Click button2Click;
     private EventButtonUI eventButtonUI;
     public ConditionUI conditionUI;
+    public BlockingButton blockingBtn;
 
     FadeInOut fadeInOut;
 
@@ -60,6 +61,7 @@ public class Button3Click : MonoBehaviour
 
         //창닫기
         eventButtonUI.ClosePopupWindow();
+        blockingBtn.CloseBlockingButton();
         fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
 
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화

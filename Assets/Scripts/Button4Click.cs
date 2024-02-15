@@ -14,7 +14,7 @@ public class Button4Click : MonoBehaviour
     private EventButtonUI eventButtonUI;
     public Button button4;
     public ConditionUI conditionUI;
-
+    public BlockingButton blockingBtn;
     FadeInOut fadeInOut;
 
     void Start()
@@ -98,7 +98,8 @@ public class Button4Click : MonoBehaviour
 
         //창닫기
         eventButtonUI.ClosePopupWindow();
-        
+        blockingBtn.CloseBlockingButton();
+
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
         //GameManager.memoPanel.SetActive(true);
     }

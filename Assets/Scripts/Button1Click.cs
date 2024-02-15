@@ -12,6 +12,7 @@ public class Button1Click : MonoBehaviour
     private EventButtonUI eventButtonUI;
     public Button2Click button2Click;
     public ConditionUI conditionUI;
+    public BlockingButton blockingBtn;
 
     private static int waterCount;
 
@@ -85,7 +86,8 @@ public class Button1Click : MonoBehaviour
         button2Click.initNeglectCount();
 
         //창닫기
-        eventButtonUI.ClosePopupWindow();        
+        eventButtonUI.ClosePopupWindow();
+        blockingBtn.CloseBlockingButton();
     }
 
     public int initWaterCount()
