@@ -56,4 +56,8 @@ public class FadeInOut : MonoBehaviour
 
         isFading = false; // 페이드 종료
     }
+    public bool GetIsFading()
+    {
+        return isFading;
+    }
 }
