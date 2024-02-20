@@ -9,6 +9,8 @@ public class ConditionUI : MonoBehaviour
     public int conditionPoint = 50;
     public TextMeshProUGUI conditionText;
     string originConditionText = "식물상태 : ";
+    public GameObject diePanel;
+
     void Start()
     {
         UpdateConditionText();
@@ -19,7 +21,7 @@ public class ConditionUI : MonoBehaviour
         string currentCond = "";
         if (conditionPoint <= 0)
         {
-            //식물 죽었을 때 실행할 메서드 호출
+            diePanel.SetActive(true); //식물이 죽었을 때(점수가 0점 이하로 떨어짐)
         }
         else
         {
