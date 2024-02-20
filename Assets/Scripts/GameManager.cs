@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,10 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
-    public static GameObject diePanel;
-    public static GameObject memoPanel;
-
+    public GameObject diePanel;
+    public GameObject quitPanel;
     public ConditionUI conditionUI;
     public DateUI dateUI;
     public EventTextUI eventTextUI;
@@ -26,12 +23,19 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameLoad();
-        diePanel = GameObject.Find("Die_PopUp");
-        memoPanel = GameObject.Find("Memo_PopUp");
         diePanel.SetActive(false);
-        memoPanel.SetActive(false);
+        quitPanel.SetActive(false);
     }
-
+    void Update()
+    {
+        if(Application.platform == RuntimePlatform.Android)
+        {
+            if(Input.GetKey(KeyCode.Escape))
+            {
+                quitPanel.SetActive(true);
+            }
+        }
+    }
     public void Retry()
     {
 	    SceneManager.LoadScene(0);
@@ -74,4 +78,3 @@ public class GameManager : MonoBehaviour
         weatherUI.date = date;
     }
 }
-*/

@@ -17,9 +17,11 @@ public class Button1Click : MonoBehaviour
     private static int waterCount;
 
     FadeInOut fadeInOut;
+    MemoPanel memoPanel;
 
     void Start()
     {
+        memoPanel = FindAnyObjectByType<MemoPanel>();
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         dateCount = weatherUI.GetDateCount() + 1;
@@ -64,7 +66,7 @@ public class Button1Click : MonoBehaviour
 
         Debug.Log("delay");
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        //GameManager.memoPanel.SetActive(true);
+        memoPanel.memoPanel.SetActive(true);
 
         weatherUI.SetDateCount();
         waterCount++;

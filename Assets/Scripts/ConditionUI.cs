@@ -6,7 +6,7 @@ using TMPro;
 
 public class ConditionUI : MonoBehaviour
 {
-    private int conditionPoint = 50;
+    public int conditionPoint = 50;
     public TextMeshProUGUI conditionText;
     string originConditionText = "식물상태 : ";
     void Start()
