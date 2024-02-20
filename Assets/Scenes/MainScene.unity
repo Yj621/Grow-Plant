@@ -2288,7 +2288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conditionPoint: 50
   conditionText: {fileID: 179923404}
-  diePanel: {fileID: 0}
+  diePanel: {fileID: 1015359961}
 --- !u!1001 &181217523
 PrefabInstance:
   m_ObjectHideFlags: 0
