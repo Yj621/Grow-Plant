@@ -11,5 +11,6 @@ public class WeatherChange : MonoBehaviour
     {
         // 머티리얼 등록
         RenderSettings.skybox = skyboxMaterial;
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * 0.5f);
     }
 }
