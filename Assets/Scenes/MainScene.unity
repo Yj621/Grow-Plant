@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08218047, g: 0.12360709, b: 0.22000337, a: 1}
+  m_IndirectSpecularColor: {r: 0.101687446, g: 0.15464082, b: 0.27607444, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -880,6 +880,7 @@ GameObject:
   - component: {fileID: 95618122}
   - component: {fileID: 95618121}
   - component: {fileID: 95618123}
+  - component: {fileID: 95618124}
   m_Layer: 0
   m_Name: DayLight
   m_TagString: Lights
@@ -977,6 +978,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyboxMaterial: {fileID: 2100000, guid: 7416536dbe0334cfd888dd1beb75a9fb, type: 2}
+--- !u!114 &95618124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95618120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cf197b44e0452418b106b134636451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunnyLight: {fileID: 95618120}
 --- !u!4 &96296514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
@@ -1229,7 +1243,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 40, y: 5}
-  m_SizeDelta: {x: 0, y: 12.3}
+  m_SizeDelta: {x: -189.09952, y: 12.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103679240
 MonoBehaviour:
@@ -7353,6 +7367,8 @@ MonoBehaviour:
   weatherText: {fileID: 201051683}
   date: 0
   dateUI: {fileID: 1430888115}
+  sunnyLight: {fileID: 95618124}
+  rainyLight: {fileID: 1399304657}
 --- !u!4 &212484662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
@@ -9201,7 +9217,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 40, y: 5}
-  m_SizeDelta: {x: 0, y: -10}
+  m_SizeDelta: {x: -333.17535, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &478749902
 MonoBehaviour:
@@ -14436,7 +14452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1015359962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18966,6 +18982,7 @@ GameObject:
   - component: {fileID: 1399304654}
   - component: {fileID: 1399304655}
   - component: {fileID: 1399304656}
+  - component: {fileID: 1399304657}
   m_Layer: 0
   m_Name: RainyDay
   m_TagString: Lights
@@ -19063,6 +19080,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyboxMaterial: {fileID: 2100000, guid: 51b74d7bad397457d883c5940f7664d8, type: 2}
+--- !u!114 &1399304657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399304653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429a2ccefbbbd164c9bdcb1effeca322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rainyLight: {fileID: 1399304653}
 --- !u!4 &1416178742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429508, guid: 9c74caa742791864f9c678287121e6c9, type: 3}

@@ -10,6 +10,8 @@ public class WeatherUI : MonoBehaviour
     public int date = 0; // 이벤트를 하나씩 넘길 때마다 date++
     string originWeatherText;
     public DateUI dateUI;
+    public SunnyLight sunnyLight;
+    public RainyLight rainyLight;
 
     void Start()
     {
@@ -72,5 +74,17 @@ public class WeatherUI : MonoBehaviour
             Debug.LogWarning("더 이상 텍스트가 없습니다.");
         }
         dateUI.IncreaseDateCount();
+
+        if (textLines[date] == "맑음")
+        {
+            sunnyLight.ActivateSunnyLight();    //맑은 날의 조명 활성화
+            rainyLight.DeactivateRainyLight();  //비 오는 날의 조명 비활성화
+        }
+        else if (textLines[date] == "비")
+        {
+            sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
+            rainyLight.ActivateRainyLight();    //비 오는 날의 조명 활성화
+        }
+
     }
 }

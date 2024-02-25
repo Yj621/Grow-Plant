@@ -22,7 +22,7 @@ public class DateUI : MonoBehaviour
 
     public void IncreaseDateCount()
     {
-        // 일 수를 증가시키는 메서드를 만들 '예정'
+        // 일 수를 증가시키는 메서드
         dateCount = weatherUI.GetDateCount();
         UpdateDayText();
     }
