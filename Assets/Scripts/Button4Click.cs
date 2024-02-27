@@ -15,13 +15,17 @@ public class Button4Click : MonoBehaviour
     public Button button4;
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
+
     FadeInOut fadeInOut;
+    MemoPanel memoPanel;
 
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
+        memoPanel = FindAnyObjectByType<MemoPanel>();
         dateCount = weatherUI.GetDateCount() + 1;
+
         string[] button4Arr = {
             "응원한다", "직접 죽인다", "가지치기 한다",
             "식물을 옮긴다", "영양제를 준다"
@@ -101,6 +105,6 @@ public class Button4Click : MonoBehaviour
         blockingBtn.CloseBlockingButton();
 
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        //GameManager.memoPanel.SetActive(true);
+        memoPanel.memoPanel.SetActive(true);
     }
 }

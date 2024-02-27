@@ -16,13 +16,15 @@ public class Button3Click : MonoBehaviour
     public BlockingButton blockingBtn;
 
     FadeInOut fadeInOut;
-
+    MemoPanel memoPanel;
 
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
+        memoPanel = FindAnyObjectByType<MemoPanel>();
         dateCount = weatherUI.GetDateCount() + 1;
+
         string[] button3Arr = {
             "흙을 파본다", "식물을 옮긴다", "식물을 따뜻한 곳으로 옮긴다",
             "창문을 연다", "살충제를 뿌린다", "창문을 연다", "인스타에 올린다",
@@ -65,6 +67,6 @@ public class Button3Click : MonoBehaviour
         fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
 
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        //GameManager.memoPanel.SetActive(true);
+        memoPanel.memoPanel.SetActive(true);
     }
 }

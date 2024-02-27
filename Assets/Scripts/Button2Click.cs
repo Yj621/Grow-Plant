@@ -16,12 +16,17 @@ public class Button2Click : MonoBehaviour
     public BlockingButton blockingBtn;
 
     FadeInOut fadeInOut;
+    MemoPanel memoPanel;
+    GameManager gameManager;
 
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
+        gameManager = FindObjectOfType<GameManager>();
+        memoPanel = FindAnyObjectByType<MemoPanel>();
         dateCount = weatherUI.GetDateCount() + 1;
+        
         string[] button2Arr = {
             "냅둔다",
             "가습기를 튼다",
@@ -66,7 +71,7 @@ public class Button2Click : MonoBehaviour
         if (NeglectCount >= 3)
         {
             Debug.Log("Die");
-            //GameManager.diePanel.SetActive(true);
+            gameManager.diePanel.SetActive(true);
         }
 
         //일차별 버튼2 점수
@@ -82,9 +87,9 @@ public class Button2Click : MonoBehaviour
         eventButtonUI.ClosePopupWindow();
         blockingBtn.CloseBlockingButton();
         fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
-        
+
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        //GameManager.memoPanel.SetActive(true);
+        memoPanel.memoPanel.SetActive(true);
     }
     public int initNeglectCount()
     {

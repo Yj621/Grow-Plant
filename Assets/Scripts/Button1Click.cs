@@ -18,6 +18,7 @@ public class Button1Click : MonoBehaviour
 
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
+    GameManager gameManager;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class Button1Click : MonoBehaviour
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         dateCount = weatherUI.GetDateCount() + 1;
+        gameManager = FindObjectOfType<GameManager>();
         string[] button1Arr = {
             "물을 준다",
             "냉/난방기 때문인 것 같다. 끄자",
@@ -75,7 +77,7 @@ public class Button1Click : MonoBehaviour
         if (waterCount >= 5)
         {
             Debug.Log("Die");
-            //GameManager.diePanel.SetActive(true);
+            gameManager.diePanel.SetActive(true);
         }
 
         //일차별 버튼1 점수
