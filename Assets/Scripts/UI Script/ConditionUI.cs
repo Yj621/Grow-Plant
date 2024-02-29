@@ -10,6 +10,10 @@ public class ConditionUI : MonoBehaviour
     public TextMeshProUGUI conditionText;
     string originConditionText = "식물상태 : ";
     public GameObject diePanel;
+    private int newPoint;
+    public bool isGood = false;
+    public bool isSoso = false;
+    public bool isBad = false;
 
     void Start()
     {
@@ -18,6 +22,10 @@ public class ConditionUI : MonoBehaviour
     
     private void UpdateConditionText() //식물상태가 점수에 따라서 바뀌게 함.
     {
+        isGood = false;
+        isSoso = false;
+        isBad = false;
+
         string currentCond = "";
         if (conditionPoint <= 0)
         {
@@ -65,17 +73,35 @@ public class ConditionUI : MonoBehaviour
             conditionText.text += currentCond;
         }
     }
-    //버튼을 누르면 배열 안의 점수를 가져오는 메서드
-    public void GetCondPoint(int point) 
-    {
-        int newPoint = conditionPoint + point;
-        SetCondPoint(newPoint);
-    }
+
 
     private void SetCondPoint(int newPoint)
     {
         conditionPoint = newPoint;
         UpdateConditionText();
-        Debug.Log(conditionPoint);
+        Debug.Log("conditionPoint: " + conditionPoint);
     }
+
+    //버튼을 누르면 배열 안의 점수를 가져오는 메서드
+    public void GetCondPoint(int point) 
+    {
+        newPoint = conditionPoint + point;
+        SetCondPoint(newPoint);
+        if(point > 0)
+        {
+            Debug.Log("Good");
+            isGood = true;
+        }
+        else if(point == 0)
+        {
+            Debug.Log("soso");
+            isSoso = true;
+        }
+        else
+        {
+            Debug.Log("Bad");
+            isBad = true;
+        }
+    }
+
 }

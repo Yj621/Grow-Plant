@@ -30,18 +30,17 @@ public class MemoPanel : MonoBehaviour
         dateText.text = weatherUI.date+1 + "일차";
         weatherText.text = weatherUI.weatherText.text;
         //내용에 들어갈 텍스트
-        // 버튼1 클릭으로 얻은 점수 확인
-        //int btn1Score = conditionUI.GetCondPoint(btn1ScoreArr[dateCount - 1]);
-
-        // 점수가 양수인 경우
-        // if (btn1Score >= 0)
-        // {
-        //     contenetText.text = "식물 상태가 좋습니다";
-        // }
-        // // 점수가 음수인 경우
-        // else
-        // {
-        //     contenetText.text = "식물 상태가 나쁩니다";
-        // }
+        if(conditionUI.isGood)
+        {
+            contenetText.text = "식물이 호전되었습니다.";
+        }
+        else if(conditionUI.isSoso)
+        {
+            contenetText.text = "식물이 양호합니다.";
+        }
+        else if(conditionUI.isBad)
+        {
+            contenetText.text = "식물이 악화되었습니다.";
+        }
     }
 }
