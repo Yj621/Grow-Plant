@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.101825096, g: 0.15498908, b: 0.27663422, a: 1}
+  m_IndirectSpecularColor: {r: 0.113540106, g: 0.17468657, b: 0.31379762, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7156,9 +7156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9dc3e366f8a724082bf06adb118874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conditionPoint: 50
   conditionText: {fileID: 179923404}
   diePanel: {fileID: 1015359961}
+  isGood: 0
+  isSoso: 0
+  isBad: 0
 --- !u!1001 &181217523
 PrefabInstance:
   m_ObjectHideFlags: 0

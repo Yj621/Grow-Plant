@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        GameLoad();
+       
         diePanel.SetActive(false);
         quitPanel.SetActive(false);
     }
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameSave()
     {
-        PlayerPrefs.SetInt("ConditionPoint", conditionUI.conditionPoint);
+        PlayerPrefs.SetInt("ConditionPoint", ConditionUI.conditionPoint);
         PlayerPrefs.SetInt("Button1Click", button1Click.dateCount);
         PlayerPrefs.SetInt("Button2Click", button2Click.dateCount);
         PlayerPrefs.SetInt("Button3Click", button3Click.dateCount);
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
     public void GameLoad()
-    { 
+    {
         int conditionPoint = PlayerPrefs.GetInt("ConditionPoint");
         int dateCount1 = PlayerPrefs.GetInt("Button1Click");
         int dateCount2 = PlayerPrefs.GetInt("Button2Click");
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         int dateCount6 = PlayerPrefs.GetInt("DateUI");
         int date = PlayerPrefs.GetInt("WeatherUI");
 
-        conditionUI.conditionPoint = conditionPoint;
+        ConditionUI.conditionPoint = conditionPoint;
         button1Click.dateCount = dateCount1;
         button2Click.dateCount = dateCount2;
         button3Click.dateCount = dateCount3;

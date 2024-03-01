@@ -6,17 +6,17 @@ using TMPro;
 
 public class ConditionUI : MonoBehaviour
 {
-    public int conditionPoint = 50;
+    public static int conditionPoint = 50;
     public TextMeshProUGUI conditionText;
     string originConditionText = "식물상태 : ";
     public GameObject diePanel;
-    private int newPoint;
+    private int newPoint = 0;
     public bool isGood = false;
     public bool isSoso = false;
     public bool isBad = false;
 
     void Start()
-    {
+    {   
         UpdateConditionText();
     }
     

@@ -33,7 +33,7 @@ public class Button3Click : MonoBehaviour
             "가습기를 튼다", "잎에 물을 묻힌다", "가습기를 튼다", "가습기를 튼다",
             "가습기를 튼다", "가습기를 튼다", "가습기를 튼다", "꽃을 꺾어 그녀에게 준다"
         };
-        string textValue = button3Arr[dateCount];
+        string textValue = button3Arr[dateCount - 1];
 
         if (button3Text != null)
         {
