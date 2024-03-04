@@ -47,6 +47,14 @@ public class Button3Click : MonoBehaviour
 
     public void Button3OnClick()
     {
+        StartCoroutine(Button3lickSequence());
+    }
+    
+    private IEnumerator Button3lickSequence()
+    {
+        yield return StartCoroutine(fadeInOut.FadeAlpha());
+        //창닫기
+        eventButtonUI.ClosePopupWindow();
         weatherUI.SetDateCount();
 
         //일차별 버튼2 점수
@@ -62,9 +70,7 @@ public class Button3Click : MonoBehaviour
         button2Click.initNeglectCount();
 
         //창닫기
-        eventButtonUI.ClosePopupWindow();
         blockingBtn.CloseBlockingButton();
-        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
 
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
         memoPanel.memoPanel.SetActive(true);

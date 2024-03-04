@@ -64,6 +64,14 @@ public class Button2Click : MonoBehaviour
 
     public void Button2OnClick()
     {
+        StartCoroutine(Button2ClickSequence());
+
+    }
+    private IEnumerator Button2ClickSequence()
+    {
+        yield return StartCoroutine(fadeInOut.FadeAlpha());
+        //창닫기
+        eventButtonUI.ClosePopupWindow();
         weatherUI.SetDateCount();
         
         NeglectCount++;
@@ -83,10 +91,7 @@ public class Button2Click : MonoBehaviour
         //waterCount 초기화
         button1Click.initWaterCount();
 
-        //창닫기
-        eventButtonUI.ClosePopupWindow();
         blockingBtn.CloseBlockingButton();
-        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
 
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
         memoPanel.memoPanel.SetActive(true);

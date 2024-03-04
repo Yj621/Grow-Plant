@@ -85,6 +85,14 @@ public class Button4Click : MonoBehaviour
 
     public void Button4OnClick()
     {
+        StartCoroutine(Button4ClickSequence());
+    }
+    
+    private IEnumerator Button4ClickSequence()
+    {
+        yield return StartCoroutine(fadeInOut.FadeAlpha());
+        //창닫기
+        eventButtonUI.ClosePopupWindow();
         fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
         weatherUI.SetDateCount();
 
@@ -99,9 +107,7 @@ public class Button4Click : MonoBehaviour
 
         //NeglectCount 초기화
         button2Click.initNeglectCount();
-
-        //창닫기
-        eventButtonUI.ClosePopupWindow();
+        
         blockingBtn.CloseBlockingButton();
 
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화

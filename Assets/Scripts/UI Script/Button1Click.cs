@@ -63,13 +63,16 @@ public class Button1Click : MonoBehaviour
 
     public void Button1OnClick()
     {
-        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
-        Invoke("Second", 10);
-
-        Debug.Log("delay");
-        //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
+        StartCoroutine(Button1ClickSequence());
+    }
+    
+    private IEnumerator Button1ClickSequence()
+    {
+        yield return StartCoroutine(fadeInOut.FadeAlpha());
+        //창닫기
+        eventButtonUI.ClosePopupWindow();
         memoPanel.memoPanel.SetActive(true);
-
+        
         weatherUI.SetDateCount();
         waterCount++;
 
@@ -89,8 +92,6 @@ public class Button1Click : MonoBehaviour
         //NeglectCount 초기화
         button2Click.initNeglectCount();
 
-        //창닫기
-        eventButtonUI.ClosePopupWindow();
         blockingBtn.CloseBlockingButton();
     }
 
@@ -100,8 +101,4 @@ public class Button1Click : MonoBehaviour
         return waterCount; //다른 버튼이 눌릴 시 waterCount를 0으로 초기화
     }
 
-    void Second()
-    {
-
-    }
 }
