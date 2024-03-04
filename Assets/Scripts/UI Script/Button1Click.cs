@@ -77,7 +77,7 @@ public class Button1Click : MonoBehaviour
         waterCount++;
 
         Debug.Log("waterCount : "+waterCount);
-        if (waterCount > 5)
+        if (waterCount >= 5)
         {
             Debug.Log("Die");
             gameManager.diePanel.SetActive(true);

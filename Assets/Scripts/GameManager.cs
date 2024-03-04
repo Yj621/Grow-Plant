@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject blockingImg;
     public GameObject diePanel;
     public GameObject quitPanel;
     public ConditionUI conditionUI;
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-       
+        blockingImg.SetActive(false);
         diePanel.SetActive(false);
         quitPanel.SetActive(false);
     }
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.Escape))
             {
-                quitPanel.SetActive(true);
+                OpenQuitPanel();
             }
         }
     }
@@ -40,7 +41,10 @@ public class GameManager : MonoBehaviour
     {
 	    SceneManager.LoadScene(0);
     }
-
+    public void OpenQuitPanel()
+    {
+        quitPanel.SetActive(true);
+    }
     public void Quit()
     {
         Application.Quit();
@@ -76,5 +80,13 @@ public class GameManager : MonoBehaviour
         eventTextUI.dateCount = dateCount5;
         dateUI.dateCount = dateCount6;
         weatherUI.date = date;
+    }
+    public void Restart()
+    {
+        //static 변수만 초기화
+        ConditionUI.conditionPoint = 50;    //conditionPoint 초기화
+        button1Click.initWaterCount();      //waterCount 초기화
+        //재시작
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }
 }

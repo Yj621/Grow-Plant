@@ -10,6 +10,7 @@ public class ConditionUI : MonoBehaviour
     public TextMeshProUGUI conditionText;
     string originConditionText = "식물상태 : ";
     public GameObject diePanel;
+    public GameObject blockingImg;
     private int newPoint = 0;
     public bool isGood = false;
     public bool isSoso = false;
@@ -30,6 +31,7 @@ public class ConditionUI : MonoBehaviour
         if (conditionPoint <= 0)
         {
             diePanel.SetActive(true); //식물이 죽었을 때(점수가 0점 이하로 떨어짐)
+            blockingImg.SetActive(true);
         }
         else
         {
@@ -65,7 +67,7 @@ public class ConditionUI : MonoBehaviour
             {
                 currentCond = "매우 나쁨";
             }
-            else if (conditionPoint > 30 && conditionPoint <= 40)
+            else if (conditionPoint <= 10)
             {
                 currentCond = "죽으려 함";
             }
