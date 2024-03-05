@@ -10,14 +10,25 @@ public class DateUI : MonoBehaviour
     public int dateCount = 0;
     public WeatherUI weatherUI;
 
+    DiePanel diePanel;
+
     void Start()
     {
         UpdateDayText();
+        diePanel = FindAnyObjectByType<DiePanel>();
     }
 
     void Update()
     {
-        
+        if(dateCount == 8)
+        {
+            int randomNumber = Random.Range(0, 101);
+            // 10%의 확률로 강아지 이벤트
+            if (randomNumber <= 10)
+            {
+                diePanel.SpecialDie(dateCount);
+            }
+        }
     }
 
     public void IncreaseDateCount()

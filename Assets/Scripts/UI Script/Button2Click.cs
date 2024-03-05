@@ -33,7 +33,7 @@ public class Button2Click : MonoBehaviour
             "냅둔다",
             "가습기를 튼다",
             "습도가 높은 것 같다. 확인해보자",
-            "잎을 만져본다"
+            "잎에 물을 묻힌다"
         };
         string textValue;
         if (dateCount == 7)  //dateCount는 일차를 나타냄.
@@ -72,6 +72,10 @@ public class Button2Click : MonoBehaviour
             diePanel.Btn2SpecialDied(dateCount);
         }
         else if(dateCount == 8) //이유찾기
+        {
+            diePanel.Btn2SpecialDied(dateCount);
+        }
+        else if(dateCount == 13) //이유찾기
         {
             diePanel.Btn2SpecialDied(dateCount);
         }

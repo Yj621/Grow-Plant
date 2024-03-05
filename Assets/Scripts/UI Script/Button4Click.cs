@@ -16,6 +16,7 @@ public class Button4Click : MonoBehaviour
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
 
+    DiePanel diePanel;
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
 
@@ -24,6 +25,7 @@ public class Button4Click : MonoBehaviour
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         memoPanel = FindAnyObjectByType<MemoPanel>();
+        diePanel = FindAnyObjectByType<DiePanel>();
         dateCount = weatherUI.GetDateCount() + 1;
 
         string[] button4Arr = {
@@ -86,6 +88,11 @@ public class Button4Click : MonoBehaviour
     public void Button4OnClick()
     {
         StartCoroutine(Button4ClickSequence());
+        
+        if (dateCount == 11) //이유찾기
+        {
+            diePanel.Btn4SpecialDied(dateCount);
+        }
     }
     
     private IEnumerator Button4ClickSequence()
@@ -93,7 +100,6 @@ public class Button4Click : MonoBehaviour
         yield return StartCoroutine(fadeInOut.FadeAlpha());
         //창닫기
         eventButtonUI.ClosePopupWindow();
-        fadeInOut.StartCoroutine(fadeInOut.FadeAlpha());
         weatherUI.SetDateCount();
 
         //일차별 버튼2 점수

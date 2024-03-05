@@ -70,6 +70,10 @@ public class Button1Click : MonoBehaviour
         {
             diePanel.Btn1SpecialDied(dateCount);
         }
+        else if (dateCount == 13) //줄기가 길어짐
+        {
+            diePanel.Btn1SpecialDied(dateCount);
+        }
     }
     
     private IEnumerator Button1ClickSequence()
