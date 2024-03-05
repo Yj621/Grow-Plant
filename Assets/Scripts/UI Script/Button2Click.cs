@@ -75,7 +75,7 @@ public class Button2Click : MonoBehaviour
         {
             diePanel.Btn2SpecialDied(dateCount);
         }
-        else if(dateCount == 13) //이유찾기
+        else if(dateCount == 13) //줄기가 길어짐
         {
             diePanel.Btn2SpecialDied(dateCount);
         }

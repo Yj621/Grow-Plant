@@ -20,6 +20,7 @@ public class DateUI : MonoBehaviour
 
     void Update()
     {
+        //이렇게 하는게 맞는지..
         if(dateCount == 8)
         {
             int randomNumber = Random.Range(0, 101);
