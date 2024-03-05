@@ -42,5 +42,6 @@ public class MemoPanel : MonoBehaviour
         {
             contenetText.text = "식물이 악화되었습니다.";
         }
+
     }
 }

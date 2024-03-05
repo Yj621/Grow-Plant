@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject blockingImg;
-    public GameObject diePanel;
+    public GameObject blockingImg;    
     public GameObject quitPanel;
     public ConditionUI conditionUI;
     public DateUI dateUI;
@@ -24,7 +23,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         blockingImg.SetActive(false);
-        diePanel.SetActive(false);
         quitPanel.SetActive(false);
     }
     void Update()

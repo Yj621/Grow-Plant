@@ -17,12 +17,14 @@ public class Button3Click : MonoBehaviour
 
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
+    private DiePanel diePanel;
 
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         memoPanel = FindAnyObjectByType<MemoPanel>();
+        diePanel = FindAnyObjectByType<DiePanel>();
         dateCount = weatherUI.GetDateCount() + 1;
 
         string[] button3Arr = {
@@ -48,6 +50,23 @@ public class Button3Click : MonoBehaviour
     public void Button3OnClick()
     {
         StartCoroutine(Button3lickSequence());
+
+        if (dateCount == 1) //씨앗 건들임
+        {
+            diePanel.Btn3SpecialDied(dateCount);
+        }
+        else if (dateCount == 2) //식물을 그늘로 옮김
+        {
+            diePanel.Btn3SpecialDied(dateCount);
+        }
+        else if (dateCount == 8) //이유찾기
+        {
+            diePanel.Btn3SpecialDied(dateCount);
+        }
+        else if (dateCount == 13) //태풍에 날라감
+        {
+            diePanel.Btn3SpecialDied(dateCount);
+        }
     }
     
     private IEnumerator Button3lickSequence()

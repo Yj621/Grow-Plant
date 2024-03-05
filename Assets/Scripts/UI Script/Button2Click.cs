@@ -18,6 +18,7 @@ public class Button2Click : MonoBehaviour
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
     GameManager gameManager;
+    DiePanel diePanel;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class Button2Click : MonoBehaviour
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         gameManager = FindObjectOfType<GameManager>();
         memoPanel = FindAnyObjectByType<MemoPanel>();
+        diePanel = FindObjectOfType<DiePanel>();
         dateCount = weatherUI.GetDateCount() + 1;
         
         string[] button2Arr = {
@@ -65,7 +67,14 @@ public class Button2Click : MonoBehaviour
     public void Button2OnClick()
     {
         StartCoroutine(Button2ClickSequence());
-
+        if (dateCount == 5) //벌레가 잡아먹음
+        {
+            diePanel.Btn2SpecialDied(dateCount);
+        }
+        else if(dateCount == 8) //이유찾기
+        {
+            diePanel.Btn2SpecialDied(dateCount);
+        }
     }
     private IEnumerator Button2ClickSequence()
     {
@@ -78,8 +87,8 @@ public class Button2Click : MonoBehaviour
         Debug.Log("NeglectCount : "+NeglectCount);
         if (NeglectCount >= 3)
         {
-            Debug.Log("Die");
-            gameManager.diePanel.SetActive(true);
+            diePanel.PanelOn();
+            diePanel.diedText.text = "식물을 오랫동안 방치해서 죽었습니다.";
         }
 
         //일차별 버튼2 점수

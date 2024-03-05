@@ -15,7 +15,7 @@ public class EventTextUI : MonoBehaviour
         OpenEvent();
     }
 
-    void OpenEvent()
+    public void OpenEvent()
     {
         string[] eventTextArr = {
             "흙이 말라있다", "해가 쨍쨍하다", "싹이 나오기 시작했다",

@@ -14,17 +14,19 @@ public class Button1Click : MonoBehaviour
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
 
-    private static int waterCount;
+    public static int waterCount;
 
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
     GameManager gameManager;
+    DiePanel diePanel;
 
     void Start()
     {
         memoPanel = FindAnyObjectByType<MemoPanel>();
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
+        diePanel = FindAnyObjectByType<DiePanel>();
         dateCount = weatherUI.GetDateCount() + 1;
         gameManager = FindObjectOfType<GameManager>();
         string[] button1Arr = {
@@ -63,7 +65,11 @@ public class Button1Click : MonoBehaviour
 
     public void Button1OnClick()
     {
-        StartCoroutine(Button1ClickSequence());
+        StartCoroutine(Button1ClickSequence()); 
+        if (dateCount == 8) //이유찾기
+        {
+            diePanel.Btn1SpecialDied(dateCount);
+        }
     }
     
     private IEnumerator Button1ClickSequence()
@@ -79,8 +85,8 @@ public class Button1Click : MonoBehaviour
         Debug.Log("waterCount : "+waterCount);
         if (waterCount >= 5)
         {
-            Debug.Log("Die");
-            gameManager.diePanel.SetActive(true);
+            diePanel.PanelOn();
+            diePanel.diedText.text = "물을 너무 많이 주어서 식물이 죽었습니다.";
         }
 
         //일차별 버튼1 점수

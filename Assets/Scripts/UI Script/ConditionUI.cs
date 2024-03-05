@@ -8,17 +8,18 @@ public class ConditionUI : MonoBehaviour
 {
     public static int conditionPoint = 50;
     public TextMeshProUGUI conditionText;
-    string originConditionText = "식물상태 : ";
-    public GameObject diePanel;
-    public GameObject blockingImg;
+    string originConditionText = "식물상태 : ";    public GameObject blockingImg;
     private int newPoint = 0;
     public bool isGood = false;
     public bool isSoso = false;
     public bool isBad = false;
 
+    DiePanel diePanel;
+
     void Start()
     {   
         UpdateConditionText();
+        diePanel = FindAnyObjectByType<DiePanel>();
     }
     
     private void UpdateConditionText() //식물상태가 점수에 따라서 바뀌게 함.
@@ -30,7 +31,7 @@ public class ConditionUI : MonoBehaviour
         string currentCond = "";
         if (conditionPoint <= 0)
         {
-            diePanel.SetActive(true); //식물이 죽었을 때(점수가 0점 이하로 떨어짐)
+            diePanel.PanelOn(); //식물이 죽었을 때(점수가 0점 이하로 떨어짐)
             blockingImg.SetActive(true);
         }
         else
@@ -91,17 +92,14 @@ public class ConditionUI : MonoBehaviour
         SetCondPoint(newPoint);
         if(point > 0)
         {
-            Debug.Log("Good");
             isGood = true;
         }
         else if(point == 0)
         {
-            Debug.Log("soso");
             isSoso = true;
         }
         else
         {
-            Debug.Log("Bad");
             isBad = true;
         }
     }
