@@ -21,6 +21,11 @@ public class Button1Click : MonoBehaviour
     GameManager gameManager;
     DiePanel diePanel;
 
+    string[] button1MemoArr =
+        {
+            "습한데 물을 줘서"
+        };
+
     void Start()
     {
         memoPanel = FindAnyObjectByType<MemoPanel>();
@@ -29,6 +34,7 @@ public class Button1Click : MonoBehaviour
         diePanel = FindAnyObjectByType<DiePanel>();
         dateCount = weatherUI.GetDateCount() + 1;
         gameManager = FindObjectOfType<GameManager>();
+      
         string[] button1Arr = {
             "물을 준다",
             "냉/난방기 때문인 것 같다. 끄자",
@@ -58,11 +64,6 @@ public class Button1Click : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     public void Button1OnClick()
     {
         StartCoroutine(Button1ClickSequence()); 
@@ -77,12 +78,11 @@ public class Button1Click : MonoBehaviour
     }
     
     private IEnumerator Button1ClickSequence()
-    {
+    {        
         yield return StartCoroutine(fadeInOut.FadeAlpha());
         //창닫기
         eventButtonUI.ClosePopupWindow();
-        memoPanel.memoPanel.SetActive(true);
-        
+       
         weatherUI.SetDateCount();
         waterCount++;
 
@@ -98,6 +98,14 @@ public class Button1Click : MonoBehaviour
             10,10,5,-999,10,10,10,10,10,10,10,5};           //4일차 1번 버튼은 습한데 물을 많이 줘서 비실해짐 -50
         //점수 더하기
         conditionUI.GetCondPoint(btn1ScoreArr[dateCount - 1]);
+
+        memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
+        if (dateCount == 4)
+        {
+            memoPanel.contentText.text = button1MemoArr[0]; //memoPanel.UpdateDayText()보다 밑에 있어야 함.
+        }
+        //메모패널 열기 
+        memoPanel.memoPanel.SetActive(true);
 
         //NeglectCount 초기화
         button2Click.initNeglectCount();

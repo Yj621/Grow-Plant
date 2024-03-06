@@ -85,6 +85,7 @@ public class Button2Click : MonoBehaviour
         yield return StartCoroutine(fadeInOut.FadeAlpha());
         //창닫기
         eventButtonUI.ClosePopupWindow();
+
         weatherUI.SetDateCount();
         
         NeglectCount++;
@@ -101,13 +102,15 @@ public class Button2Click : MonoBehaviour
         //점수 더하기
         conditionUI.GetCondPoint(btn2ScoreArr[dateCount - 1]);
 
+        memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
+
+        //메모패널 열기 
+        memoPanel.memoPanel.SetActive(true);
+
         //waterCount 초기화
         button1Click.initWaterCount();
 
         blockingBtn.CloseBlockingButton();
-
-        //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        memoPanel.memoPanel.SetActive(true);
     }
     public int initNeglectCount()
     {

@@ -20,6 +20,11 @@ public class Button4Click : MonoBehaviour
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
 
+    string[] button4MemoArr =
+        {
+            "다음 날 식물이 응원을 받아 무럭무럭 자랐다."
+        };
+
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
@@ -108,6 +113,15 @@ public class Button4Click : MonoBehaviour
         //점수 더하기
         conditionUI.GetCondPoint(btn4ScoreArr[dateCount - 1]);
 
+        // +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
+        memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
+        if (dateCount == 3)
+        {
+            memoPanel.contentText.text = button4MemoArr[0];
+        }
+        //메모패널 열기 
+        memoPanel.memoPanel.SetActive(true);
+
         //waterCount 초기화
         button1Click.initWaterCount();
 
@@ -115,8 +129,5 @@ public class Button4Click : MonoBehaviour
         button2Click.initNeglectCount();
         
         blockingBtn.CloseBlockingButton();
-
-        //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        memoPanel.memoPanel.SetActive(true);
     }
 }
