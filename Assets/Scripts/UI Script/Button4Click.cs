@@ -22,7 +22,7 @@ public class Button4Click : MonoBehaviour
 
     string[] button4MemoArr =
         {
-            "다음 날 식물이 응원을 받아 무럭무럭 자랐다."
+            "식물이 응원을 받아 무럭무럭 자랐다."
         };
 
     void Start()
