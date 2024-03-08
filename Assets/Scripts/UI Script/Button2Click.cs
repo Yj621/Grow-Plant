@@ -105,7 +105,7 @@ public class Button2Click : MonoBehaviour
         memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
 
         //메모패널 열기 
-        memoPanel.memoPanel.SetActive(true);
+        memoPanel.MemoPanelOn();
 
         //waterCount 초기화
         button1Click.initWaterCount();

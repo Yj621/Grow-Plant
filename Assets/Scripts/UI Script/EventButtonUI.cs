@@ -13,12 +13,15 @@ public class EventButtonUI : MonoBehaviour
     
     private GameObject popupInstance;
 
+    SoundManager soundManager;
+
     void Start()
     {
         if (popupWindow != null)
             popupWindow.SetActive(false);
         if (blockingButton != null)
             blockingButton.SetActive(false);
+        soundManager = FindAnyObjectByType<SoundManager>();
     }
 
     public void OpenPopupWindow()
@@ -53,8 +56,8 @@ public class EventButtonUI : MonoBehaviour
         {
             Destroy(popupInstance);
         }
-
         isPopupOpen = false;
+        soundManager.Sound(2);
     }
 
 }

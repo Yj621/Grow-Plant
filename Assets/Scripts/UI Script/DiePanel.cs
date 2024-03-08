@@ -9,15 +9,18 @@ public class DiePanel : MonoBehaviour
     public TextMeshProUGUI diedText;
     public GameObject diePanel;
     public bool isPanelOn = false;
+    SoundManager soundManager;
 
     void Start()
     {
         diePanel.SetActive(false);
+        soundManager = FindAnyObjectByType<SoundManager>();
     }
     public void PanelOn()
     {
         diePanel.SetActive(true);
         isPanelOn = true;
+        soundManager.Sound(5);
     }
 
     public void PanelOff()

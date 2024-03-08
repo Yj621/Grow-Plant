@@ -13,11 +13,13 @@ public class MemoPanel : MonoBehaviour
 
     ConditionUI conditionUI;
     WeatherUI weatherUI;
+    SoundManager soundManager;
     void Start()
     {
         memoPanel.SetActive(false);
         weatherUI = FindAnyObjectByType<WeatherUI>();
         conditionUI = FindAnyObjectByType<ConditionUI>();
+        soundManager = FindAnyObjectByType<SoundManager>();
     }
 
     void Update()
@@ -25,6 +27,11 @@ public class MemoPanel : MonoBehaviour
         
     }
 
+    public void MemoPanelOn()
+    {
+        memoPanel.SetActive(true);
+        soundManager.Sound(1);
+    }
     public void UpdateDayText()
     {
         dateText.text = weatherUI.date + 1 + "일차";

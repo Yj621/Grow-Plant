@@ -98,7 +98,7 @@ public class Button3Click : MonoBehaviour
         }
 
         //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        memoPanel.memoPanel.SetActive(true);
+        memoPanel.MemoPanelOn();
 
         //waterCount 초기화
         button1Click.initWaterCount();

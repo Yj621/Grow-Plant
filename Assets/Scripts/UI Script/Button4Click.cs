@@ -120,8 +120,7 @@ public class Button4Click : MonoBehaviour
             memoPanel.contentText.text = button4MemoArr[0];
         }
         //메모패널 열기 
-        memoPanel.memoPanel.SetActive(true);
-
+        memoPanel.MemoPanelOn();
         //waterCount 초기화
         button1Click.initWaterCount();
 
