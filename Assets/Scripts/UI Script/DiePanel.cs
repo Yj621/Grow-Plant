@@ -9,6 +9,7 @@ public class DiePanel : MonoBehaviour
     public TextMeshProUGUI diedText;
     public GameObject diePanel;
     public bool isPanelOn = false;
+    public bool isDie = false;
     SoundManager soundManager;
 
     void Start()
@@ -31,6 +32,7 @@ public class DiePanel : MonoBehaviour
 
     public void Btn1SpecialDied(int dateCount)
     {
+        isDie = true;
         if(dateCount == 8)
         {
             diedText.text = "이유를 찾지 못해서 죽었습니다.";
@@ -43,6 +45,7 @@ public class DiePanel : MonoBehaviour
 
     public void Btn2SpecialDied(int dateCount)
     {
+        isDie = true;
         if(dateCount == 5)
         {
             diedText.text = "벌레들이 잡아먹어 죽었습니다.";
@@ -60,6 +63,7 @@ public class DiePanel : MonoBehaviour
 
     public void Btn3SpecialDied(int dateCount)
     {
+        isDie = true;
         if(dateCount == 1)
         {
             diedText.text = "씨앗을 건들여서 죽었습니다.";
@@ -80,6 +84,7 @@ public class DiePanel : MonoBehaviour
     
     public void Btn4SpecialDied(int dateCount)
     {
+        isDie = true;
         if(dateCount == 13)
         {
             diedText.text = "모르고 줄기를 잘라버려서 죽었습니다.";
@@ -96,6 +101,7 @@ public class DiePanel : MonoBehaviour
 
     public void SpecialDie(int dateCount)
     {
+        isDie = true;
         if(dateCount == 8)
         {
             diedText.text = "지나가던 강아지가 식물을 먹어버렸습니다.";

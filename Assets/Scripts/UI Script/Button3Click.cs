@@ -96,10 +96,12 @@ public class Button3Click : MonoBehaviour
         {
             memoPanel.contentText.text = button3MemoArr[0]; //memoPanel.UpdateDayText()보다 밑에 있어야 함.
         }
-
-        //페이드 인/아웃이 끝난 후(일차 끝) 메모 패널 활성화
-        memoPanel.MemoPanelOn();
-
+        
+        if(diePanel.isDie == false)
+        {
+            //메모패널 열기 
+            memoPanel.MemoPanelOn();
+        }
         //waterCount 초기화
         button1Click.initWaterCount();
 

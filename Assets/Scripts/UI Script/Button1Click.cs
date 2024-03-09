@@ -104,8 +104,12 @@ public class Button1Click : MonoBehaviour
         {
             memoPanel.contentText.text = button1MemoArr[0]; //memoPanel.UpdateDayText()보다 밑에 있어야 함.
         }
-        //메모패널 열기 
-        memoPanel.MemoPanelOn();
+
+        if(diePanel.isDie == false)
+        {
+            //메모패널 열기 
+            memoPanel.MemoPanelOn();
+        }
 
         //NeglectCount 초기화
         button2Click.initNeglectCount();

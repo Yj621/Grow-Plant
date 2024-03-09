@@ -118,9 +118,12 @@ public class Button4Click : MonoBehaviour
         if (dateCount == 3)
         {
             memoPanel.contentText.text = button4MemoArr[0];
+        }       
+        if(diePanel.isDie == false)
+        {
+            //메모패널 열기 
+            memoPanel.MemoPanelOn();
         }
-        //메모패널 열기 
-        memoPanel.MemoPanelOn();
         //waterCount 초기화
         button1Click.initWaterCount();
 
