@@ -6,14 +6,23 @@ using UnityEngine.UI;
 public class RainyLight : MonoBehaviour
 {
     public GameObject rainyLight;
+    public GameObject rainEffect;
 
-    public void ActivateRainyLight() //비 오는 날의 조명 활성화
+    public void ActivateRainEffect() //비 오는 날의 조명 활성화
     {
-        
-        rainyLight.SetActive(true);
+        rainEffect.SetActive(true);
     }
 
-    public void DeactivateRainyLight()//비 오는 날의 조명 비활성화
+    public void DeactivateRainEffect()//비 오는 날의 조명 비활성화
+    {
+        rainEffect?.SetActive(false);
+    }
+
+    public void ActivateCloudyLight()
+    {
+        rainyLight.SetActive(true);
+    }
+    public void DeactivateCloudyLight()
     {
         rainyLight.SetActive(false);
     }

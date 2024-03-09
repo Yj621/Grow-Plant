@@ -12,6 +12,7 @@ public class WeatherUI : MonoBehaviour
     public DateUI dateUI;
     public SunnyLight sunnyLight;
     public RainyLight rainyLight;
+    public PlantsLevelChange plantsLevelChange;
 
     void Start()
     {
@@ -44,6 +45,9 @@ public class WeatherUI : MonoBehaviour
     public void SetDateCount()
     {
         date += 1;
+
+        //일수가 늘어난 후 일차에 따라 식물 레벨 체크
+        plantsLevelChange.CheckDate();
 
         // 이벤트를 하나씩 넘길 때마다 텍스트 업데이트
         string[] textLines = new string[] {
@@ -78,12 +82,20 @@ public class WeatherUI : MonoBehaviour
         if (textLines[date] == "맑음")
         {
             sunnyLight.ActivateSunnyLight();    //맑은 날의 조명 활성화
-            rainyLight.DeactivateRainyLight();  //비 오는 날의 조명 비활성화
+            rainyLight.DeactivateCloudyLight(); //흐린 날의 조명 비활성화
+            rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
+        }
+        else if (textLines[date] == "흐림")
+        {
+            sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
+            rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
+            rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
         }
         else if (textLines[date] == "비")
         {
             sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
-            rainyLight.ActivateRainyLight();    //비 오는 날의 조명 활성화
+            rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
+            rainyLight.ActivateRainEffect();    //Rain Effect 활성화
         }
 
     }

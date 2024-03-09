@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11482477, g: 0.17677344, b: 0.31745365, a: 1}
+  m_IndirectSpecularColor: {r: 0.11232067, g: 0.17281188, b: 0.31034747, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1320,6 +1320,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
+--- !u!1 &100682531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1748820730718148507, guid: 62091ce07b5ed994ba70d2fe5e9dad5e, type: 3}
+  m_PrefabInstance: {fileID: 5062930707821288593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &102072798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1389,6 +1394,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
   m_PrefabInstance: {fileID: 36259029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &103496216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 340388796673444205, guid: 4435a1889a5901c40ba51aa7eae6eedc, type: 3}
+  m_PrefabInstance: {fileID: 940785278863764587}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &103679238
 GameObject:
@@ -1641,6 +1651,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c74caa742791864f9c678287121e6c9, type: 3}
+--- !u!1 &119783629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6968331865279432791, guid: d933966aa30bdb740b8949312161e871, type: 3}
+  m_PrefabInstance: {fileID: 1644833654231088481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &124301768
 GameObject:
   m_ObjectHideFlags: 0
@@ -7604,6 +7619,7 @@ MonoBehaviour:
   dateUI: {fileID: 1430888115}
   sunnyLight: {fileID: 95618124}
   rainyLight: {fileID: 1399304657}
+  plantsLevelChange: {fileID: 1734726752}
 --- !u!4 &212484662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
@@ -9834,6 +9850,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c63ea781a273235439e583799176c846, type: 3}
+--- !u!1 &483894450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6954334290666440260, guid: 73f6863cb43fd0748a1350c1eab163e6, type: 3}
+  m_PrefabInstance: {fileID: 7861360456373056164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &488391090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
@@ -16939,6 +16960,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
   m_PrefabInstance: {fileID: 1321621991}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1144241004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1468504829579227194, guid: e369acd71d73db44c8287c0c9da8fb64, type: 3}
+  m_PrefabInstance: {fileID: 1199534331141775860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1146855554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 472700, guid: d638ef2ca2fe20c4c9c08e125692d3f4, type: 3}
@@ -20094,10 +20120,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rainyLight: {fileID: 1399304653}
+  rainEffect: {fileID: 1843169848}
 --- !u!4 &1416178742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429508, guid: 9c74caa742791864f9c678287121e6c9, type: 3}
   m_PrefabInstance: {fileID: 1007892079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1416869072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2877684552674987056, guid: 7e4a4f03fc38bba408fd869bee37fb5e, type: 3}
+  m_PrefabInstance: {fileID: 5489731867658715343}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1422406564 stripped
 Transform:
@@ -22287,6 +22319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1734726751}
+  - component: {fileID: 1734726752}
   m_Layer: 0
   m_Name: Plants
   m_TagString: Untagged
@@ -22320,6 +22353,25 @@ Transform:
   - {fileID: 367264323}
   m_Father: {fileID: 2026169600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1734726752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734726750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9314c05af9c3b4ba12cdaf8f19774b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dateUI: {fileID: 1430888115}
+  level1: {fileID: 1144241004}
+  level2: {fileID: 100682531}
+  level3: {fileID: 103496216}
+  level4: {fileID: 483894450}
+  level5: {fileID: 1416869072}
+  level6: {fileID: 119783629}
 --- !u!1001 &1735442389
 PrefabInstance:
   m_ObjectHideFlags: 0
