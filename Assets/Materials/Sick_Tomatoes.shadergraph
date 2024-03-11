@@ -240,7 +240,7 @@
     "m_StageCapability": 3,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"508e5e217ecb68844a86da9707e87e8a\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"1fbbce862652440ee85513f17626b5e9\",\"type\":3}}",
         "m_Guid": ""
     },
     "m_DefaultType": 0

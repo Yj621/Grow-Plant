@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class WeatherChange : MonoBehaviour
 {
-    // ½ºÄ«ÀÌ¹Ú½º ¸ÓÆ¼¸®¾ó
+    // ï¿½ï¿½Ä«ï¿½Ì¹Ú½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½
     public Material skyboxMaterial;
 
     void Update()
     {
-        // ¸ÓÆ¼¸®¾ó µî·Ï
+        // ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         RenderSettings.skybox = skyboxMaterial;
-        RenderSettings.skybox.SetFloat("_Rotation", Time.time * 0.5f);
+        //RenderSettings.skybox.SetFloat("_Rotation", Time.time * 0.5f);
     }
 }
