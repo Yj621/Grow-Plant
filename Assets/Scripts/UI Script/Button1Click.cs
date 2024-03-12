@@ -23,7 +23,7 @@ public class Button1Click : MonoBehaviour
 
     string[] button1MemoArr =
         {
-            "습한데 물을 줘서"
+            "습한 날 물을 줘서 식물이 악화되었습니다."
         };
 
     void Start()

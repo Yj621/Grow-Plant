@@ -25,11 +25,13 @@ public class DateUI : MonoBehaviour
         {
             int randomNumber = Random.Range(0, 101);
             // 10%의 확률로 강아지 이벤트
-            if (randomNumber <= 10)
+            if (randomNumber <= 90)
             {
                 diePanel.SpecialDie(dateCount);
             }
         }
+
+        Debug.Log("isDie : "+diePanel.isDie);
     }
 
     public void IncreaseDateCount()

@@ -6,8 +6,8 @@ public class TouchManager : MonoBehaviour
 {
     public Transform stageTransform; // 주변을 기준으로 회전할 Stage의 Transform
     public float rotateSpeed = 500.0f;
-    public float perspectiveZoomSpeed = 0.008f;
-    public float orthoZoomSpeed = 0.0001f;
+    public float perspectiveZoomSpeed = 0.01f;
+    public float orthoZoomSpeed = 0.01f;
 
     private bool isRotating = false;
     private Vector2 lastTouchPosition;
