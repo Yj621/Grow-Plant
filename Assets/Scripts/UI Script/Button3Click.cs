@@ -102,6 +102,12 @@ public class Button3Click : MonoBehaviour
             //메모패널 열기 
             memoPanel.MemoPanelOn();
         }
+        else
+        {
+            Debug.Log("close block");
+            blockingBtn.CloseBlockingButton();
+        }
+        
         //waterCount 초기화
         button1Click.initWaterCount();
 
@@ -109,6 +115,6 @@ public class Button3Click : MonoBehaviour
         button2Click.initNeglectCount();
 
         //창닫기
-        blockingBtn.CloseBlockingButton();      
+        //blockingBtn.CloseBlockingButton();      
     }
 }

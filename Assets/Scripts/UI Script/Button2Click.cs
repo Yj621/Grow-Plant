@@ -113,7 +113,7 @@ public class Button2Click : MonoBehaviour
         //waterCount 초기화
         button1Click.initWaterCount();
 
-        blockingBtn.CloseBlockingButton();
+        //blockingBtn.CloseBlockingButton();
     }
     public int initNeglectCount()
     {

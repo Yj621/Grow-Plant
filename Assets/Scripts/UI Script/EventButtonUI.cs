@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class EventButtonUI : MonoBehaviour
 {
     public GameObject popupWindow;
-    public GameObject blockingButton;
     public Transform eventCanvas; // EventCanvas
 
     private bool isPopupOpen = false;
@@ -19,8 +18,6 @@ public class EventButtonUI : MonoBehaviour
     {
         if (popupWindow != null)
             popupWindow.SetActive(false);
-        if (blockingButton != null)
-            blockingButton.SetActive(false);
         soundManager = FindAnyObjectByType<SoundManager>();
     }
 

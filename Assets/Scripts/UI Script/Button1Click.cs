@@ -110,11 +110,16 @@ public class Button1Click : MonoBehaviour
             //메모패널 열기 
             memoPanel.MemoPanelOn();
         }
+        else
+        {
+            Debug.Log("close block");
+            blockingBtn.CloseBlockingButton();
+        }
 
         //NeglectCount 초기화
         button2Click.initNeglectCount();
 
-        blockingBtn.CloseBlockingButton();
+        // blockingBtn.CloseBlockingButton();
     }
 
     public int initWaterCount()

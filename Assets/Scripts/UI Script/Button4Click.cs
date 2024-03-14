@@ -130,6 +130,6 @@ public class Button4Click : MonoBehaviour
         //NeglectCount 초기화
         button2Click.initNeglectCount();
         
-        blockingBtn.CloseBlockingButton();
+        //blockingBtn.CloseBlockingButton();
     }
 }

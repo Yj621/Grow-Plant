@@ -5,19 +5,20 @@ using UnityEngine;
 
 public class BlockingButton : MonoBehaviour
 {
-    public GameObject BlockingBtn;
+    public GameObject blockingBtn;
  
     void Start()
     {
-       
+        if (blockingBtn != null)
+            blockingBtn.SetActive(false);
     }
     public void OpenBlockingButton()
     {
-        BlockingBtn.SetActive(true);
+        blockingBtn.SetActive(true);
     }
 
     public void CloseBlockingButton()
     {
-        BlockingBtn.SetActive(false);
+        blockingBtn.SetActive(false);
     }
 }
