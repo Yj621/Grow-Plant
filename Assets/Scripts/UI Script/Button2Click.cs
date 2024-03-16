@@ -45,10 +45,6 @@ public class Button2Click : MonoBehaviour
         {
             textValue = button2Arr[2];
         }
-        else if (dateCount == 16)
-        {
-            textValue = button2Arr[3];
-        }
         else
         {
             textValue = button2Arr[0];
@@ -100,7 +96,7 @@ public class Button2Click : MonoBehaviour
         int[] btn2ScoreArr = {0,0,0,10,-999,0,10,-999,0,0,        //-999는 즉사, 999는 히든엔딩
             0,0,0,-999,0,10,0,0,0,0,0,0};                         //4일차 1번 버튼은 습한데 물을 많이 먹음 -50
         //점수 더하기
-        conditionUI.GetCondPoint(btn2ScoreArr[dateCount - 1]);
+        conditionUI.GetCondPoint(btn2ScoreArr[dateCount-1]);
 
         memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
     

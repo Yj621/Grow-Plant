@@ -71,7 +71,7 @@ public class Button1Click : MonoBehaviour
         {
             diePanel.Btn1SpecialDied(dateCount);
         }
-        else if (dateCount == 13) //줄기가 길어짐
+        else if (dateCount == 13) //태풍에 날아감
         {
             diePanel.Btn1SpecialDied(dateCount);
         }

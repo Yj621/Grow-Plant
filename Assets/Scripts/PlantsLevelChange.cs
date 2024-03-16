@@ -13,6 +13,7 @@ public class PlantsLevelChange : MonoBehaviour
     public GameObject level4;
     public GameObject level5;
     public GameObject level6;
+    public ConditionUI conditionUI;
 
     void Start()
     {        
