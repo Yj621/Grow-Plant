@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -99,12 +100,15 @@ public class Button4Click : MonoBehaviour
     {
         StartCoroutine(Button4ClickSequence());
         
-        if (dateCount == 11) //이유찾기
+        //{}안에 있는 일차에 죽는 이벤트 발생
+        int[] specialDateCounts = { 2, 8, 9, 12, 14, 20, 21, 23, 24, 25, 26,  };
+        
+        if (Array.IndexOf(specialDateCounts, dateCount) != -1)
         {
             diePanel.Btn4SpecialDied(dateCount);
         }
     }
-    
+
     private IEnumerator Button4ClickSequence()
     {
         yield return StartCoroutine(fadeInOut.FadeAlpha());
