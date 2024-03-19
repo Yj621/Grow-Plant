@@ -44,51 +44,11 @@ public class Button4Click : MonoBehaviour
             "SNS에 업로드한다", "SNS에 업로드한다"
         };
 
-        string textValue;
-        bool isButtonInteractable = false;
-        if (dateCount == 3)  //dateCount는 일차를 나타냄.
-                             //4번째 버튼이 있는 일차에는 버튼이 활성화, 아닌 날에는 비활성화
-        {
-            textValue = button4Arr[0];
-            isButtonInteractable = true;
-        }
-        else if (dateCount == 5)
-        {
-            textValue = button4Arr[1];
-            isButtonInteractable = true;
-        }
-        else if (dateCount == 11)
-        {
-            textValue = button4Arr[2];
-            isButtonInteractable = true;
-        }
-        else if (dateCount == 13)
-        {
-            textValue = button4Arr[3];
-            isButtonInteractable = true;
-        }
-        else if (dateCount == 22)
-        {
-            textValue = button4Arr[4];
-            isButtonInteractable = true;
-        }
-        else
-        {
-            textValue = button4Arr[0];
-            isButtonInteractable = false;
-        }
+        string textValue = button4Arr[dateCount - 1];
 
         if (button4Text != null)
         {
             button4Text.text = textValue;
-            button4 = GetComponent<Button>(); //button4를 찾아서 할당
-            if (button4 != null)
-            {
-                //일차에 따라서 버튼이 활성화 or 비활성화
-                button4.interactable = isButtonInteractable;
-                button4.image.enabled = isButtonInteractable; //Source Image 비활성화
-                button4Text.enabled = isButtonInteractable;   //남아있는 text 비활성화
-            }
         }
         else
         {
@@ -117,8 +77,9 @@ public class Button4Click : MonoBehaviour
         weatherUI.SetDateCount();
 
         //일차별 버튼2 점수
-        int[] btn4ScoreArr = {0,0,20,10,5,0,0,0,0,0,         //-999는 즉사, 999는 히든엔딩
-            -999,0,10,0,0,0,0,0,0,0,0,10};                     //4일차 1번 버튼은 비가 들이쳐서 물을 많이 먹음 -50
+        int[] btn4ScoreArr = {-10,-999,20,10,-20,-10,-5,-999,-999,-10,         //-999는 즉사, 999는 히든엔딩
+            -5,-999,10,-5,-15,-5,0,0,-5,-999,
+            -999,-5,-999,-999,-999,-999,0,-5,-5,0};    //30일차 4번 버튼에 들어갈 이벤트 필요
         //점수 더하기
         conditionUI.GetCondPoint(btn4ScoreArr[dateCount - 1]);
 
