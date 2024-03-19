@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,19 +61,10 @@ public class Button3Click : MonoBehaviour
     {
         StartCoroutine(Button3lickSequence());
 
-        if (dateCount == 1) //씨앗 건드림.
-        {
-            diePanel.Btn3SpecialDied(dateCount);
-        }
-        else if (dateCount == 2) //식물을 그늘로 옮김
-        {
-            diePanel.Btn3SpecialDied(dateCount);
-        }
-        else if (dateCount == 8) //이유찾기
-        {
-            diePanel.Btn3SpecialDied(dateCount);
-        }
-        else if (dateCount == 13) //태풍에 날라감
+        //{}안에 있는 일차에 죽는 이벤트 발생
+        int[] specialDateCounts = { 1, 2, 8, 11, 13, 21, 25, 27, 29 };
+        
+        if (Array.IndexOf(specialDateCounts, dateCount) != -1)
         {
             diePanel.Btn3SpecialDied(dateCount);
         }

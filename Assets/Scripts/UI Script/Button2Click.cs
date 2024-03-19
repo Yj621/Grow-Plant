@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -63,15 +64,11 @@ public class Button2Click : MonoBehaviour
     public void Button2OnClick()
     {
         StartCoroutine(Button2ClickSequence());
-        if (dateCount == 5) //벌레가 잡아먹음
-        {
-            diePanel.Btn2SpecialDied(dateCount);
-        }
-        else if(dateCount == 8) //이유찾기
-        {
-            diePanel.Btn2SpecialDied(dateCount);
-        }
-        else if(dateCount == 13) //줄기가 길어짐
+
+        //{}안에 있는 일차에 죽는 이벤트 발생
+        int[] specialDateCounts = { 5, 8, 12, 13, 14, 21, 23, 24, 26, 30 };
+        
+        if (Array.IndexOf(specialDateCounts, dateCount) != -1)
         {
             diePanel.Btn2SpecialDied(dateCount);
         }
