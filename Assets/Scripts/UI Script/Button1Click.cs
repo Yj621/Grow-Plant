@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -67,11 +68,11 @@ public class Button1Click : MonoBehaviour
     public void Button1OnClick()
     {
         StartCoroutine(Button1ClickSequence()); 
-        if (dateCount == 8) //이유찾기
-        {
-            diePanel.Btn1SpecialDied(dateCount);
-        }
-        else if (dateCount == 13) //태풍에 날아감
+
+        //{}안에 있는 일차에 죽는 이벤트 발생
+        int[] specialDateCounts = { 8, 14, 24};
+        
+        if (Array.IndexOf(specialDateCounts, dateCount) != -1)
         {
             diePanel.Btn1SpecialDied(dateCount);
         }

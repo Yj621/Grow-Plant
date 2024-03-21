@@ -33,13 +33,17 @@ public class DiePanel : MonoBehaviour
     public void Btn1SpecialDied(int dateCount)
     {
         isDie = true;
-        if(dateCount == 8)
+        switch(dateCount)
         {
-            diedText.text = "이유를 찾지 못해서 죽었습니다. 다시 시작하시겠습니까?";
-        }
-        else if(dateCount == 14)
-        {
-            diedText.text = "줄기가 너무 길어서 꺾여죽었습니다. 다시 시작하시겠습니까?";
+            case 8:
+                diedText.text = "이유를 찾지 못해서 죽었습니다. 다시 시작하시겠습니까?";
+                break;
+            case 14:
+                diedText.text = "줄기가 너무 길어서 꺾여죽었습니다. 다시 시작하시겠습니까?";
+                break;
+            case 24:
+                diedText.text = "식물을 실내로 옮기지 않아 추워서 동사했습니다. 다시 시작하시겠습니까?";
+                break;
         }
     }
 
