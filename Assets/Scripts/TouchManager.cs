@@ -8,6 +8,7 @@ public class TouchManager : MonoBehaviour
     public float rotateSpeed = 500.0f;
     public float perspectiveZoomSpeed = 0.01f;
     public float orthoZoomSpeed = 0.01f;
+    public float minYCoordinate = 2.33f; // 카메라가 내려갈 수 있는 최소 y 좌표
 
     private bool isRotating = false;
     private Vector2 lastTouchPosition;
@@ -39,6 +40,13 @@ public class TouchManager : MonoBehaviour
                         transform.LookAt(stagePosition);
 
                         lastTouchPosition = touch.position;
+
+                        // 회전 중에도 y 좌표를 체크하여 설정한 값에 도달하면 회전 멈춤
+                        Vector3 cameraPosition = transform.position;
+                        if (cameraPosition.y <= minYCoordinate)
+                        {
+                            isRotating = false;
+                        }
                     }
                     break;
                 case TouchPhase.Ended:
@@ -69,6 +77,14 @@ public class TouchManager : MonoBehaviour
                 Camera.main.fieldOfView += deltaMagnitudeDiff * perspectiveZoomSpeed;
                 Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 0.1f, 179.9f);
             }
+        }
+
+        // 회전 중이 아닐 때만 y 좌표를 제한
+        if (!isRotating)
+        {
+            Vector3 cameraPosition = transform.position;
+            cameraPosition.y = Mathf.Max(cameraPosition.y, minYCoordinate);
+            transform.position = cameraPosition;
         }
     }
 }

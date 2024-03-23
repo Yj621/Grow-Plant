@@ -22,8 +22,11 @@ public class Button3Click : MonoBehaviour
 
     string[] button3MemoArr =
         {
-            "비가 들이쳐서 식물이 물을 많이 먹었다."
-            
+            "비가 들이쳐서 식물이 물을 많이 먹었다.",
+            "무당벌레가 날아가 버렸다.",
+            "젓가락으로 지지대를 세워 식물이 꺾이지 않았다.",
+            "꽃가루 알레르기가 있다는 사실을 알아버렸다.",
+            "다 익지 않아 맛이 없었다."            
         };
 
     void Start()
@@ -92,8 +95,24 @@ public class Button3Click : MonoBehaviour
         {
             memoPanel.contentText.text = button3MemoArr[0]; //memoPanel.UpdateDayText()보다 밑에 있어야 함.
         }
-        
-        if(diePanel.isDie == false)
+        else if (dateCount == 10)
+        {
+            memoPanel.contentText.text = button3MemoArr[1]; 
+        }
+        else if (dateCount == 12)
+        {
+            memoPanel.contentText.text = button3MemoArr[2]; 
+        }
+        else if (dateCount == 22)
+        {
+            memoPanel.contentText.text = button3MemoArr[3];
+        }
+        else if (dateCount == 28)
+        {
+            memoPanel.contentText.text = button3MemoArr[4]; //memoPanel.UpdateDayText()보다 밑에 있어야 함.
+        }
+
+        if (diePanel.isDie == false)
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();

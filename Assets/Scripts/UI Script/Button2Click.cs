@@ -21,6 +21,12 @@ public class Button2Click : MonoBehaviour
     GameManager gameManager;
     DiePanel diePanel;
 
+    string[] button2MemoArr =
+        {
+            "진딧물이 생겼다.",
+            "잎에 벌레가 생겼다.",
+        };
+
     void Start()
     {
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
@@ -97,8 +103,16 @@ public class Button2Click : MonoBehaviour
         conditionUI.GetCondPoint(btn2ScoreArr[dateCount-1]);
 
         memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
-    
-        if(diePanel.isDie == false)
+        if (dateCount == 11)
+        {
+            memoPanel.contentText.text = button2MemoArr[0]; //memoPanel.UpdateDayText()보다 밑에 있어야 함.
+        }
+        else if (dateCount == 16)
+        {
+            memoPanel.contentText.text = button2MemoArr[1]; 
+        }
+
+        if (diePanel.isDie == false)
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();

@@ -24,7 +24,8 @@ public class Button1Click : MonoBehaviour
 
     string[] button1MemoArr =
         {
-            "습한 날 물을 줘서 식물이 악화되었습니다."
+            "습한데 물을 줘서 식물이 비실해졌다.",
+            "식물이 숨쉬기 힘들다."
         };
 
     void Start()
@@ -106,8 +107,12 @@ public class Button1Click : MonoBehaviour
         {
             memoPanel.contentText.text = button1MemoArr[0]; //memoPanel.UpdateDayText()보다 밑에 있어야 함.
         }
+        else if (dateCount == 20)
+        {
+            memoPanel.contentText.text = button1MemoArr[1];
+        }
 
-        if(diePanel.isDie == false)
+        if (diePanel.isDie == false)
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();

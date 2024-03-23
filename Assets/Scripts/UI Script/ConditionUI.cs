@@ -8,7 +8,8 @@ public class ConditionUI : MonoBehaviour
 {
     public static int conditionPoint = 50;
     public TextMeshProUGUI conditionText;
-    string originConditionText = "식물상태 : ";    public GameObject blockingImg;
+    string originConditionText = "식물상태 : ";    
+    public GameObject blockingImg;
     private int newPoint = 0;
     private int maxPoint = 100;
     public bool isGood = false;

@@ -23,7 +23,9 @@ public class Button4Click : MonoBehaviour
 
     string[] button4MemoArr =
         {
-            "식물이 응원을 받아 무럭무럭 자랐다."
+            "식물이 응원을 받아 무럭무럭 자랐다.",
+            "벌레를 잡다가 식물에 상처가 났다.",
+            "진딧물을 잡아먹는 무당벌레를 죽였다."
         };
 
     void Start()
@@ -88,7 +90,16 @@ public class Button4Click : MonoBehaviour
         if (dateCount == 3)
         {
             memoPanel.contentText.text = button4MemoArr[0];
-        }       
+        }
+        else if (dateCount == 5) 
+        {
+            memoPanel.contentText.text = button4MemoArr[1];
+        }
+        else if (dateCount == 10)
+        {
+            memoPanel.contentText.text = button4MemoArr[2];
+        }
+
         if(diePanel.isDie == false)
         {
             //메모패널 열기 
