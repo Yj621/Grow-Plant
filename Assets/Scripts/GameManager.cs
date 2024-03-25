@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
         //static 변수만 초기화
         ConditionUI.conditionPoint = 50;    //conditionPoint 초기화
         button1Click.initWaterCount();      //waterCount 초기화
+        button2Click.initNeglectCount();    //neglectCount 초기화
         //재시작
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }

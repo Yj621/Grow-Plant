@@ -85,7 +85,7 @@ public class Button2Click : MonoBehaviour
         //창닫기
         eventButtonUI.ClosePopupWindow();
 
-        weatherUI.SetDateCount();
+        
         
         NeglectCount++;
         Debug.Log("NeglectCount : "+NeglectCount);
@@ -101,6 +101,8 @@ public class Button2Click : MonoBehaviour
             -999,999,-999,-999,5,-999,0,0,0,-999};                                       //
         //점수 더하기
         conditionUI.GetCondPoint(btn2ScoreArr[dateCount-1]);
+
+        weatherUI.SetDateCount();
 
         memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
         if (dateCount == 11)

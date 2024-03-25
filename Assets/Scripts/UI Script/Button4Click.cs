@@ -76,8 +76,7 @@ public class Button4Click : MonoBehaviour
         yield return StartCoroutine(fadeInOut.FadeAlpha());
         //창닫기
         eventButtonUI.ClosePopupWindow();
-        weatherUI.SetDateCount();
-
+        
         //일차별 버튼2 점수
         int[] btn4ScoreArr = {-10,-999,20,10,-20,-10,-5,-999,-999,-10,         //-999는 즉사, 999는 히든엔딩
             -5,-999,10,-5,-15,-5,0,0,-5,-999,
@@ -85,7 +84,8 @@ public class Button4Click : MonoBehaviour
         //점수 더하기
         conditionUI.GetCondPoint(btn4ScoreArr[dateCount - 1]);
 
-        // +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
+        weatherUI.SetDateCount();
+
         memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
         if (dateCount == 3)
         {

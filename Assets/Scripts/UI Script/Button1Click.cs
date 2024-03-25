@@ -85,7 +85,7 @@ public class Button1Click : MonoBehaviour
         //창닫기
         eventButtonUI.ClosePopupWindow();
        
-        weatherUI.SetDateCount();
+        
         waterCount++;
 
         Debug.Log("waterCount : "+waterCount);
@@ -101,6 +101,8 @@ public class Button1Click : MonoBehaviour
             10,5,5,-999,5,5,5,5,5,0};           //4일차 1번 버튼은 습한데 물을 많이 줘서 비실해짐 -50
         //점수 더하기
         conditionUI.GetCondPoint(btn1ScoreArr[dateCount - 1]);
+
+        weatherUI.SetDateCount();
 
         memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
         if (dateCount == 4)

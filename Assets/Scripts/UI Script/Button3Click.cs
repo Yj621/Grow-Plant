@@ -77,9 +77,7 @@ public class Button3Click : MonoBehaviour
     {
         yield return StartCoroutine(fadeInOut.FadeAlpha());
         //창닫기
-        eventButtonUI.ClosePopupWindow();
-          
-        weatherUI.SetDateCount();
+        eventButtonUI.ClosePopupWindow();        
 
         //일차별 버튼3 점수
         int[] btn3ScoreArr = {-999,-999,3,-20,5,10,10,20,10,-10,  //-999는 즉사, 999는 히든엔딩
@@ -88,6 +86,8 @@ public class Button3Click : MonoBehaviour
         
         //점수 더하기
         conditionUI.GetCondPoint(btn3ScoreArr[dateCount - 1]);
+
+        weatherUI.SetDateCount();
 
         //메모패널 콘텐츠텍스트
         memoPanel.UpdateDayText(); // +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
