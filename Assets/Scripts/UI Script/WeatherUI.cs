@@ -13,9 +13,11 @@ public class WeatherUI : MonoBehaviour
     public SunnyLight sunnyLight;
     public RainyLight rainyLight;
     public PlantsLevelChange plantsLevelChange;
+    AudioManager audioManager;
 
     void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         originWeatherText = weatherText.text;  // "날씨 : "를 저장하는 변수
         string[] weatherArr = {
             "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
@@ -84,18 +86,29 @@ public class WeatherUI : MonoBehaviour
             sunnyLight.ActivateSunnyLight();    //맑은 날의 조명 활성화
             rainyLight.DeactivateCloudyLight(); //흐린 날의 조명 비활성화
             rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
+            // 배경 음악이 재생 중이면 정지
+            if (audioManager.backgroundMusic[1].isPlaying)
+            {
+                audioManager.backgroundMusic[1].Stop();
+            }
         }
         else if (textLines[date] == "흐림")
         {
             sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
             rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
             rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
+                                                // 배경 음악이 재생 중이면 정지
+            if (audioManager.backgroundMusic[1].isPlaying)
+            {
+                audioManager.backgroundMusic[1].Stop();
+            }
         }
         else if (textLines[date] == "비")
         {
             sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
             rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
             rainyLight.ActivateRainEffect();    //Rain Effect 활성화
+            audioManager.backgroundMusic[1].Play();
         }
 
     }

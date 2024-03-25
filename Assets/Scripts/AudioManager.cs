@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource backgroundMusic;
+    public AudioSource[] backgroundMusic;
 
     // 버튼 클릭 상태를 나타내는 변수
     private bool isMusicPlaying = true;
@@ -14,11 +14,12 @@ public class AudioManager : MonoBehaviour
     public GameObject turnTableEffect;
     public GameObject SoundPanel;
     TouchManager touchManager;
+    public int currentIndex = 0;
     void Start()
     {
         touchManager = FindAnyObjectByType<TouchManager>();
         // 처음에 음악 재생
-        backgroundMusic.Play();
+        backgroundMusic[currentIndex].Play();
     }
 
     public void OnPanelSound()
@@ -38,7 +39,7 @@ public class AudioManager : MonoBehaviour
         if (!isMusicPlaying)
         {
             // 음악 재생
-            backgroundMusic.Play();
+            backgroundMusic[currentIndex].Play();
             // buttonImage.sprite = playSprite; // 재생 이미지로 변경
             turnTableEffect.SetActive(true);
         }
@@ -53,7 +54,7 @@ public class AudioManager : MonoBehaviour
         if (isMusicPlaying)
         {
             // 음악 정지
-            backgroundMusic.Stop();
+            backgroundMusic[currentIndex].Stop();
             // buttonImage.sprite = pauseSprite; // 일시정지 이미지로 변경
             turnTableEffect.SetActive(false);
         }
