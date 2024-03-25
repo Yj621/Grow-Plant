@@ -9,6 +9,10 @@ public class DateUI : MonoBehaviour
     public TextMeshProUGUI dayText;
     public int dateCount = 0;
     public WeatherUI weatherUI;
+    //8일차 강아지
+    public static bool isExecuted = false;
+    //21일차 강아지
+    public static bool isExecuted2 = false;
 
     DiePanel diePanel;
 
@@ -17,22 +21,25 @@ public class DateUI : MonoBehaviour
         UpdateDayText();
         diePanel = FindAnyObjectByType<DiePanel>();
 
-        
+
     }
 
     void Update()
     {
-        //if (dateCount == 8)
-        // {
-        //     int randomNumber = Random.Range(0, 99);
-        //     // 10%의 확률로 강아지 이벤트
-        //     if (randomNumber < 10)
-        //     {
-        //         diePanel.SpecialDie(dateCount);
-        //     }
-        // }
+        if (isExecuted)
+            return;
 
-        // Debug.Log("isDie : " + diePanel.isDie);
+        // dateCount가 8인 경우에만 실행
+        if (dateCount == 8 && !isExecuted)
+        {
+            RandomFunction();
+        }
+
+        // dateCount가 21인 경우에만 실행
+        if (dateCount == 21 && !isExecuted2)
+        {
+            RandomFunction2();
+        }
     }
 
     public void IncreaseDateCount()
@@ -40,6 +47,25 @@ public class DateUI : MonoBehaviour
         // 일 수를 증가시키는 메서드
         dateCount = weatherUI.GetDateCount();
         UpdateDayText();
+    }
+
+    void RandomFunction()
+    {
+        isExecuted = true;
+        // 10%의 확률로 실행
+        if (Random.Range(0, 100) < 10)
+        {
+            diePanel.SpecialDie(dateCount);
+        }
+    }
+    void RandomFunction2()
+    {
+        isExecuted2 = true;
+        // 15%의 확률로 실행
+        if (Random.Range(0, 100) < 15)
+        {
+            diePanel.SpecialDie(dateCount);
+        }
     }
 
     void UpdateDayText()
