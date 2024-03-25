@@ -7,36 +7,58 @@ public class AudioManager : MonoBehaviour
 
     // 버튼 클릭 상태를 나타내는 변수
     private bool isMusicPlaying = true;
-    public Image buttonImage;
+    // public Image buttonImage;
 
-    public Sprite playSprite;
-    public Sprite pauseSprite;
+    // public Sprite playSprite;
+    // public Sprite pauseSprite;
     public GameObject turnTableEffect;
+    public GameObject SoundPanel;
+    TouchManager touchManager;
     void Start()
     {
+        touchManager = FindAnyObjectByType<TouchManager>();
         // 처음에 음악 재생
         backgroundMusic.Play();
     }
 
-    // 버튼 클릭 이벤트에 연결될 함수
-    public void ToggleMusic()
+    public void OnPanelSound()
     {
-        if (isMusicPlaying)
+        SoundPanel.SetActive(true);
+        touchManager.isPanelActive = true;
+    }
+    public void OffPanelSound()
+    {
+        SoundPanel.SetActive(false);
+        touchManager.isPanelActive = false;
+    }
+
+    // 음악 재생을 처리하는 함수
+    public void PlayMusic()
+    {
+        if (!isMusicPlaying)
         {
-            // 음악 일시정지
-            backgroundMusic.Pause();
-            buttonImage.sprite = pauseSprite; // 재생 이미지로 변경
-            turnTableEffect.SetActive(false);
-        }
-        else
-        {
-            // 일시정지된 음악 재생
-            backgroundMusic.UnPause();
-            buttonImage.sprite = playSprite; // 일시정지 이미지로 변경
+            // 음악 재생
+            backgroundMusic.Play();
+            // buttonImage.sprite = playSprite; // 재생 이미지로 변경
             turnTableEffect.SetActive(true);
         }
 
-        // 버튼 클릭 상태 업데이트
-        isMusicPlaying = !isMusicPlaying;
+        // 음악 재생 상태 업데이트
+        isMusicPlaying = true;
+    }
+
+    // 음악 정지를 처리하는 함수
+    public void StopMusic()
+    {
+        if (isMusicPlaying)
+        {
+            // 음악 정지
+            backgroundMusic.Stop();
+            // buttonImage.sprite = pauseSprite; // 일시정지 이미지로 변경
+            turnTableEffect.SetActive(false);
+        }
+
+        // 음악 재생 상태 업데이트
+        isMusicPlaying = false;
     }
 }

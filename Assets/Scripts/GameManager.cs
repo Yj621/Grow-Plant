@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+        GameLoad();
         blockingImg.SetActive(false);
         quitPanel.SetActive(false);
     }
@@ -86,6 +87,7 @@ public class GameManager : MonoBehaviour
         button1Click.initWaterCount();      //waterCount 초기화
         button2Click.initNeglectCount();    //neglectCount 초기화
         DateUI.isExecuted = false;
+        DateUI.isExecuted2 = false;
         //재시작
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }
