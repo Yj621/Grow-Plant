@@ -22,18 +22,17 @@ public class DateUI : MonoBehaviour
 
     void Update()
     {
-        //이렇게 하는게 맞는지..
-        if (dateCount == 8)
-        {
-            int randomNumber = Random.Range(0, 99);
-            // 10%의 확률로 강아지 이벤트
-            if (randomNumber < 10)
-            {
-                diePanel.SpecialDie(dateCount);
-            }
-        }
+        //if (dateCount == 8)
+        // {
+        //     int randomNumber = Random.Range(0, 99);
+        //     // 10%의 확률로 강아지 이벤트
+        //     if (randomNumber < 10)
+        //     {
+        //         diePanel.SpecialDie(dateCount);
+        //     }
+        // }
 
-        Debug.Log("isDie : " + diePanel.isDie);
+        // Debug.Log("isDie : " + diePanel.isDie);
     }
 
     public void IncreaseDateCount()
