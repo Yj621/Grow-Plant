@@ -40,14 +40,14 @@ public class Button1Click : MonoBehaviour
         string[] button1Arr = {
             "물을 준다",
             "냉/난방기 때문인 것 같다. 끄자",
-            "식물을 옮긴다"
+            "열매를 심는다"
         };
         string textValue;
         if (dateCount == 8)  //dateCount는 일차를 나타냄. 8일차, 16일차에는 txt파일의 각각 2번째 줄과 3번째 줄의 내용을 넣음.
         {
             textValue = button1Arr[1];
         }
-        else if (dateCount == 16)
+        else if (dateCount == 30)
         {
             textValue = button1Arr[2];
         }

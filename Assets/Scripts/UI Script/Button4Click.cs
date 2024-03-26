@@ -9,6 +9,7 @@ public class Button4Click : MonoBehaviour
 {
     public TextMeshProUGUI button4Text;
     public int dateCount = 0;
+    public static int snsUpload = 0;
     public WeatherUI weatherUI;
     public Button1Click button1Click;
     public Button2Click button2Click;
@@ -61,13 +62,26 @@ public class Button4Click : MonoBehaviour
     public void Button4OnClick()
     {
         StartCoroutine(Button4ClickSequence());
-        
+
         //{}안에 있는 일차에 죽는 이벤트 발생
-        int[] specialDateCounts = { 2, 8, 9, 12, 14, 20, 21, 23, 24, 25, 26,  };
+        int[] specialDateCounts = { 2, 8, 9, 12, 14, 20, 21, 23, 24, 25, 26 };
         
         if (Array.IndexOf(specialDateCounts, dateCount) != -1)
         {
             diePanel.Btn4SpecialDied(dateCount);
+        }
+
+        //{}안에 있는 일차에 SNS에 업로드
+        int[] uploadToSNSDate = { 7, 11, 14, 16, 19, 22, 28, 29 };
+
+        if (Array.IndexOf(uploadToSNSDate, dateCount) != -1)
+        {
+            snsUpload++;
+            Debug.Log("snsUplaod : " + snsUpload);
+            if (snsUpload >= 5) 
+            {
+                //히든엔딩 연결
+            }
         }
     }
 

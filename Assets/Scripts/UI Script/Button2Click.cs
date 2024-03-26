@@ -37,20 +37,28 @@ public class Button2Click : MonoBehaviour
         dateCount = weatherUI.GetDateCount() + 1;
         
         string[] button2Arr = {
-            "냅둔다",
-            "가습기를 튼다",
+            "냅둔다",          
             "습도가 높은 것 같다. 확인해보자",
-            "잎에 물을 묻힌다"
+            "꽃을 꺾어 그녀에게 준다",
+            "가습기를 튼다",
+            "경찰에 신고한다"
         };
         string textValue;
-        if (dateCount == 7)  //dateCount는 일차를 나타냄.
-                             //7일차, 8일차, 16일차에는 txt파일의 각각 2번째 줄, 3번째 줄, 4번째 줄의 내용을 넣음.
+        if (dateCount == 8)
         {
             textValue = button2Arr[1];
         }
-        else if (dateCount == 8)
+        else if (dateCount == 22)
         {
             textValue = button2Arr[2];
+        }
+        else if (dateCount == 25)
+        {
+            textValue = button2Arr[3];
+        }
+        else if (dateCount == 26)
+        {
+            textValue = button2Arr[4];
         }
         else
         {
