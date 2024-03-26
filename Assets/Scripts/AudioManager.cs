@@ -5,21 +5,43 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource[] backgroundMusic;
 
-    // 버튼 클릭 상태를 나타내는 변수
     private bool isMusicPlaying = true;
-    // public Image buttonImage;
-
-    // public Sprite playSprite;
-    // public Sprite pauseSprite;
+    private float musicVolume = 1f; // 음악 볼륨
+    private float soundVolume = 1f; // 효과음 볼륨
     public GameObject turnTableEffect;
     public GameObject SoundPanel;
-    TouchManager touchManager;
+    public Slider musicSlider;
+    public Slider soundSlider;
     public int currentIndex = 0;
+
+    TouchManager touchManager;
+    SoundManager soundManager;
+
     void Start()
     {
-        touchManager = FindAnyObjectByType<TouchManager>();
+        soundManager = FindObjectOfType<SoundManager>();
+        touchManager = FindObjectOfType<TouchManager>(); 
+        
         // 처음에 음악 재생
         backgroundMusic[currentIndex].Play();
+    }
+
+    void Update()
+    {
+        // 볼륨 조절
+        foreach (var audio in backgroundMusic)
+        {
+            audio.volume = musicVolume;
+        }
+
+        // SoundManager에서 효과음 배열을 가져와서 볼륨을 조절
+        if (soundManager != null)
+        {
+            foreach (var audio in soundManager.arrAudio)
+            {
+                audio.volume = soundVolume;
+            }
+        }
     }
 
     public void OnPanelSound()
@@ -27,6 +49,7 @@ public class AudioManager : MonoBehaviour
         SoundPanel.SetActive(true);
         touchManager.isPanelActive = true;
     }
+
     public void OffPanelSound()
     {
         SoundPanel.SetActive(false);
@@ -40,7 +63,6 @@ public class AudioManager : MonoBehaviour
         {
             // 음악 재생
             backgroundMusic[currentIndex].Play();
-            // buttonImage.sprite = playSprite; // 재생 이미지로 변경
             turnTableEffect.SetActive(true);
         }
 
@@ -55,11 +77,23 @@ public class AudioManager : MonoBehaviour
         {
             // 음악 정지
             backgroundMusic[currentIndex].Stop();
-            // buttonImage.sprite = pauseSprite; // 일시정지 이미지로 변경
+            //턴테이블 이펙트 없애기
             turnTableEffect.SetActive(false);
         }
 
         // 음악 재생 상태 업데이트
         isMusicPlaying = false;
+    }
+
+    // 음악 볼륨 조절 함수
+    public void MusicVolume(float volume)
+    {
+        musicVolume = volume;
+    }
+
+    // 효과음 볼륨 조절 함수
+    public void EffectVolume(float volume)
+    {
+        soundVolume = volume;
     }
 }
