@@ -65,7 +65,7 @@ public class Button3Click : MonoBehaviour
         StartCoroutine(Button3lickSequence());
 
         //{}안에 있는 일차에 죽는 이벤트 발생
-        int[] specialDateCounts = { 1, 2, 8, 11, 13, 21, 25, 27, 29 };
+        int[] specialDateCounts = { 1, 2, 11, 13, 21, 25, 27, 29 };
         
         if (Array.IndexOf(specialDateCounts, dateCount) != -1)
         {
@@ -109,7 +109,7 @@ public class Button3Click : MonoBehaviour
         }
         else if (dateCount == 28)
         {
-            memoPanel.contentText.text = button3MemoArr[4]; //memoPanel.UpdateDayText()보다 밑에 있어야 함.
+            memoPanel.contentText.text = button3MemoArr[4]; 
         }
 
         if (diePanel.isDie == false)

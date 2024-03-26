@@ -97,9 +97,6 @@ public class DiePanel : MonoBehaviour
             case 2:
                 diedText.text = "식물을 그늘로 옮겨서 죽었습니다. 다시 시작하시겠습니까?";
                 break;
-            case 8:
-                diedText.text = "이유를 찾지 못해서 죽었습니다. 다시 시작하시겠습니까?";
-                break;
             case 11:
                 diedText.text = "줄기를 잘라버려서 죽었다. 다시 시작하시겠습니까?";
                 break;

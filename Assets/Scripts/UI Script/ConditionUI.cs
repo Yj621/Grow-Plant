@@ -107,8 +107,4 @@ public class ConditionUI : MonoBehaviour
             isBad = true;
         }
     }
-    public int ReturnCondPoint()
-    {
-        return conditionPoint;
-    }
 }

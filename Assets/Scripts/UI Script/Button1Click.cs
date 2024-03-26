@@ -84,8 +84,7 @@ public class Button1Click : MonoBehaviour
         yield return StartCoroutine(fadeInOut.FadeAlpha());
         //창닫기
         eventButtonUI.ClosePopupWindow();
-       
-        
+
         waterCount++;
 
         Debug.Log("waterCount : "+waterCount);

@@ -25,6 +25,12 @@ public class GameManager : MonoBehaviour
         GameLoad();
         blockingImg.SetActive(false);
         quitPanel.SetActive(false);
+
+        //처음 시작 시에만 50으로 시작
+        if (ConditionUI.conditionPoint == 0)
+        {
+            ConditionUI.conditionPoint = 50;
+        }
     }
     void Update()
     {
