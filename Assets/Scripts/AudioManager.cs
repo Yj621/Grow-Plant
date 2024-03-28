@@ -6,8 +6,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource[] backgroundMusic;
 
     private bool isMusicPlaying = true;
-    private float musicVolume = 1f; // 음악 볼륨
-    private float soundVolume = 1f; // 효과음 볼륨
     public GameObject turnTableEffect;
     public GameObject SoundPanel;
     public Slider musicSlider;
@@ -28,20 +26,6 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        // 볼륨 조절
-        foreach (var audio in backgroundMusic)
-        {
-            audio.volume = musicVolume;
-        }
-
-        // SoundManager에서 효과음 배열을 가져와서 볼륨을 조절
-        if (soundManager != null)
-        {
-            foreach (var audio in soundManager.arrAudio)
-            {
-                audio.volume = soundVolume;
-            }
-        }
     }
 
     public void OnPanelSound()
@@ -85,15 +69,20 @@ public class AudioManager : MonoBehaviour
         isMusicPlaying = false;
     }
 
-    // 음악 볼륨 조절 함수
-    public void MusicVolume(float volume)
+    public void UpdateMusicVolume(float volume)
     {
-        musicVolume = volume;
+        foreach (AudioSource musicSource in backgroundMusic)
+        {
+            musicSource.volume = volume;
+        }
+    }
+    public void UpdateEffectVolume(float volume)
+    {
+        // 모든 효과음의 볼륨을 주어진 값으로 설정합니다.
+        foreach (AudioSource audioSource in soundManager.arrAudio)
+        {
+            audioSource.volume = volume;
+        }
     }
 
-    // 효과음 볼륨 조절 함수
-    public void EffectVolume(float volume)
-    {
-        soundVolume = volume;
-    }
 }

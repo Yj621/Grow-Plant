@@ -18,6 +18,8 @@ public class Button4Click : MonoBehaviour
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
 
+    public GameObject HiddenEndingImage;
+
     DiePanel diePanel;
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
@@ -80,7 +82,7 @@ public class Button4Click : MonoBehaviour
             Debug.Log("snsUplaod : " + snsUpload);
             if (snsUpload >= 5) 
             {
-                //히든엔딩 연결
+                HiddenEndingImage.SetActive(true);
             }
         }
     }
