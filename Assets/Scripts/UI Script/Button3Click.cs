@@ -16,6 +16,7 @@ public class Button3Click : MonoBehaviour
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
     public Image endingImage;
+    public EndingScenesManager endingScenesManager;
 
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
@@ -126,7 +127,7 @@ public class Button3Click : MonoBehaviour
 
         if (dateCount == 30)
         {
-            endingImage.gameObject.SetActive(true);
+            endingScenesManager.printEndingScene();
         }
         
         //waterCount 초기화

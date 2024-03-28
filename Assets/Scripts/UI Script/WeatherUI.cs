@@ -91,7 +91,7 @@ public class WeatherUI : MonoBehaviour
             {
                 audioManager.backgroundMusic[1].Stop();
                 audioManager.backgroundMusic[3].Stop();
-            }
+            }            
         }
         else if (textLines[date] == "흐림")
         {
