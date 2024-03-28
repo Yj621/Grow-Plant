@@ -123,7 +123,7 @@ public class Button4Click : MonoBehaviour
         {
             snsUpload++;
             Debug.Log("snsUplaod : " + snsUpload);
-            if (snsUpload >= 1) 
+            if (snsUpload >= 5) 
             {
                 endingScenesManager.printSNSEndingScene();
             }

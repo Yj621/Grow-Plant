@@ -113,6 +113,10 @@ public class Button3Click : MonoBehaviour
         {
             memoPanel.contentText.text = button3MemoArr[4]; 
         }
+        else if (dateCount == 30)
+        {
+            endingScenesManager.printEndingScene();
+        }
 
         if (diePanel.isDie == false)
         {
@@ -124,12 +128,7 @@ public class Button3Click : MonoBehaviour
             Debug.Log("close block");
             blockingBtn.CloseBlockingButton();
         }
-
-        if (dateCount == 30)
-        {
-            endingScenesManager.printEndingScene();
-        }
-        
+              
         //waterCount 초기화
         button1Click.initWaterCount();
 

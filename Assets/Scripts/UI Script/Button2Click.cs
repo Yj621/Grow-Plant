@@ -15,14 +15,14 @@ public class Button2Click : MonoBehaviour
     private EventButtonUI eventButtonUI;
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
+    public EndingScenesManager endingScenesManager;
 
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
     GameManager gameManager;
     DiePanel diePanel;
 
-    string[] button2MemoArr =
-        {
+    string[] button2MemoArr = {
             "진딧물이 생겼다.",
             "잎에 벌레가 생겼다.",
         };
@@ -50,7 +50,7 @@ public class Button2Click : MonoBehaviour
         }
         else if (dateCount == 22)
         {
-            textValue = button2Arr[2];
+            textValue = button2Arr[2];            
         }
         else if (dateCount == 25)
         {
@@ -120,6 +120,10 @@ public class Button2Click : MonoBehaviour
         else if (dateCount == 16)
         {
             memoPanel.contentText.text = button2MemoArr[1]; 
+        }
+        else if (dateCount == 22)
+        {
+            endingScenesManager.printHiddenEndingScene();
         }
 
         if (diePanel.isDie == false)
