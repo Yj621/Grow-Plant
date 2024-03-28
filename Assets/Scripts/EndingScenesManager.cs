@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class EndingScenesManager : MonoBehaviour
 {
     public Image endingScene;       //기본 엔딩
-    //public Image snsEndingScene;    //꽃집사 인스타 머시기..
+    public Image snsEndingScene;    //꽃집사 인스타 머시기..
     public Image hiddenEndingScene; //그녀에게 꽃을 준다
 
     Image[] endingSceneArr = new Image[3];
 
     void Start()
     {
-        endingSceneArr = new Image[] { endingScene, hiddenEndingScene };
+        endingSceneArr = new Image[] { endingScene, hiddenEndingScene,snsEndingScene };
     }
 
     public void printEndingScene()
@@ -25,4 +25,8 @@ public class EndingScenesManager : MonoBehaviour
         hiddenEndingScene.gameObject.SetActive(true);
     }
 
+    public void printSNSEndingScene()
+    {
+        snsEndingScene.gameObject.SetActive(true);
+    }
 }

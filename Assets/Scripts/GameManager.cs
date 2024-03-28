@@ -42,10 +42,10 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public void Retry()
-    {
-	    SceneManager.LoadScene(0);
-    }
+    // public void Retry()
+    // {
+	//     SceneManager.LoadScene(0);
+    // }
     public void OpenQuitPanel()
     {
         quitPanel.SetActive(true);

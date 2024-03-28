@@ -18,8 +18,7 @@ public class Button4Click : MonoBehaviour
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
 
-    public GameObject HiddenEndingImage;
-
+    EndingScenesManager endingScenesManager;
     DiePanel diePanel;
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
@@ -33,6 +32,7 @@ public class Button4Click : MonoBehaviour
 
     void Start()
     {
+        endingScenesManager = FindAnyObjectByType<EndingScenesManager>();
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         memoPanel = FindAnyObjectByType<MemoPanel>();
@@ -72,19 +72,7 @@ public class Button4Click : MonoBehaviour
         {
             diePanel.Btn4SpecialDied(dateCount);
         }
-
-        //{}안에 있는 일차에 SNS에 업로드
-        int[] uploadToSNSDate = { 7, 11, 14, 16, 19, 22, 28, 29 };
-
-        if (Array.IndexOf(uploadToSNSDate, dateCount) != -1)
-        {
-            snsUpload++;
-            Debug.Log("snsUplaod : " + snsUpload);
-            if (snsUpload >= 5) 
-            {
-                HiddenEndingImage.SetActive(true);
-            }
-        }
+        
     }
 
     private IEnumerator Button4ClickSequence()
@@ -127,6 +115,18 @@ public class Button4Click : MonoBehaviour
         //NeglectCount 초기화
         button2Click.initNeglectCount();
         
+        //{}안에 있는 일차에 SNS에 업로드
+        int[] uploadToSNSDate = { 7, 11, 14, 16, 19, 22, 28, 29 };
+
         //blockingBtn.CloseBlockingButton();
+        if (Array.IndexOf(uploadToSNSDate, dateCount) != -1)
+        {
+            snsUpload++;
+            Debug.Log("snsUplaod : " + snsUpload);
+            if (snsUpload >= 1) 
+            {
+                endingScenesManager.printSNSEndingScene();
+            }
+        }
     }
 }
