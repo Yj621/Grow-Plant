@@ -13920,6 +13920,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6000015867480281405, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
+      propertyPath: blockimg
+      value: 
+      objectReference: {fileID: 1486750237}
+    - target: {fileID: 6000015867480281405, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: weatherUI
       value: 
       objectReference: {fileID: 201051685}
@@ -14768,7 +14772,6 @@ RectTransform:
   - {fileID: 201051682}
   - {fileID: 1430888114}
   - {fileID: 179923403}
-  - {fileID: 1486750238}
   - {fileID: 1644171590}
   - {fileID: 1272881690}
   - {fileID: 565656482}
@@ -14777,6 +14780,7 @@ RectTransform:
   - {fileID: 515352098}
   - {fileID: 1389725657}
   - {fileID: 566046208}
+  - {fileID: 1486750238}
   - {fileID: 1083986852}
   - {fileID: 1367274511}
   - {fileID: 416690764}

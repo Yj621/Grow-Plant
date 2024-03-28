@@ -14,6 +14,7 @@ public class Button1Click : MonoBehaviour
     public Button2Click button2Click;
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
+    public GameObject blockimg;
 
     public static int waterCount;
 
@@ -68,6 +69,7 @@ public class Button1Click : MonoBehaviour
 
     public void Button1OnClick()
     {
+        blockimg.SetActive(true);
         StartCoroutine(Button1ClickSequence()); 
 
         //{}안에 있는 일차에 죽는 이벤트 발생
@@ -128,6 +130,7 @@ public class Button1Click : MonoBehaviour
         button2Click.initNeglectCount();
 
         // blockingBtn.CloseBlockingButton();
+        blockimg.SetActive(false);
     }
 
     public int initWaterCount()
