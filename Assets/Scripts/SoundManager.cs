@@ -52,4 +52,13 @@ public class SoundManager : MonoBehaviour
             soundStates[i] = false;
         }
     }
+
+    // 효과음 볼륨 일괄 업데이트
+    public void UpdateEffectsVolume(float volume)
+    {
+        foreach (AudioSource audioSource in arrAudio)
+        {
+            audioSource.volume = volume;
+        }
+    }
 }

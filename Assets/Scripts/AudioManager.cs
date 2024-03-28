@@ -69,20 +69,19 @@ public class AudioManager : MonoBehaviour
         isMusicPlaying = false;
     }
 
-    public void UpdateMusicVolume(float volume)
+    public void UpdateMusicVolume()
     {
+        // 현재 재생 중인 배경 음악의 볼륨을 조절
         foreach (AudioSource musicSource in backgroundMusic)
         {
-            musicSource.volume = volume;
+            musicSource.volume = musicSlider.value;
         }
     }
-    public void UpdateEffectVolume(float volume)
+
+    public void UpdateEffectVolume()
     {
-        // 모든 효과음의 볼륨을 주어진 값으로 설정합니다.
-        foreach (AudioSource audioSource in soundManager.arrAudio)
-        {
-            audioSource.volume = volume;
-        }
+        // SoundManager에서 효과음 볼륨 업데이트
+        soundManager.UpdateEffectsVolume(soundSlider.value);
     }
 
 }

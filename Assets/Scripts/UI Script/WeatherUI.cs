@@ -87,10 +87,10 @@ public class WeatherUI : MonoBehaviour
             rainyLight.DeactivateCloudyLight(); //흐린 날의 조명 비활성화
             rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
             // 배경 음악이 재생 중이면 정지
-            if (audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[3].isPlaying)
+            if (audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying)
             {
                 audioManager.backgroundMusic[1].Stop();
-                audioManager.backgroundMusic[3].Stop();
+                audioManager.backgroundMusic[2].Stop();
             }            
         }
         else if (textLines[date] == "흐림")
@@ -99,10 +99,10 @@ public class WeatherUI : MonoBehaviour
             rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
             rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
             // 배경 음악이 재생 중이면 정지
-            if (audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[3].isPlaying)
+            if (audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying)
             {
                 audioManager.backgroundMusic[1].Stop();
-                audioManager.backgroundMusic[3].Stop();
+                audioManager.backgroundMusic[2].Stop();
             }
         }
         else if (textLines[date] == "비")
@@ -114,8 +114,11 @@ public class WeatherUI : MonoBehaviour
         }
         else if (textLines[date] == "태풍")
         {
+            sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
+            rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
+            rainyLight.ActivateRainEffect();    //Rain Effect 활성화
             audioManager.backgroundMusic[1].Play();
-            audioManager.backgroundMusic[3].Play();
+            audioManager.backgroundMusic[2].Play();
         }
     }
 }
