@@ -17,6 +17,7 @@ public class Button3Click : MonoBehaviour
     public BlockingButton blockingBtn;
     public Image endingImage;
     public EndingScenesManager endingScenesManager;
+    public GameObject blockimg;
 
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
@@ -64,6 +65,8 @@ public class Button3Click : MonoBehaviour
 
     public void Button3OnClick()
     {
+        blockimg.SetActive(true);
+        
         StartCoroutine(Button3lickSequence());
 
         //{}안에 있는 일차에 죽는 이벤트 발생
@@ -73,6 +76,7 @@ public class Button3Click : MonoBehaviour
         {
             diePanel.Btn3SpecialDied(dateCount);
         }
+        eventButtonUI.ChangePopupInstancePosition();
     }
     
     private IEnumerator Button3lickSequence()
@@ -116,9 +120,10 @@ public class Button3Click : MonoBehaviour
         else if (dateCount == 30)
         {
             endingScenesManager.printEndingScene();
+            EndingScenesManager.isEnding = true;
         }
 
-        if (diePanel.isDie == false)
+        if (diePanel.isDie == false && EndingScenesManager.isEnding == false)
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();
@@ -136,6 +141,8 @@ public class Button3Click : MonoBehaviour
         button2Click.initNeglectCount();
 
         //창닫기
-        //blockingBtn.CloseBlockingButton();      
+        //blockingBtn.CloseBlockingButton();    
+        blockimg.SetActive(false);  
+        eventButtonUI.RestoreOriginalPosition();
     }
 }

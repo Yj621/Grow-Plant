@@ -16,6 +16,7 @@ public class Button2Click : MonoBehaviour
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
     public EndingScenesManager endingScenesManager;
+    public GameObject blockimg;
 
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
@@ -77,6 +78,8 @@ public class Button2Click : MonoBehaviour
 
     public void Button2OnClick()
     {
+        blockimg.SetActive(true);
+        
         StartCoroutine(Button2ClickSequence());
 
         //{}안에 있는 일차에 죽는 이벤트 발생
@@ -86,13 +89,13 @@ public class Button2Click : MonoBehaviour
         {
             diePanel.Btn2SpecialDied(dateCount);
         }
+        eventButtonUI.ChangePopupInstancePosition();
     }
     private IEnumerator Button2ClickSequence()
     {
         yield return StartCoroutine(fadeInOut.FadeAlpha());
         //창닫기
         eventButtonUI.ClosePopupWindow();
-
         
         
         NeglectCount++;
@@ -124,9 +127,10 @@ public class Button2Click : MonoBehaviour
         else if (dateCount == 22)
         {
             endingScenesManager.printHiddenEndingScene();
+            EndingScenesManager.isEnding = true;
         }
 
-        if (diePanel.isDie == false)
+        if (diePanel.isDie == false && EndingScenesManager.isEnding == false)
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();
@@ -136,6 +140,8 @@ public class Button2Click : MonoBehaviour
         button1Click.initWaterCount();
 
         //blockingBtn.CloseBlockingButton();
+        blockimg.SetActive(false);
+        eventButtonUI.RestoreOriginalPosition();
     }
     public int initNeglectCount()
     {

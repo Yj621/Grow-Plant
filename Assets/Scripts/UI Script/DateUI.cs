@@ -40,6 +40,7 @@ public class DateUI : MonoBehaviour
         {
             RandomFunction2();
         }
+        Debug.Log("엔딩"+EndingScenesManager.isEnding);
     }
 
     public void IncreaseDateCount()

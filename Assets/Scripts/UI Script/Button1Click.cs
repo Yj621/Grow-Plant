@@ -71,14 +71,15 @@ public class Button1Click : MonoBehaviour
     {
         blockimg.SetActive(true);
         StartCoroutine(Button1ClickSequence()); 
-
+        
         //{}안에 있는 일차에 죽는 이벤트 발생
-        int[] specialDateCounts = { 8, 14, 24};
+        int[] specialDateCounts = { 8, 14, 24, 30};
         
         if (Array.IndexOf(specialDateCounts, dateCount) != -1)
         {
             diePanel.Btn1SpecialDied(dateCount);
         }
+        eventButtonUI.ChangePopupInstancePosition();
     }
     
     private IEnumerator Button1ClickSequence()
@@ -131,6 +132,7 @@ public class Button1Click : MonoBehaviour
 
         // blockingBtn.CloseBlockingButton();
         blockimg.SetActive(false);
+        eventButtonUI.RestoreOriginalPosition();
     }
 
     public int initWaterCount()

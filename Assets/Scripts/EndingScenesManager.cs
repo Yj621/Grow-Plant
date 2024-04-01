@@ -10,6 +10,7 @@ public class EndingScenesManager : MonoBehaviour
     public Image hiddenEndingScene; //±×³à¿¡°Ô ²ÉÀ» ÁØ´Ù
 
     Image[] endingSceneArr = new Image[3];
+    public static bool isEnding = false;
 
     void Start()
     {
@@ -19,14 +20,17 @@ public class EndingScenesManager : MonoBehaviour
     public void printEndingScene()
     {
         endingScene.gameObject.SetActive(true);
+        isEnding = true;
     }
     public void printHiddenEndingScene()
     {
         hiddenEndingScene.gameObject.SetActive(true);
+        isEnding = true;
     }
 
     public void printSNSEndingScene()
     {
         snsEndingScene.gameObject.SetActive(true);
+        isEnding = true;
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7adccb9be21bcbd48b58d947c4b31a8d
+guid: d9f88a3ede70b4683a80c4af4f6ae027
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: today event_0
+      name: retrybtn_0
       rect:
         serializedVersion: 2
-        x: 80
-        y: 228
+        x: 81
+        y: 249
         width: 1759
-        height: 640
+        height: 582
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5032bbe531fd84ca9b7b9ce9de95d68c
-      internalID: -237209702
+      spriteID: 4626ccb4310534ddd9b170ff871191ef
+      internalID: 956804598
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      today event_0: -237209702
+      retrybtn_0: 956804598
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

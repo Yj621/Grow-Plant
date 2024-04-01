@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
         button2Click.initNeglectCount();    //neglectCount 초기화
         DateUI.isExecuted = false;
         DateUI.isExecuted2 = false;
+        EndingScenesManager.isEnding = false;
         //재시작
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }

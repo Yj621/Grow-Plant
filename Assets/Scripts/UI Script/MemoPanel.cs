@@ -46,7 +46,7 @@ public class MemoPanel : MonoBehaviour
         }
         else if (conditionUI.isSoso)
         {
-            contentText.text = "식물이 양호합니다.";
+            contentText.text = "식물의 변화가 없습니다.";
         }
         else if (conditionUI.isBad)
         {

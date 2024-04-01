@@ -44,6 +44,9 @@ public class DiePanel : MonoBehaviour
             case 24:
                 diedText.text = "식물을 실내로 옮기지 않아 추워서 동사했습니다. 다시 시작하시겠습니까?";
                 break;
+            case 30:
+                diedText.text = "식물을 다 키웠습니다. 다시 시작하시겠습니까?";
+                break;
         }
     }
 

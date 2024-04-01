@@ -17,6 +17,7 @@ public class Button4Click : MonoBehaviour
     public Button button4;
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
+    public GameObject blockimg;
 
     EndingScenesManager endingScenesManager;
     DiePanel diePanel;
@@ -63,16 +64,18 @@ public class Button4Click : MonoBehaviour
 
     public void Button4OnClick()
     {
+        blockimg.SetActive(true);
         StartCoroutine(Button4ClickSequence());
 
         //{}안에 있는 일차에 죽는 이벤트 발생
-        int[] specialDateCounts = { 2, 8, 9, 12, 14, 20, 21, 23, 24, 25, 26 };
+        int[] specialDateCounts = { 2, 8, 9, 12, 20, 21, 23, 24, 25, 26 };
         
         if (Array.IndexOf(specialDateCounts, dateCount) != -1)
         {
             diePanel.Btn4SpecialDied(dateCount);
         }
         
+        eventButtonUI.ChangePopupInstancePosition();
     }
 
     private IEnumerator Button4ClickSequence()
@@ -104,7 +107,7 @@ public class Button4Click : MonoBehaviour
             memoPanel.contentText.text = button4MemoArr[2];
         }
 
-        if(diePanel.isDie == false)
+        if(diePanel.isDie == false && EndingScenesManager.isEnding == false)
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();
@@ -126,7 +129,10 @@ public class Button4Click : MonoBehaviour
             if (snsUpload >= 5) 
             {
                 endingScenesManager.printSNSEndingScene();
+                EndingScenesManager.isEnding = true;
             }
         }
+        blockimg.SetActive(false);
+        eventButtonUI.RestoreOriginalPosition();
     }
 }
