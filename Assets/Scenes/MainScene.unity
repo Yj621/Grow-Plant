@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10912644, g: 0.16731839, b: 0.29985392, a: 1}
+  m_IndirectSpecularColor: {r: 0.10909393, g: 0.16726683, b: 0.2998435, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8149,6 +8149,7 @@ MonoBehaviour:
   dateUI: {fileID: 1430888115}
   sunnyLight: {fileID: 95618124}
   rainyLight: {fileID: 1399304657}
+  stormyLight: {fileID: 1399304658}
   plantsLevelChange: {fileID: 1734726752}
 --- !u!4 &212484662 stripped
 Transform:
@@ -23444,6 +23445,7 @@ GameObject:
   - component: {fileID: 1399304655}
   - component: {fileID: 1399304656}
   - component: {fileID: 1399304657}
+  - component: {fileID: 1399304658}
   m_Layer: 0
   m_Name: RainyDay
   m_TagString: Lights
@@ -23555,6 +23557,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rainyLight: {fileID: 1399304653}
   rainEffect: {fileID: 1843169848}
+--- !u!114 &1399304658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399304653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3731415a23771a84dbe420abd65aa2d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stormEffect: {fileID: 2041869925}
+  windZone: {fileID: 885361621}
+  stormWindZone: {fileID: 267972506}
 --- !u!4 &1416178742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429508, guid: 9c74caa742791864f9c678287121e6c9, type: 3}
@@ -46149,7 +46166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupWindow: {fileID: 1644171589}
   eventCanvas: {fileID: 566046208}
-  selectPopupClone: {fileID: 566046207}
+  selectPopupClone: {fileID: 0}
 --- !u!114 &2052194372
 MonoBehaviour:
   m_ObjectHideFlags: 0

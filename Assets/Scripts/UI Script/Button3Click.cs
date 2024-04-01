@@ -25,10 +25,21 @@ public class Button3Click : MonoBehaviour
 
     string[] button3MemoArr =
         {
+            "따뜻한 곳에서 식물이 잘 자랄 것 같다.",
             "비가 들이쳐서 식물이 물을 많이 먹었다.",
+            "벌레들이 사라졌다.",
+            "화창한 날씨로 식물의 기분도 좋아졌다.",
+            "쾌적한 환경으로 식물의 상태가 좋아졌다.",
             "무당벌레가 날아가 버렸다.",
             "젓가락으로 지지대를 세워 식물이 꺾이지 않았다.",
+            "식물이 꺾이지 않고 똑바로 자랄 수 있게 되었다.",
+            "햇빛을 많이 받아서 식물의 상태가 좋아졌다.",
+            "잎에 벌레가 생기는 것을 예방할 수 있었다.",
+            "습한 날씨에 가습기를 틀어 식물의 상태가 악화됐다.",
+            "쾌적한 환경이 되어 식물의 상태가 좋아졌다.",
             "꽃가루 알레르기가 있다는 사실을 알아버렸다.",
+            "따뜻한 곳으로 옮겨 식물의 상태가 좋아졌다.",
+            "산타 할아버지가 영양제를 주고 가셨다.",
             "다 익지 않아 맛이 없었다."            
         };
 
@@ -97,25 +108,69 @@ public class Button3Click : MonoBehaviour
 
         //메모패널 콘텐츠텍스트
         memoPanel.UpdateDayText(); // +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
-        if (dateCount == 4)
+        if (dateCount == 3)
         {
             memoPanel.contentText.text = button3MemoArr[0]; //memoPanel.UpdateDayText()보다 밑에 있어야 함.
         }
-        else if (dateCount == 10)
+        else if (dateCount == 4)
         {
             memoPanel.contentText.text = button3MemoArr[1]; 
         }
-        else if (dateCount == 12)
+        else if (dateCount == 5)
         {
             memoPanel.contentText.text = button3MemoArr[2]; 
         }
-        else if (dateCount == 22)
+        else if (dateCount == 6)
         {
             memoPanel.contentText.text = button3MemoArr[3];
         }
-        else if (dateCount == 28)
+        else if (dateCount == 7 || dateCount == 9 || dateCount == 17)
         {
             memoPanel.contentText.text = button3MemoArr[4]; 
+        }
+        else if (dateCount == 10 )
+        {
+            memoPanel.contentText.text = button3MemoArr[5];
+        }
+        else if (dateCount == 12)
+        {
+            memoPanel.contentText.text = button3MemoArr[6];
+        }
+        else if (dateCount == 14)
+        {
+            memoPanel.contentText.text = button3MemoArr[7];
+        }
+        else if (dateCount == 15)
+        {
+            memoPanel.contentText.text = button3MemoArr[8];
+        }
+        else if (dateCount == 16)
+        {
+            memoPanel.contentText.text = button3MemoArr[9];
+        }
+        else if (dateCount == 18 || dateCount == 19)
+        {
+            memoPanel.contentText.text = button3MemoArr[10];
+        }
+        else if (dateCount == 20)
+        {
+            memoPanel.contentText.text = button3MemoArr[11];
+        }
+        else if (dateCount == 22)
+        {
+            memoPanel.contentText.text = button3MemoArr[12];
+        }
+        else if (dateCount == 24)
+        {
+            memoPanel.contentText.text = button3MemoArr[13];
+        }
+        else if (dateCount == 26)
+        {
+            memoPanel.contentText.text = button3MemoArr[14];
+        }
+        else if (dateCount == 28)
+        {
+            memoPanel.contentText.text = button3MemoArr[15];
         }
         else if (dateCount == 30)
         {

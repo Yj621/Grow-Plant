@@ -25,7 +25,7 @@ public class Button2Click : MonoBehaviour
 
     string[] button2MemoArr = {
             "진딧물이 생겼다.",
-            "잎에 벌레가 생겼다.",
+            "잎에 벌레가 생겼다."
         };
 
     void Start()

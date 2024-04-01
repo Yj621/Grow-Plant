@@ -26,9 +26,16 @@ public class Button4Click : MonoBehaviour
 
     string[] button4MemoArr =
         {
-            "식물이 응원을 받아 무럭무럭 자랐다.",
+            "지렁이가 씨앗을 건드려서 악화됐다.",
+            "다음날 식물이 응원을 받아 무럭무럭 자랐다.",
+            "쾌적한 환경이 조성됐다.",
             "벌레를 잡다가 식물에 상처가 났다.",
-            "진딧물을 잡아먹는 무당벌레를 죽였다."
+            "식물을 돌보지 않아 식물의 상태가 악화됐다.",
+            "식물에게는 별 도움이 되지 않는 행동에 식물의 상태가 악화됐다.",
+            "진딧물을 잡아먹는 무당벌레를 죽였다.",
+            "태풍을 피할 수 있었다.",
+            "선글라스가 햇빛을 막아 식물의 상태가 악화됐다.",
+
         };
 
     void Start()
@@ -94,20 +101,45 @@ public class Button4Click : MonoBehaviour
         weatherUI.SetDateCount();
 
         memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
-        if (dateCount == 3)
+        if (dateCount == 1)
         {
             memoPanel.contentText.text = button4MemoArr[0];
         }
-        else if (dateCount == 5) 
+        else if (dateCount == 3) 
         {
             memoPanel.contentText.text = button4MemoArr[1];
         }
-        else if (dateCount == 10)
+        else if (dateCount == 4)
         {
             memoPanel.contentText.text = button4MemoArr[2];
         }
+        else if (dateCount == 5)
+        {
+            memoPanel.contentText.text = button4MemoArr[3];
+        }
+        else if (dateCount == 6)
+        {
+            memoPanel.contentText.text = button4MemoArr[4];
+        }
+        else if (dateCount == 7 || dateCount == 11 || dateCount == 14 ||
+            dateCount == 16 || dateCount == 18 || dateCount == 22 || dateCount == 28 || dateCount == 29)
+        {
+            memoPanel.contentText.text = button4MemoArr[5];
+        }
+        else if (dateCount == 10)
+        {
+            memoPanel.contentText.text = button4MemoArr[6];
+        }
+        else if (dateCount == 13)
+        {
+            memoPanel.contentText.text = button4MemoArr[7];
+        }
+        else if (dateCount == 15)
+        {
+            memoPanel.contentText.text = button4MemoArr[8];
+        }
 
-        if(diePanel.isDie == false && EndingScenesManager.isEnding == false)
+        if (diePanel.isDie == false && EndingScenesManager.isEnding == false)
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();
