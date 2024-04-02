@@ -13,6 +13,7 @@ public class WeatherUI : MonoBehaviour
     public SunnyLight sunnyLight;
     public RainyLight rainyLight;
     public StormyLight stormyLight;
+    public SnowyLight snowyLight;
     public PlantsLevelChange plantsLevelChange;
     AudioManager audioManager;
 
@@ -54,7 +55,7 @@ public class WeatherUI : MonoBehaviour
 
         // 이벤트를 하나씩 넘길 때마다 텍스트 업데이트
         string[] textLines = new string[] {
-            "맑음", "태풍", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
+            "맑음", "눈", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
             "맑음", "맑음", "흐림", "태풍", "태풍", "맑음", "맑음", "맑음", "습함",
             "습함", "비", "맑음", "맑음", "흐림", "눈", "눈", "맑음", "맑음",
             "흐림", "비", "맑음"
@@ -89,6 +90,7 @@ public class WeatherUI : MonoBehaviour
             rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
             stormyLight.DeactivateStormEffect();
             stormyLight.DeactivateStormWindZone();
+            snowyLight.DeactivateSnowEffect();
             // 배경 음악이 재생 중이면 정지
             if (audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying)
             {
@@ -103,6 +105,7 @@ public class WeatherUI : MonoBehaviour
             rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
             stormyLight.DeactivateStormEffect();
             stormyLight.DeactivateStormWindZone();
+            snowyLight.DeactivateSnowEffect();
             // 배경 음악이 재생 중이면 정지
             if (audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying)
             {
@@ -117,6 +120,7 @@ public class WeatherUI : MonoBehaviour
             rainyLight.ActivateRainEffect();    //Rain Effect 활성화
             stormyLight.DeactivateStormEffect();
             stormyLight.DeactivateStormWindZone();
+            snowyLight.DeactivateSnowEffect();
             audioManager.backgroundMusic[1].Play();
         }
         else if (textLines[date] == "태풍")
@@ -124,10 +128,20 @@ public class WeatherUI : MonoBehaviour
             sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
             rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
             rainyLight.DeactivateRainEffect();
+            snowyLight.DeactivateSnowEffect();
             stormyLight.ActivateStormEffect();
             stormyLight.ActivateStormWindZone();
             audioManager.backgroundMusic[1].Play();
             audioManager.backgroundMusic[2].Play();
+        }
+        else if (textLines[date] == "눈")
+        {
+            sunnyLight.DeactivateSunnyLight();
+            rainyLight.ActivateCloudyLight();
+            rainyLight.DeactivateRainEffect();
+            stormyLight.DeactivateStormEffect();
+            stormyLight.DeactivateStormWindZone();
+            snowyLight.ActivateSnowEffect();
         }
     }
 }
