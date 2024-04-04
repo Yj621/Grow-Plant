@@ -6,8 +6,8 @@ public class TouchManager : MonoBehaviour
 {
     public Transform stageTransform; // 주변을 기준으로 회전할 Stage의 Transform
     public float rotateSpeed = 500.0f;
-    public float perspectiveZoomSpeed = 0.01f;
-    public float orthoZoomSpeed = 0.01f;
+    public float perspectiveZoomSpeed = 0.5f;
+    public float orthoZoomSpeed = 0.5f;
     public float minYCoordinate = 2.33f; // 카메라가 내려갈 수 있는 최소 y 좌표
     public bool isPanelActive = false;
     private bool isRotating = false;
