@@ -18,7 +18,7 @@ public class Button3Click : MonoBehaviour
     public Image endingImage;
     public EndingScenesManager endingScenesManager;
     public GameObject blockimg;
-
+    private AudioManager audioManager;
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
     private DiePanel diePanel;
@@ -49,6 +49,7 @@ public class Button3Click : MonoBehaviour
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         memoPanel = FindAnyObjectByType<MemoPanel>();
         diePanel = FindAnyObjectByType<DiePanel>();
+        audioManager = FindAnyObjectByType<AudioManager>();
         dateCount = weatherUI.GetDateCount() + 1;
 
         string[] button3Arr = {
@@ -176,6 +177,8 @@ public class Button3Click : MonoBehaviour
         {
             endingScenesManager.printEndingScene();
             EndingScenesManager.isEnding = true;
+            audioManager.StopAllMusic(); //모든 음악 정지
+            audioManager.backgroundMusic[5].Play();
         }
 
         if (diePanel.isDie == false && EndingScenesManager.isEnding == false)

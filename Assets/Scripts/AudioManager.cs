@@ -15,6 +15,16 @@ public class AudioManager : MonoBehaviour
     TouchManager touchManager;
     SoundManager soundManager;
 
+    /*
+    0 배경음악
+    1 비
+    2 태풍
+    3 눈
+    4 흐림
+    5 찐엔딩
+    6 꽃엔딩
+    7 인스타엔딩
+    */
     void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
@@ -26,6 +36,17 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
+    }
+    // 모든 음악 정지를 처리하는 함수
+    public void StopAllMusic()
+    {
+        foreach (var musicSource in backgroundMusic)
+        {
+            musicSource.Stop();
+        }
+
+        // 모든 음악 재생 상태 업데이트
+        isMusicPlaying = false;
     }
 
     public void OnPanelSound()

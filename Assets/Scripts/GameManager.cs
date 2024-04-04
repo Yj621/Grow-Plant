@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public Button2Click button2Click;
     public Button3Click button3Click;
     public Button4Click button4Click;
+    public Notice _notice;
     
     void Start()
     {
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
         blockingImg.SetActive(false);
         quitPanel.SetActive(false);
 
-        //Ã³À½ ½ÃÀÛ ½Ã¿¡¸¸ 50À¸·Î ½ÃÀÛ
+        //Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¿ï¿½ï¿½ï¿½ 50ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (ConditionUI.conditionPoint == 0)
         {
             ConditionUI.conditionPoint = 50;
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("DateUI", dateUI.dateCount);  
         PlayerPrefs.SetInt("WeatherUI", weatherUI.date);  
         PlayerPrefs.Save();
+        _notice.SUB("ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
     }
     public void GameLoad()
     {
@@ -88,14 +90,14 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
-        //static º¯¼ö¸¸ ÃÊ±âÈ­
-        ConditionUI.conditionPoint = 50;    //conditionPoint ÃÊ±âÈ­
-        button1Click.initWaterCount();      //waterCount ÃÊ±âÈ­
-        button2Click.initNeglectCount();    //neglectCount ÃÊ±âÈ­
+        //static ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
+        ConditionUI.conditionPoint = 50;    //conditionPoint ï¿½Ê±ï¿½È­
+        button1Click.initWaterCount();      //waterCount ï¿½Ê±ï¿½È­
+        button2Click.initNeglectCount();    //neglectCount ï¿½Ê±ï¿½È­
         DateUI.isExecuted = false;
         DateUI.isExecuted2 = false;
         EndingScenesManager.isEnding = false;
-        //Àç½ÃÀÛ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }
 }

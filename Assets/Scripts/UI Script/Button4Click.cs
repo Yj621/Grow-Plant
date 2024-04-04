@@ -18,6 +18,7 @@ public class Button4Click : MonoBehaviour
     public ConditionUI conditionUI;
     public BlockingButton blockingBtn;
     public GameObject blockimg;
+    private AudioManager audioManager;
 
     EndingScenesManager endingScenesManager;
     DiePanel diePanel;
@@ -45,6 +46,7 @@ public class Button4Click : MonoBehaviour
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         memoPanel = FindAnyObjectByType<MemoPanel>();
         diePanel = FindAnyObjectByType<DiePanel>();
+        audioManager = FindAnyObjectByType<AudioManager>();
         dateCount = weatherUI.GetDateCount() + 1;
 
         string[] button4Arr = {
@@ -162,6 +164,8 @@ public class Button4Click : MonoBehaviour
             {
                 endingScenesManager.printSNSEndingScene();
                 EndingScenesManager.isEnding = true;
+                audioManager.StopAllMusic(); //모든 음악 정지
+                audioManager.backgroundMusic[7].Play();
             }
         }
         blockimg.SetActive(false);
