@@ -160,6 +160,6 @@ public class WeatherUI : MonoBehaviour
                 audioManager.backgroundMusic[2].Stop();
                 audioManager.backgroundMusic[3].Play(); //눈
             }
-        }
-    }
+        } 
+    } 
 }

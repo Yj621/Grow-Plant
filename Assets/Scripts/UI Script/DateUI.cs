@@ -69,7 +69,7 @@ public class DateUI : MonoBehaviour
         }
     }
 
-    void UpdateDayText()
+    public void UpdateDayText()
     {
         dateCount = weatherUI.GetDateCount() + 1;
         // UI에 현재 일 수를 표시하는 메서드

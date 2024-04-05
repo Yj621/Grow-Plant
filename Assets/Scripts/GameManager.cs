@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameLoad();
+        dateUI.UpdateDayText();
         blockingImg.SetActive(false);
         quitPanel.SetActive(false);
 
@@ -94,6 +95,8 @@ public class GameManager : MonoBehaviour
         ConditionUI.conditionPoint = 50;    //conditionPoint �ʱ�ȭ
         button1Click.initWaterCount();      //waterCount �ʱ�ȭ
         button2Click.initNeglectCount();    //neglectCount �ʱ�ȭ
+        dateUI.dateCount = 0;
+        weatherUI.date = 0;
         DateUI.isExecuted = false;
         DateUI.isExecuted2 = false;
         EndingScenesManager.isEnding = false;
