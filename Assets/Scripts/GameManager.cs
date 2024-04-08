@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,15 +24,18 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameLoad();
-        dateUI.UpdateDayText();
-        blockingImg.SetActive(false);
-        quitPanel.SetActive(false);
 
-        //ó�� ���� �ÿ��� 50���� ����
-        if (ConditionUI.conditionPoint == 0)
+        //처음 시작할 때만 50점으로 초기화
+        if (ConditionUI.conditionPoint <= 0)
         {
             ConditionUI.conditionPoint = 50;
         }
+        
+        dateUI.UpdateDayText();
+        conditionUI.ReturnCondPoint();
+        weatherUI.WeatherTextUpdate();
+        blockingImg.SetActive(false);
+        quitPanel.SetActive(false);       
     }
     void Update()
     {
@@ -91,16 +94,16 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
-        //static ������ �ʱ�ȭ
-        ConditionUI.conditionPoint = 50;    //conditionPoint �ʱ�ȭ
-        button1Click.initWaterCount();      //waterCount �ʱ�ȭ
-        button2Click.initNeglectCount();    //neglectCount �ʱ�ȭ
+        //변수 초기화
+        ConditionUI.conditionPoint = 50;    //conditionPoint 초기화
+        button1Click.initWaterCount();      //waterCount 초기화
+        button2Click.initNeglectCount();    //neglectCount 초기화
         dateUI.dateCount = 0;
         weatherUI.date = 0;
         DateUI.isExecuted = false;
         DateUI.isExecuted2 = false;
         EndingScenesManager.isEnding = false;
-        //�����
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }
 }

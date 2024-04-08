@@ -41,18 +41,8 @@ public class WeatherUI : MonoBehaviour
         }
     }
 
-    public int GetDateCount()
+    public void WeatherTextUpdate()
     {
-        return date;
-    }
-
-    public void SetDateCount()
-    {
-        date += 1;
-
-        //일수가 늘어난 후 일차에 따라 식물 레벨 체크
-        plantsLevelChange.CheckDate();
-
         // 이벤트를 하나씩 넘길 때마다 텍스트 업데이트
         string[] textLines = new string[] {
             "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
@@ -81,6 +71,29 @@ public class WeatherUI : MonoBehaviour
         {
             Debug.LogWarning("더 이상 텍스트가 없습니다.");
         }
+    }
+
+    public int GetDateCount()
+    {
+        return date;
+    }
+
+    public void SetDateCount()
+    {
+        date += 1;
+
+        //일수가 늘어난 후 일차에 따라 식물 레벨 체크
+        plantsLevelChange.CheckDate();
+
+        string[] textLines = new string[] {
+            "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
+            "맑음", "맑음", "흐림", "태풍", "태풍", "맑음", "맑음", "맑음", "습함",
+            "습함", "비", "맑음", "맑음", "흐림", "눈", "눈", "맑음", "맑음",
+            "흐림", "비", "맑음"
+        };
+
+        WeatherTextUpdate();
+
         dateUI.IncreaseDateCount();
     /*
     0 배경음악

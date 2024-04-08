@@ -26,8 +26,6 @@ public class ConditionUI : MonoBehaviour
     
     private void UpdateConditionText() //식물상태가 점수에 따라서 바뀌게 함.
     {
-        
-
         string currentCond = "";
         if (conditionPoint <= 0)
         {
@@ -106,5 +104,10 @@ public class ConditionUI : MonoBehaviour
         {
             isBad = true;
         }
+    }
+    public int ReturnCondPoint()
+    {
+        UpdateConditionText();
+        return conditionPoint;
     }
 }
