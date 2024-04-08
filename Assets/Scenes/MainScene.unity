@@ -732,7 +732,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: -628.8889, y: -10}
+  m_SizeDelta: {x: -631.39014, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &33251133
 MonoBehaviour:
@@ -8582,7 +8582,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: -451.1111, y: 12.3}
+  m_SizeDelta: {x: -455.60538, y: 12.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &249026445
 MonoBehaviour:
@@ -13322,7 +13322,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: -328.8889, y: -10}
+  m_SizeDelta: {x: -331.39014, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &670380533
 MonoBehaviour:
@@ -15472,13 +15472,13 @@ RectTransform:
   - {fileID: 1272881690}
   - {fileID: 565656482}
   - {fileID: 1015359962}
-  - {fileID: 690006128}
   - {fileID: 1389725657}
   - {fileID: 566046208}
   - {fileID: 1486750238}
   - {fileID: 1083986852}
   - {fileID: 515352098}
   - {fileID: 577749331}
+  - {fileID: 690006128}
   - {fileID: 1367274511}
   - {fileID: 416690764}
   - {fileID: 364499724}
@@ -23281,7 +23281,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: -608.8889, y: -10}
+  m_SizeDelta: {x: -609.8655, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1325692747
 MonoBehaviour:
@@ -35240,7 +35240,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: -583.70374, y: -10}
+  m_SizeDelta: {x: -584.75336, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1878622123
 MonoBehaviour:
@@ -40977,7 +40977,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: -151.11111, y: 12.3}
+  m_SizeDelta: {x: -155.60538, y: 12.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973608127
 MonoBehaviour:

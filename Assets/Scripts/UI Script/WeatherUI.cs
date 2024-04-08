@@ -72,18 +72,18 @@ public class WeatherUI : MonoBehaviour
             Debug.LogWarning("더 이상 텍스트가 없습니다.");
         }
     }
-
-    public int GetDateCount()
+    public void WeatherLightUpdate()
     {
-        return date;
-    }
-
-    public void SetDateCount()
-    {
-        date += 1;
-
-        //일수가 늘어난 후 일차에 따라 식물 레벨 체크
-        plantsLevelChange.CheckDate();
+        /*
+        0 배경음악
+        1 비
+        2 태풍
+        3 눈
+        4 흐림
+        5 찐엔딩
+        6 꽃엔딩
+        7 인스타엔딩
+        */
 
         string[] textLines = new string[] {
             "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
@@ -92,19 +92,6 @@ public class WeatherUI : MonoBehaviour
             "흐림", "비", "맑음"
         };
 
-        WeatherTextUpdate();
-
-        dateUI.IncreaseDateCount();
-    /*
-    0 배경음악
-    1 비
-    2 태풍
-    3 눈
-    4 흐림
-    5 찐엔딩
-    6 꽃엔딩
-    7 인스타엔딩
-    */
         if (textLines[date] == "맑음")
         {
             sunnyLight.ActivateSunnyLight();    //맑은 날의 조명 활성화
@@ -118,7 +105,7 @@ public class WeatherUI : MonoBehaviour
             {
                 audioManager.backgroundMusic[1].Stop();
                 audioManager.backgroundMusic[2].Stop();
-            }            
+            }
         }
         else if (textLines[date] == "흐림")
         {
@@ -166,13 +153,39 @@ public class WeatherUI : MonoBehaviour
             stormyLight.DeactivateStormEffect();
             stormyLight.DeactivateStormWindZone();
             snowyLight.ActivateSnowEffect();
-            if (audioManager.backgroundMusic[0].isPlaying || audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying|| audioManager.backgroundMusic[4].isPlaying)
+            if (audioManager.backgroundMusic[0].isPlaying || audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying || audioManager.backgroundMusic[4].isPlaying)
             {
                 audioManager.backgroundMusic[0].Stop();
                 audioManager.backgroundMusic[1].Stop();
                 audioManager.backgroundMusic[2].Stop();
                 audioManager.backgroundMusic[3].Play(); //눈
             }
-        } 
+        }
+    }
+
+    public int GetDateCount()
+    {
+        return date;
+    }
+
+    public void SetDateCount()
+    {
+        date += 1;
+
+        //일수가 늘어난 후 일차에 따라 식물 레벨 체크
+        plantsLevelChange.CheckDate();
+
+        string[] textLines = new string[] {
+            "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
+            "맑음", "맑음", "흐림", "태풍", "태풍", "맑음", "맑음", "맑음", "습함",
+            "습함", "비", "맑음", "맑음", "흐림", "눈", "눈", "맑음", "맑음",
+            "흐림", "비", "맑음"
+        };
+
+        WeatherTextUpdate();
+
+        dateUI.IncreaseDateCount();
+        
+        WeatherLightUpdate();
     } 
 }

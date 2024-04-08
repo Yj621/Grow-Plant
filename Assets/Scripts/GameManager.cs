@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         dateUI.UpdateDayText();
         conditionUI.ReturnCondPoint();
         weatherUI.WeatherTextUpdate();
+        weatherUI.WeatherLightUpdate();
         blockingImg.SetActive(false);
         quitPanel.SetActive(false);       
     }
