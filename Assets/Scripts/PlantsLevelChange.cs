@@ -36,6 +36,12 @@ public class PlantsLevelChange : MonoBehaviour
     {
         dateCount = dateUI.dateCount + 1;
         condPoint = ConditionUI.conditionPoint;
+        level1.SetActive(true);
+        level2.SetActive(false);
+        level3.SetActive(false);
+        level4.SetActive(false);
+        level5.SetActive(false);
+        level6.SetActive(false);
         if (dateCount >= 0 && dateCount < 3)        //Level_1
         {
             level1.SetActive(true);           

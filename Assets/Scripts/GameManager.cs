@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
     public Button3Click button3Click;
     public Button4Click button4Click;
     public Notice _notice;
-    
+    public PlantsLevelChange plantsLevelChange;
+
     void Start()
     {
         GameLoad();
@@ -104,7 +105,11 @@ public class GameManager : MonoBehaviour
         DateUI.isExecuted = false;
         DateUI.isExecuted2 = false;
         EndingScenesManager.isEnding = false;
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
+
+        dateUI.UpdateDayText();
+        conditionUI.ReturnCondPoint();
+        weatherUI.WeatherTextUpdate();
+        weatherUI.WeatherLightUpdate();
+        plantsLevelChange.CheckDate();
     }
 }
