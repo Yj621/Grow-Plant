@@ -43,6 +43,7 @@ public class MemoPanel : MonoBehaviour
         if (conditionUI.isGood)
         {
             contentText.text = "식물이 호전되었습니다.";
+            soundManager.Sound(3);
         }
         else if (conditionUI.isSoso)
         {
@@ -51,6 +52,7 @@ public class MemoPanel : MonoBehaviour
         else if (conditionUI.isBad)
         {
             contentText.text = "식물이 악화되었습니다.";
+            soundManager.Sound(4);
         }
 
         conditionUI.isGood = false;
