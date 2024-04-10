@@ -101,10 +101,13 @@ public class WeatherUI : MonoBehaviour
             stormyLight.DeactivateStormWindZone();
             snowyLight.DeactivateSnowEffect();
             // 배경 음악이 재생 중이면 정지
-            if (audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying)
+            if (audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying  || audioManager.backgroundMusic[3].isPlaying|| audioManager.backgroundMusic[4].isPlaying)
             {
                 audioManager.backgroundMusic[1].Stop();
                 audioManager.backgroundMusic[2].Stop();
+                audioManager.backgroundMusic[3].Stop();
+                audioManager.backgroundMusic[4].Stop();
+                audioManager.backgroundMusic[0].Play();
             }
         }
         else if (textLines[date] == "흐림")
@@ -116,7 +119,7 @@ public class WeatherUI : MonoBehaviour
             stormyLight.DeactivateStormWindZone();
             snowyLight.DeactivateSnowEffect();
             // 배경 음악이 재생 중이면 정지
-            if (audioManager.backgroundMusic[0].isPlaying || audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying)
+            if (audioManager.backgroundMusic[0].isPlaying || audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying || audioManager.backgroundMusic[3].isPlaying)
             {
                 audioManager.backgroundMusic[0].Stop();
                 audioManager.backgroundMusic[1].Stop();
@@ -132,7 +135,13 @@ public class WeatherUI : MonoBehaviour
             stormyLight.DeactivateStormEffect();
             stormyLight.DeactivateStormWindZone();
             snowyLight.DeactivateSnowEffect();
-            audioManager.backgroundMusic[1].Play();
+            if (audioManager.backgroundMusic[0].isPlaying || audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying || audioManager.backgroundMusic[3].isPlaying || audioManager.backgroundMusic[4].isPlaying)
+            {
+                audioManager.backgroundMusic[0].Stop();
+                audioManager.backgroundMusic[2].Stop();
+                audioManager.backgroundMusic[3].Stop();
+                audioManager.backgroundMusic[1].Play();
+            }
         }
         else if (textLines[date] == "태풍")
         {
