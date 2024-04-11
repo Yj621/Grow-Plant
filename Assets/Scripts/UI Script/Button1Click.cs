@@ -70,7 +70,7 @@ public class Button1Click : MonoBehaviour
 
     public void Button1OnClick()
     {
-        blockimg.SetActive(true);
+        
         StartCoroutine(Button1ClickSequence()); 
         
         //{}안에 있는 일차에 죽는 이벤트 발생
@@ -84,7 +84,8 @@ public class Button1Click : MonoBehaviour
     }
     
     private IEnumerator Button1ClickSequence()
-    {        
+    {
+   
         yield return StartCoroutine(fadeInOut.FadeAlpha());
         //창닫기
         eventButtonUI.ClosePopupWindow();

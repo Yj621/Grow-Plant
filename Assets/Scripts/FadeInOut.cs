@@ -12,9 +12,10 @@ public class FadeInOut : MonoBehaviour
     
     private float currentAlpha; // 현재 투명도 값
     private bool isFading = false; // 페이드 중인지 여부
-
+    
     public Button eventBtn;  
     public Button settingBtn;
+    public GameObject blockImg2;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class FadeInOut : MonoBehaviour
         Color startColor = image.color;
         startColor.a = initialAlpha;
         image.color = startColor;
+        blockImg2.SetActive(false);
     }
 
     void Update()
@@ -32,6 +34,7 @@ public class FadeInOut : MonoBehaviour
     // 투명도를 서서히 변화시키는 코루틴
     public IEnumerator FadeAlpha()
     {
+        blockImg2.SetActive(true);
         isFading = true; // 페이드 중임을 표시
         eventBtn.interactable = false; // 페이드 도중에 이벤트 버튼 비활성화
         settingBtn.interactable = false; // 페이드 도중에 세팅 버튼 비활성화
@@ -57,7 +60,7 @@ public class FadeInOut : MonoBehaviour
             image.color = newColor;
             yield return null;           
         }
-
+        blockImg2.SetActive(false);
         isFading = false; // 페이드 종료
         eventBtn.interactable = true;
         settingBtn.interactable = true;
