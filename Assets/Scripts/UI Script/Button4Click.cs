@@ -145,6 +145,13 @@ public class Button4Click : MonoBehaviour
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();
+            blockimg.SetActive(false);
+            eventButtonUI.RestoreOriginalPosition();
+        }
+        else
+        {
+            blockimg.SetActive(true);
+            blockingBtn.CloseBlockingButton();
         }
         //waterCount 초기화
         button1Click.initWaterCount();
@@ -168,7 +175,5 @@ public class Button4Click : MonoBehaviour
                 audioManager.backgroundMusic[7].Play();
             }
         }
-        blockimg.SetActive(false);
-        eventButtonUI.RestoreOriginalPosition();
     }
 }

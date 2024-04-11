@@ -95,6 +95,7 @@ public class Button1Click : MonoBehaviour
         if (waterCount >= 5)
         {
             diePanel.PanelOn();
+            diePanel.isDie = true;
             diePanel.diedText.text = "물을 너무 많이 주어서 식물이 죽었습니다.";
         }
 
@@ -125,19 +126,20 @@ public class Button1Click : MonoBehaviour
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();
+
+            //NeglectCount 초기화
+            button2Click.initNeglectCount();
+
+            // blockingBtn.CloseBlockingButton();
+            blockimg.SetActive(false);
+            eventButtonUI.RestoreOriginalPosition();
         }
         else
         {
             Debug.Log("close block");
             blockingBtn.CloseBlockingButton();
+            blockimg.SetActive(true);
         }
-
-        //NeglectCount 초기화
-        button2Click.initNeglectCount();
-
-        // blockingBtn.CloseBlockingButton();
-        blockimg.SetActive(false);
-        eventButtonUI.RestoreOriginalPosition();
     }
 
     public int initWaterCount()

@@ -184,10 +184,13 @@ public class Button3Click : MonoBehaviour
         if (diePanel.isDie == false && EndingScenesManager.isEnding == false)
         {
             //메모패널 열기 
-            memoPanel.MemoPanelOn();
+            memoPanel.MemoPanelOn();    
+            blockimg.SetActive(false);  
+            eventButtonUI.RestoreOriginalPosition();
         }
         else
         {
+            blockimg.SetActive(true);  
             Debug.Log("close block");
             blockingBtn.CloseBlockingButton();
         }
@@ -199,8 +202,6 @@ public class Button3Click : MonoBehaviour
         button2Click.initNeglectCount();
 
         //창닫기
-        //blockingBtn.CloseBlockingButton();    
-        blockimg.SetActive(false);  
-        eventButtonUI.RestoreOriginalPosition();
+        //blockingBtn.CloseBlockingButton();
     }
 }

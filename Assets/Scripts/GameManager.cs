@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public Button4Click button4Click;
     public Notice _notice;
     public PlantsLevelChange plantsLevelChange;
+    public DiePanel diePanel;
 
     void Start()
     {
@@ -105,6 +106,7 @@ public class GameManager : MonoBehaviour
         DateUI.isExecuted = false;
         DateUI.isExecuted2 = false;
         EndingScenesManager.isEnding = false;
+        diePanel.isDie = false;
 
         dateUI.UpdateDayText();
         conditionUI.ReturnCondPoint();

@@ -15628,10 +15628,10 @@ RectTransform:
   - {fileID: 1644171590}
   - {fileID: 1272881690}
   - {fileID: 565656482}
+  - {fileID: 1486750238}
   - {fileID: 1015359962}
   - {fileID: 1389725657}
   - {fileID: 566046208}
-  - {fileID: 1486750238}
   - {fileID: 1083986852}
   - {fileID: 515352098}
   - {fileID: 1960487342}
@@ -23184,11 +23184,11 @@ RectTransform:
   - {fileID: 1460534542}
   m_Father: {fileID: 775216607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 2000}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1272881691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24833,6 +24833,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 816050305}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1486750237}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -26756,16 +26768,16 @@ RectTransform:
   m_GameObject: {fileID: 1486750237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 775216607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.3843, y: 11.222}
-  m_SizeDelta: {x: 1705.4341, y: 3544.517}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1486750239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29553,6 +29565,7 @@ MonoBehaviour:
   button4Click: {fileID: 1856095897}
   _notice: {fileID: 775216609}
   plantsLevelChange: {fileID: 1734726752}
+  diePanel: {fileID: 1015359963}
 --- !u!4 &1775791866
 Transform:
   m_ObjectHideFlags: 0

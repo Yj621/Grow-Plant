@@ -105,6 +105,7 @@ public class Button2Click : MonoBehaviour
         if (NeglectCount >= 3)
         {
             diePanel.PanelOn();
+            diePanel.isDie = true;
             diePanel.diedText.text = "식물을 오랫동안 방치해서 죽었습니다.";
         }
 
@@ -138,14 +139,20 @@ public class Button2Click : MonoBehaviour
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();
+            blockimg.SetActive(false);
+            eventButtonUI.RestoreOriginalPosition();
+        }
+        else
+        {
+            Debug.Log("close block");
+            blockingBtn.CloseBlockingButton();
+            blockimg.SetActive(true);
         }
 
         //waterCount 초기화
         button1Click.initWaterCount();
 
         //blockingBtn.CloseBlockingButton();
-        blockimg.SetActive(false);
-        eventButtonUI.RestoreOriginalPosition();
     }
     public int initNeglectCount()
     {
