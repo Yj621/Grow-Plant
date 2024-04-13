@@ -34,6 +34,10 @@ public class MemoPanel : MonoBehaviour
         memoPanel.SetActive(true);
         soundManager.Sound(1);
     }
+    public void MemoPanelOff()
+    {
+        memoPanel.SetActive(false);
+    }
 
     public void UpdateDayText()
     {

@@ -15644,8 +15644,8 @@ RectTransform:
   - {fileID: 1644171590}
   - {fileID: 1272881690}
   - {fileID: 565656482}
-  - {fileID: 1486750238}
   - {fileID: 566046208}
+  - {fileID: 1486750238}
   - {fileID: 1015359962}
   - {fileID: 1512875498}
   - {fileID: 1389725657}
@@ -18327,6 +18327,8 @@ MonoBehaviour:
   diePanel: {fileID: 816050305}
   isPanelOn: 0
   isDie: 0
+  memoPanel: {fileID: 565656483}
+  blockingButton: {fileID: 1272881691}
 --- !u!1 &1025762201
 GameObject:
   m_ObjectHideFlags: 0
