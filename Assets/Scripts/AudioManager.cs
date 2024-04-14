@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     public GameObject SoundPanel;
     public Slider musicSlider;
     public Slider soundSlider;
-    public int currentIndex = 0;
+    public int currentIndex;
 
     TouchManager touchManager;
     SoundManager soundManager;
@@ -29,7 +29,6 @@ public class AudioManager : MonoBehaviour
     {
         soundManager = FindObjectOfType<SoundManager>();
         touchManager = FindObjectOfType<TouchManager>(); 
-        
         // 처음에 음악 재생
         backgroundMusic[currentIndex].Play();
     }
@@ -69,6 +68,7 @@ public class AudioManager : MonoBehaviour
             // 음악 재생
             backgroundMusic[currentIndex].Play();
             turnTableEffect.SetActive(true);
+            Debug.Log("currentIndex : "+currentIndex);
         }
 
         // 음악 재생 상태 업데이트
@@ -84,6 +84,7 @@ public class AudioManager : MonoBehaviour
             backgroundMusic[currentIndex].Stop();
             //턴테이블 이펙트 없애기
             turnTableEffect.SetActive(false);
+            Debug.Log("currentIndex : "+currentIndex);
         }
 
         // 음악 재생 상태 업데이트

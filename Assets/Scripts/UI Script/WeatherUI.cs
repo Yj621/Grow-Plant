@@ -15,11 +15,11 @@ public class WeatherUI : MonoBehaviour
     public StormyLight stormyLight;
     public SnowyLight snowyLight;
     public PlantsLevelChange plantsLevelChange;
-    AudioManager audioManager;
+    public AudioManager audioManager;
+
 
     void Start()
     {
-        audioManager = FindAnyObjectByType<AudioManager>();
         originWeatherText = weatherText.text;  // "날씨 : "를 저장하는 변수
         string[] weatherArr = {
             "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
@@ -101,14 +101,21 @@ public class WeatherUI : MonoBehaviour
             stormyLight.DeactivateStormWindZone();
             snowyLight.DeactivateSnowEffect();
             // 배경 음악이 재생 중이면 정지
-            if (audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying  || audioManager.backgroundMusic[3].isPlaying|| audioManager.backgroundMusic[4].isPlaying)
+            if (audioManager.backgroundMusic[1].isPlaying || 
+                audioManager.backgroundMusic[2].isPlaying || 
+                audioManager.backgroundMusic[3].isPlaying || 
+                audioManager.backgroundMusic[4].isPlaying)
             {
+                // 배경 음악 정지
                 audioManager.backgroundMusic[1].Stop();
                 audioManager.backgroundMusic[2].Stop();
                 audioManager.backgroundMusic[3].Stop();
                 audioManager.backgroundMusic[4].Stop();
-                audioManager.backgroundMusic[0].Play();
+                // currentIndex를 0으로 설정하여 맑은 날 배경 음악 재생
+                audioManager.currentIndex = 0;
+                audioManager.backgroundMusic[audioManager.currentIndex].Play();
             }
+
         }
         else if (textLines[date] == "흐림")
         {
@@ -119,12 +126,16 @@ public class WeatherUI : MonoBehaviour
             stormyLight.DeactivateStormWindZone();
             snowyLight.DeactivateSnowEffect();
             // 배경 음악이 재생 중이면 정지
-            if (audioManager.backgroundMusic[0].isPlaying || audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying || audioManager.backgroundMusic[3].isPlaying)
+            if (audioManager.backgroundMusic[0].isPlaying || 
+                audioManager.backgroundMusic[1].isPlaying ||
+                audioManager.backgroundMusic[2].isPlaying || 
+                audioManager.backgroundMusic[3].isPlaying)
             {
                 audioManager.backgroundMusic[0].Stop();
                 audioManager.backgroundMusic[1].Stop();
                 audioManager.backgroundMusic[2].Stop();
-                audioManager.backgroundMusic[4].Play(); //흐림
+                audioManager.currentIndex = 4;
+                audioManager.backgroundMusic[audioManager.currentIndex].Play();
             }
         }
         else if (textLines[date] == "비")
@@ -135,12 +146,17 @@ public class WeatherUI : MonoBehaviour
             stormyLight.DeactivateStormEffect();
             stormyLight.DeactivateStormWindZone();
             snowyLight.DeactivateSnowEffect();
-            if (audioManager.backgroundMusic[0].isPlaying || audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying || audioManager.backgroundMusic[3].isPlaying || audioManager.backgroundMusic[4].isPlaying)
+            if (audioManager.backgroundMusic[0].isPlaying || 
+                audioManager.backgroundMusic[1].isPlaying ||
+                audioManager.backgroundMusic[2].isPlaying || 
+                audioManager.backgroundMusic[3].isPlaying || 
+                audioManager.backgroundMusic[4].isPlaying)
             {
                 audioManager.backgroundMusic[0].Stop();
                 audioManager.backgroundMusic[2].Stop();
                 audioManager.backgroundMusic[3].Stop();
-                audioManager.backgroundMusic[1].Play();
+                audioManager.currentIndex = 4;
+                audioManager.backgroundMusic[audioManager.currentIndex].Play();
             }
         }
         else if (textLines[date] == "태풍")
@@ -152,7 +168,8 @@ public class WeatherUI : MonoBehaviour
             stormyLight.ActivateStormEffect();
             stormyLight.ActivateStormWindZone();
             audioManager.backgroundMusic[1].Play();
-            audioManager.backgroundMusic[2].Play();
+            audioManager.currentIndex = 2;
+            audioManager.backgroundMusic[audioManager.currentIndex].Play();
         }
         else if (textLines[date] == "눈")
         {
@@ -162,12 +179,17 @@ public class WeatherUI : MonoBehaviour
             stormyLight.DeactivateStormEffect();
             stormyLight.DeactivateStormWindZone();
             snowyLight.ActivateSnowEffect();
-            if (audioManager.backgroundMusic[0].isPlaying || audioManager.backgroundMusic[1].isPlaying || audioManager.backgroundMusic[2].isPlaying || audioManager.backgroundMusic[4].isPlaying)
+             if (audioManager.backgroundMusic[0].isPlaying || 
+                audioManager.backgroundMusic[1].isPlaying ||
+                audioManager.backgroundMusic[2].isPlaying || 
+                audioManager.backgroundMusic[4].isPlaying)
             {
                 audioManager.backgroundMusic[0].Stop();
                 audioManager.backgroundMusic[1].Stop();
                 audioManager.backgroundMusic[2].Stop();
-                audioManager.backgroundMusic[3].Play(); //눈
+                audioManager.backgroundMusic[4].Stop();
+                audioManager.currentIndex = 3;
+                audioManager.backgroundMusic[audioManager.currentIndex].Play();
             }
         }
     }
