@@ -129,11 +129,13 @@ public class WeatherUI : MonoBehaviour
             if (audioManager.backgroundMusic[0].isPlaying || 
                 audioManager.backgroundMusic[1].isPlaying ||
                 audioManager.backgroundMusic[2].isPlaying || 
-                audioManager.backgroundMusic[3].isPlaying)
+                audioManager.backgroundMusic[3].isPlaying || 
+                audioManager.backgroundMusic[4].isPlaying)
             {
                 audioManager.backgroundMusic[0].Stop();
                 audioManager.backgroundMusic[1].Stop();
                 audioManager.backgroundMusic[2].Stop();
+                audioManager.backgroundMusic[3].Stop();
                 audioManager.currentIndex = 4;
                 audioManager.backgroundMusic[audioManager.currentIndex].Play();
             }
@@ -167,9 +169,18 @@ public class WeatherUI : MonoBehaviour
             snowyLight.DeactivateSnowEffect();
             stormyLight.ActivateStormEffect();
             stormyLight.ActivateStormWindZone();
-            audioManager.backgroundMusic[1].Play();
-            audioManager.currentIndex = 2;
-            audioManager.backgroundMusic[audioManager.currentIndex].Play();
+            if (audioManager.backgroundMusic[0].isPlaying || 
+                audioManager.backgroundMusic[1].isPlaying ||
+                audioManager.backgroundMusic[2].isPlaying || 
+                audioManager.backgroundMusic[3].isPlaying || 
+                audioManager.backgroundMusic[4].isPlaying)
+            {
+                audioManager.backgroundMusic[0].Stop();
+                audioManager.backgroundMusic[3].Stop();
+                audioManager.backgroundMusic[4].Stop();
+                audioManager.currentIndex = 2;
+                audioManager.backgroundMusic[audioManager.currentIndex].Play();
+            }
         }
         else if (textLines[date] == "눈")
         {
@@ -179,9 +190,10 @@ public class WeatherUI : MonoBehaviour
             stormyLight.DeactivateStormEffect();
             stormyLight.DeactivateStormWindZone();
             snowyLight.ActivateSnowEffect();
-             if (audioManager.backgroundMusic[0].isPlaying || 
+            if (audioManager.backgroundMusic[0].isPlaying || 
                 audioManager.backgroundMusic[1].isPlaying ||
                 audioManager.backgroundMusic[2].isPlaying || 
+                audioManager.backgroundMusic[3].isPlaying || 
                 audioManager.backgroundMusic[4].isPlaying)
             {
                 audioManager.backgroundMusic[0].Stop();
