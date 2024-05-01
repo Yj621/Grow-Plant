@@ -106,16 +106,16 @@ public class WeatherUI : MonoBehaviour
                 audioManager.backgroundMusic[3].isPlaying || 
                 audioManager.backgroundMusic[4].isPlaying)
             {
-                // 배경 음악 정지
-                audioManager.backgroundMusic[1].Stop();
-                audioManager.backgroundMusic[2].Stop();
-                audioManager.backgroundMusic[3].Stop();
-                audioManager.backgroundMusic[4].Stop();
-                // currentIndex를 0으로 설정하여 맑은 날 배경 음악 재생
-                audioManager.currentIndex = 0;
-                audioManager.backgroundMusic[audioManager.currentIndex].Play();
+                TurnOnMusic0();
             }
-
+            else if (!audioManager.backgroundMusic[0].isPlaying ||
+                    !audioManager.backgroundMusic[1].isPlaying ||
+                    !audioManager.backgroundMusic[2].isPlaying ||
+                    !audioManager.backgroundMusic[3].isPlaying ||
+                    !audioManager.backgroundMusic[4].isPlaying)
+            {
+                audioManager.currentIndex = 0;
+            }
         }
         else if (textLines[date] == "흐림")
         {
@@ -132,12 +132,15 @@ public class WeatherUI : MonoBehaviour
                 audioManager.backgroundMusic[3].isPlaying || 
                 audioManager.backgroundMusic[4].isPlaying)
             {
-                audioManager.backgroundMusic[0].Stop();
-                audioManager.backgroundMusic[1].Stop();
-                audioManager.backgroundMusic[2].Stop();
-                audioManager.backgroundMusic[3].Stop();
+                TurnOnMusic4();
+            }
+            else if (!audioManager.backgroundMusic[0].isPlaying ||
+                    !audioManager.backgroundMusic[1].isPlaying ||
+                    !audioManager.backgroundMusic[2].isPlaying ||
+                    !audioManager.backgroundMusic[3].isPlaying ||
+                    !audioManager.backgroundMusic[4].isPlaying)
+            {
                 audioManager.currentIndex = 4;
-                audioManager.backgroundMusic[audioManager.currentIndex].Play();
             }
         }
         else if (textLines[date] == "비")
@@ -154,11 +157,15 @@ public class WeatherUI : MonoBehaviour
                 audioManager.backgroundMusic[3].isPlaying || 
                 audioManager.backgroundMusic[4].isPlaying)
             {
-                audioManager.backgroundMusic[0].Stop();
-                audioManager.backgroundMusic[2].Stop();
-                audioManager.backgroundMusic[3].Stop();
+                TurnOnMusic4();
+            }
+            else if (!audioManager.backgroundMusic[0].isPlaying ||
+                    !audioManager.backgroundMusic[1].isPlaying ||
+                    !audioManager.backgroundMusic[2].isPlaying ||
+                    !audioManager.backgroundMusic[3].isPlaying ||
+                    !audioManager.backgroundMusic[4].isPlaying)
+            {
                 audioManager.currentIndex = 4;
-                audioManager.backgroundMusic[audioManager.currentIndex].Play();
             }
         }
         else if (textLines[date] == "태풍")
@@ -175,11 +182,15 @@ public class WeatherUI : MonoBehaviour
                 audioManager.backgroundMusic[3].isPlaying || 
                 audioManager.backgroundMusic[4].isPlaying)
             {
-                audioManager.backgroundMusic[0].Stop();
-                audioManager.backgroundMusic[3].Stop();
-                audioManager.backgroundMusic[4].Stop();
+                TurnOnMusic2();
+            }
+            else if (!audioManager.backgroundMusic[0].isPlaying ||
+                     !audioManager.backgroundMusic[1].isPlaying ||
+                     !audioManager.backgroundMusic[2].isPlaying ||
+                     !audioManager.backgroundMusic[3].isPlaying ||
+                     !audioManager.backgroundMusic[4].isPlaying)
+            {
                 audioManager.currentIndex = 2;
-                audioManager.backgroundMusic[audioManager.currentIndex].Play();
             }
         }
         else if (textLines[date] == "눈")
@@ -196,12 +207,15 @@ public class WeatherUI : MonoBehaviour
                 audioManager.backgroundMusic[3].isPlaying || 
                 audioManager.backgroundMusic[4].isPlaying)
             {
-                audioManager.backgroundMusic[0].Stop();
-                audioManager.backgroundMusic[1].Stop();
-                audioManager.backgroundMusic[2].Stop();
-                audioManager.backgroundMusic[4].Stop();
+                TurnOnMusic3();
+            }
+            else if(!audioManager.backgroundMusic[0].isPlaying ||
+                    !audioManager.backgroundMusic[1].isPlaying ||
+                    !audioManager.backgroundMusic[2].isPlaying ||
+                    !audioManager.backgroundMusic[3].isPlaying ||
+                    !audioManager.backgroundMusic[4].isPlaying)
+            {
                 audioManager.currentIndex = 3;
-                audioManager.backgroundMusic[audioManager.currentIndex].Play();
             }
         }
     }
@@ -230,5 +244,42 @@ public class WeatherUI : MonoBehaviour
         dateUI.IncreaseDateCount();
         
         WeatherLightUpdate();
-    } 
+    }
+    
+    private void TurnOnMusic0() //맑음 날씨
+    {
+        // 배경 음악 정지
+        audioManager.backgroundMusic[1].Stop();
+        audioManager.backgroundMusic[2].Stop();
+        audioManager.backgroundMusic[3].Stop();
+        audioManager.backgroundMusic[4].Stop();
+        // currentIndex를 0으로 설정하여 맑은 날 배경 음악 재생
+        audioManager.currentIndex = 0;
+        audioManager.backgroundMusic[audioManager.currentIndex].Play();
+    }
+    private void TurnOnMusic4() //흐림, 비 날씨
+    {
+        audioManager.backgroundMusic[0].Stop();
+        audioManager.backgroundMusic[2].Stop();
+        audioManager.backgroundMusic[3].Stop();
+        audioManager.currentIndex = 4;
+        audioManager.backgroundMusic[audioManager.currentIndex].Play();
+    }
+    private void TurnOnMusic2() //태풍 날씨
+    {
+        audioManager.backgroundMusic[0].Stop();
+        audioManager.backgroundMusic[3].Stop();
+        audioManager.backgroundMusic[4].Stop();
+        audioManager.currentIndex = 2;
+        audioManager.backgroundMusic[audioManager.currentIndex].Play();
+    }
+    private void TurnOnMusic3() //눈 날씨
+    {
+        audioManager.backgroundMusic[0].Stop();
+        audioManager.backgroundMusic[1].Stop();
+        audioManager.backgroundMusic[2].Stop();
+        audioManager.backgroundMusic[4].Stop();
+        audioManager.currentIndex = 3;
+        audioManager.backgroundMusic[audioManager.currentIndex].Play();
+    }
 }
