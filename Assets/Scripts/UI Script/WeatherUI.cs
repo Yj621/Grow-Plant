@@ -157,7 +157,7 @@ public class WeatherUI : MonoBehaviour
                 audioManager.backgroundMusic[3].isPlaying || 
                 audioManager.backgroundMusic[4].isPlaying)
             {
-                TurnOnMusic4();
+                TurnOnMusic1();
             }
             else if (!audioManager.backgroundMusic[0].isPlaying ||
                     !audioManager.backgroundMusic[1].isPlaying ||
@@ -257,7 +257,25 @@ public class WeatherUI : MonoBehaviour
         audioManager.currentIndex = 0;
         audioManager.backgroundMusic[audioManager.currentIndex].Play();
     }
-    private void TurnOnMusic4() //흐림, 비 날씨
+
+    private void TurnOnMusic1() // 비 날씨
+    {
+        if(audioManager.currentIndex == 4)
+        {
+            audioManager.backgroundMusic[0].Stop();
+            audioManager.backgroundMusic[2].Stop();
+            audioManager.backgroundMusic[3].Stop();
+            audioManager.backgroundMusic[1].Play();
+        }
+        else
+        {
+            audioManager.currentIndex = 4;
+            audioManager.backgroundMusic[audioManager.currentIndex].Play();
+            audioManager.backgroundMusic[1].Play();
+        }
+
+    }
+    private void TurnOnMusic4() //흐림
     {
         audioManager.backgroundMusic[0].Stop();
         audioManager.backgroundMusic[2].Stop();
