@@ -19,6 +19,10 @@ public class DiePanel : MonoBehaviour
         diePanel.SetActive(false);
         soundManager = FindAnyObjectByType<SoundManager>();
     }
+    public void Update()
+    {
+        Debug.Log("isDie : " + isDie);
+    }
     public void PanelOn()
     {
         diePanel.SetActive(true);

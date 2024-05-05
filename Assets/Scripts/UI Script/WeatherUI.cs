@@ -16,10 +16,12 @@ public class WeatherUI : MonoBehaviour
     public SnowyLight snowyLight;
     public PlantsLevelChange plantsLevelChange;
     public AudioManager audioManager;
+    DiePanel diePanel;
 
 
     void Start()
     {
+        diePanel = FindAnyObjectByType<DiePanel>();
         originWeatherText = weatherText.text;  // "날씨 : "를 저장하는 변수
         string[] weatherArr = {
             "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
@@ -74,149 +76,156 @@ public class WeatherUI : MonoBehaviour
     }
     public void WeatherLightUpdate()
     {
-        /*
-        0 배경음악
-        1 비
-        2 태풍
-        3 눈
-        4 흐림
-        5 찐엔딩
-        6 꽃엔딩
-        7 인스타엔딩
-        */
+        if (diePanel.isDie == false)
+        {
+            /*
+            0 배경음악
+            1 비
+            2 태풍
+            3 눈
+            4 흐림
+            5 찐엔딩
+            6 꽃엔딩
+            7 인스타엔딩
+            */
 
-        string[] textLines = new string[] {
+            string[] textLines = new string[] {
             "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
             "맑음", "맑음", "흐림", "태풍", "태풍", "맑음", "맑음", "맑음", "습함",
             "습함", "비", "맑음", "맑음", "흐림", "눈", "눈", "맑음", "맑음",
             "흐림", "비", "맑음"
         };
 
-        if (textLines[date] == "맑음")
-        {
-            sunnyLight.ActivateSunnyLight();    //맑은 날의 조명 활성화
-            rainyLight.DeactivateCloudyLight(); //흐린 날의 조명 비활성화
-            rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
-            stormyLight.DeactivateStormEffect();
-            stormyLight.DeactivateStormWindZone();
-            snowyLight.DeactivateSnowEffect();
-            // 배경 음악이 재생 중이면 정지
-            if (audioManager.backgroundMusic[1].isPlaying || 
-                audioManager.backgroundMusic[2].isPlaying || 
-                audioManager.backgroundMusic[3].isPlaying || 
-                audioManager.backgroundMusic[4].isPlaying)
+            if (textLines[date] == "맑음")
             {
-                TurnOnMusic0();
+                sunnyLight.ActivateSunnyLight();    //맑은 날의 조명 활성화
+                rainyLight.DeactivateCloudyLight(); //흐린 날의 조명 비활성화
+                rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
+                stormyLight.DeactivateStormEffect();
+                stormyLight.DeactivateStormWindZone();
+                snowyLight.DeactivateSnowEffect();
+                // 배경 음악이 재생 중이면 정지
+                if (audioManager.backgroundMusic[1].isPlaying ||
+                    audioManager.backgroundMusic[2].isPlaying ||
+                    audioManager.backgroundMusic[3].isPlaying ||
+                    audioManager.backgroundMusic[4].isPlaying)
+                {
+                    TurnOnMusic0();
+                }
+                else if (!audioManager.backgroundMusic[0].isPlaying ||
+                        !audioManager.backgroundMusic[1].isPlaying ||
+                        !audioManager.backgroundMusic[2].isPlaying ||
+                        !audioManager.backgroundMusic[3].isPlaying ||
+                        !audioManager.backgroundMusic[4].isPlaying)
+                {
+                    audioManager.currentIndex = 0;
+                }
             }
-            else if (!audioManager.backgroundMusic[0].isPlaying ||
-                    !audioManager.backgroundMusic[1].isPlaying ||
-                    !audioManager.backgroundMusic[2].isPlaying ||
-                    !audioManager.backgroundMusic[3].isPlaying ||
-                    !audioManager.backgroundMusic[4].isPlaying)
+            else if (textLines[date] == "흐림")
             {
-                audioManager.currentIndex = 0;
+                sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
+                rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
+                rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
+                stormyLight.DeactivateStormEffect();
+                stormyLight.DeactivateStormWindZone();
+                snowyLight.DeactivateSnowEffect();
+                // 배경 음악이 재생 중이면 정지
+                if (audioManager.backgroundMusic[0].isPlaying ||
+                    audioManager.backgroundMusic[1].isPlaying ||
+                    audioManager.backgroundMusic[2].isPlaying ||
+                    audioManager.backgroundMusic[3].isPlaying ||
+                    audioManager.backgroundMusic[4].isPlaying)
+                {
+                    TurnOnMusic4();
+                }
+                else if (!audioManager.backgroundMusic[0].isPlaying ||
+                        !audioManager.backgroundMusic[1].isPlaying ||
+                        !audioManager.backgroundMusic[2].isPlaying ||
+                        !audioManager.backgroundMusic[3].isPlaying ||
+                        !audioManager.backgroundMusic[4].isPlaying)
+                {
+                    audioManager.currentIndex = 4;
+                }
+            }
+            else if (textLines[date] == "비")
+            {
+                sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
+                rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
+                rainyLight.ActivateRainEffect();    //Rain Effect 활성화
+                stormyLight.DeactivateStormEffect();
+                stormyLight.DeactivateStormWindZone();
+                snowyLight.DeactivateSnowEffect();
+                if (audioManager.backgroundMusic[0].isPlaying ||
+                    audioManager.backgroundMusic[1].isPlaying ||
+                    audioManager.backgroundMusic[2].isPlaying ||
+                    audioManager.backgroundMusic[3].isPlaying ||
+                    audioManager.backgroundMusic[4].isPlaying)
+                {
+                    TurnOnMusic1();
+                }
+                else if (!audioManager.backgroundMusic[0].isPlaying ||
+                        !audioManager.backgroundMusic[1].isPlaying ||
+                        !audioManager.backgroundMusic[2].isPlaying ||
+                        !audioManager.backgroundMusic[3].isPlaying ||
+                        !audioManager.backgroundMusic[4].isPlaying)
+                {
+                    audioManager.currentIndex = 4;
+                }
+            }
+            else if (textLines[date] == "태풍")
+            {
+                sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
+                rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
+                rainyLight.DeactivateRainEffect();
+                snowyLight.DeactivateSnowEffect();
+                stormyLight.ActivateStormEffect();
+                stormyLight.ActivateStormWindZone();
+                if (audioManager.backgroundMusic[0].isPlaying ||
+                    audioManager.backgroundMusic[1].isPlaying ||
+                    audioManager.backgroundMusic[2].isPlaying ||
+                    audioManager.backgroundMusic[3].isPlaying ||
+                    audioManager.backgroundMusic[4].isPlaying)
+                {
+                    TurnOnMusic2();
+                }
+                else if (!audioManager.backgroundMusic[0].isPlaying ||
+                         !audioManager.backgroundMusic[1].isPlaying ||
+                         !audioManager.backgroundMusic[2].isPlaying ||
+                         !audioManager.backgroundMusic[3].isPlaying ||
+                         !audioManager.backgroundMusic[4].isPlaying)
+                {
+                    audioManager.currentIndex = 2;
+                }
+            }
+            else if (textLines[date] == "눈")
+            {
+                sunnyLight.DeactivateSunnyLight();
+                rainyLight.ActivateCloudyLight();
+                rainyLight.DeactivateRainEffect();
+                stormyLight.DeactivateStormEffect();
+                stormyLight.DeactivateStormWindZone();
+                snowyLight.ActivateSnowEffect();
+                if (audioManager.backgroundMusic[0].isPlaying ||
+                    audioManager.backgroundMusic[1].isPlaying ||
+                    audioManager.backgroundMusic[2].isPlaying ||
+                    audioManager.backgroundMusic[3].isPlaying ||
+                    audioManager.backgroundMusic[4].isPlaying)
+                {
+                    TurnOnMusic3();
+                }
+                else if (!audioManager.backgroundMusic[0].isPlaying ||
+                        !audioManager.backgroundMusic[1].isPlaying ||
+                        !audioManager.backgroundMusic[2].isPlaying ||
+                        !audioManager.backgroundMusic[3].isPlaying ||
+                        !audioManager.backgroundMusic[4].isPlaying)
+                {
+                    audioManager.currentIndex = 3;
+                }
             }
         }
-        else if (textLines[date] == "흐림")
+        else
         {
-            sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
-            rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
-            rainyLight.DeactivateRainEffect();  //Rain Effect 비활성화
-            stormyLight.DeactivateStormEffect();
-            stormyLight.DeactivateStormWindZone();
-            snowyLight.DeactivateSnowEffect();
-            // 배경 음악이 재생 중이면 정지
-            if (audioManager.backgroundMusic[0].isPlaying || 
-                audioManager.backgroundMusic[1].isPlaying ||
-                audioManager.backgroundMusic[2].isPlaying || 
-                audioManager.backgroundMusic[3].isPlaying || 
-                audioManager.backgroundMusic[4].isPlaying)
-            {
-                TurnOnMusic4();
-            }
-            else if (!audioManager.backgroundMusic[0].isPlaying ||
-                    !audioManager.backgroundMusic[1].isPlaying ||
-                    !audioManager.backgroundMusic[2].isPlaying ||
-                    !audioManager.backgroundMusic[3].isPlaying ||
-                    !audioManager.backgroundMusic[4].isPlaying)
-            {
-                audioManager.currentIndex = 4;
-            }
-        }
-        else if (textLines[date] == "비")
-        {
-            sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
-            rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
-            rainyLight.ActivateRainEffect();    //Rain Effect 활성화
-            stormyLight.DeactivateStormEffect();
-            stormyLight.DeactivateStormWindZone();
-            snowyLight.DeactivateSnowEffect();
-            if (audioManager.backgroundMusic[0].isPlaying || 
-                audioManager.backgroundMusic[1].isPlaying ||
-                audioManager.backgroundMusic[2].isPlaying || 
-                audioManager.backgroundMusic[3].isPlaying || 
-                audioManager.backgroundMusic[4].isPlaying)
-            {
-                TurnOnMusic1();
-            }
-            else if (!audioManager.backgroundMusic[0].isPlaying ||
-                    !audioManager.backgroundMusic[1].isPlaying ||
-                    !audioManager.backgroundMusic[2].isPlaying ||
-                    !audioManager.backgroundMusic[3].isPlaying ||
-                    !audioManager.backgroundMusic[4].isPlaying)
-            {
-                audioManager.currentIndex = 4;
-            }
-        }
-        else if (textLines[date] == "태풍")
-        {
-            sunnyLight.DeactivateSunnyLight();  //맑은 날의 조명 비활성화
-            rainyLight.ActivateCloudyLight();   //비 오는 날의 조명 활성화
-            rainyLight.DeactivateRainEffect();
-            snowyLight.DeactivateSnowEffect();
-            stormyLight.ActivateStormEffect();
-            stormyLight.ActivateStormWindZone();
-            if (audioManager.backgroundMusic[0].isPlaying || 
-                audioManager.backgroundMusic[1].isPlaying ||
-                audioManager.backgroundMusic[2].isPlaying || 
-                audioManager.backgroundMusic[3].isPlaying || 
-                audioManager.backgroundMusic[4].isPlaying)
-            {
-                TurnOnMusic2();
-            }
-            else if (!audioManager.backgroundMusic[0].isPlaying ||
-                     !audioManager.backgroundMusic[1].isPlaying ||
-                     !audioManager.backgroundMusic[2].isPlaying ||
-                     !audioManager.backgroundMusic[3].isPlaying ||
-                     !audioManager.backgroundMusic[4].isPlaying)
-            {
-                audioManager.currentIndex = 2;
-            }
-        }
-        else if (textLines[date] == "눈")
-        {
-            sunnyLight.DeactivateSunnyLight();
-            rainyLight.ActivateCloudyLight();
-            rainyLight.DeactivateRainEffect();
-            stormyLight.DeactivateStormEffect();
-            stormyLight.DeactivateStormWindZone();
-            snowyLight.ActivateSnowEffect();
-            if (audioManager.backgroundMusic[0].isPlaying || 
-                audioManager.backgroundMusic[1].isPlaying ||
-                audioManager.backgroundMusic[2].isPlaying || 
-                audioManager.backgroundMusic[3].isPlaying || 
-                audioManager.backgroundMusic[4].isPlaying)
-            {
-                TurnOnMusic3();
-            }
-            else if(!audioManager.backgroundMusic[0].isPlaying ||
-                    !audioManager.backgroundMusic[1].isPlaying ||
-                    !audioManager.backgroundMusic[2].isPlaying ||
-                    !audioManager.backgroundMusic[3].isPlaying ||
-                    !audioManager.backgroundMusic[4].isPlaying)
-            {
-                audioManager.currentIndex = 3;
-            }
+            audioManager.backgroundMusic[audioManager.currentIndex].Stop();
         }
     }
 
@@ -242,10 +251,10 @@ public class WeatherUI : MonoBehaviour
         WeatherTextUpdate();
 
         dateUI.IncreaseDateCount();
-        
+
         WeatherLightUpdate();
     }
-    
+
     private void TurnOnMusic0() //맑음 날씨
     {
         // 배경 음악 정지
@@ -260,7 +269,7 @@ public class WeatherUI : MonoBehaviour
 
     private void TurnOnMusic1() // 비 날씨
     {
-        if(audioManager.currentIndex == 4)
+        if (audioManager.currentIndex == 4)
         {
             audioManager.backgroundMusic[0].Stop();
             audioManager.backgroundMusic[2].Stop();
