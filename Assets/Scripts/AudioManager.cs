@@ -104,4 +104,9 @@ public class AudioManager : MonoBehaviour
         soundManager.UpdateEffectsVolume(soundSlider.value);
     }
 
+    public void TurnOffAndOn()  //죽은 뒤 die_popup이 뜨고 confirm을 누르면 노래를 껐다 킴
+    {
+        StopMusic();
+        PlayMusic();
+    }
 }

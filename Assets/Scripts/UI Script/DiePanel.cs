@@ -80,7 +80,7 @@ public class DiePanel : MonoBehaviour
                 diedText.text = "벌레가 너무 많이 꼬여 죽었습니다. 다시 시작하시겠습니까?";
                 break;
             case 23:
-                diedText.text = "꿀벌을 사냥하러 온 말벌에게 쏘여 사망했습니다. 다시 시작하시겠습니까?";
+                diedText.text = "주인공이 꿀벌을 사냥하러 온 말벌에게 쏘여 사망했습니다. 다시 시작하시겠습니까?";
                 break;
             case 24:
                 diedText.text = "식물을 실내로 옮기지 않아 추워서 동사했습니다. 다시 시작하시겠습니까?";
