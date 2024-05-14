@@ -11,10 +11,10 @@ public class AudioManager : MonoBehaviour
     public Slider musicSlider;
     public Slider soundSlider;
     public int currentIndex;
-
-    TouchManager touchManager;
+    public bool isOn;
     SoundManager soundManager;
 
+    TouchManager touchManager;
     /*
     0 배경음악
     1 비
@@ -25,16 +25,26 @@ public class AudioManager : MonoBehaviour
     6 꽃엔딩
     7 인스타엔딩
     */
+    void Awake()
+    {
+    }
     void Start()
     {
-        soundManager = FindObjectOfType<SoundManager>();
-        touchManager = FindObjectOfType<TouchManager>(); 
+        soundManager = FindAnyObjectByType<SoundManager>();
+        touchManager = FindObjectOfType<TouchManager>();
+        isOn = true;
+        Debug.Log("isOn : "+isOn);
         // 처음에 음악 재생
-        backgroundMusic[currentIndex].Play();
+        if (isOn) { backgroundMusic[currentIndex].Play(); }
     }
 
     void Update()
     {
+
+    }
+    public void IsOn()
+    {
+        isOn = FindAnyObjectByType<GameManager>().lastMusicState;
     }
     // 모든 음악 정지를 처리하는 함수
     public void StopAllMusic()
@@ -44,6 +54,7 @@ public class AudioManager : MonoBehaviour
             musicSource.Stop();
         }
 
+        isOn = false;
         // 모든 음악 재생 상태 업데이트
         isMusicPlaying = false;
     }
@@ -63,13 +74,13 @@ public class AudioManager : MonoBehaviour
     // 음악 재생을 처리하는 함수
     public void PlayMusic()
     {
-        if (!isMusicPlaying)
+        if (!isMusicPlaying && isOn)
         {
             // 음악 재생
             backgroundMusic[currentIndex].Play();
             turnTableEffect.SetActive(true);
+            isOn = true;
         }
-
         // 음악 재생 상태 업데이트
         isMusicPlaying = true;
     }
@@ -83,8 +94,8 @@ public class AudioManager : MonoBehaviour
             backgroundMusic[currentIndex].Stop();
             //턴테이블 이펙트 없애기
             turnTableEffect.SetActive(false);
+            isOn = false;
         }
-
         // 음악 재생 상태 업데이트
         isMusicPlaying = false;
     }

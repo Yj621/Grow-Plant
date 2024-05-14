@@ -25030,6 +25030,7 @@ MonoBehaviour:
   musicSlider: {fileID: 768220530}
   soundSlider: {fileID: 1679507009}
   currentIndex: 0
+  isOn: 0
 --- !u!4 &1395920989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
@@ -25555,7 +25556,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 916384853d23d8145b6642b439421db2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.8
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -30007,9 +30008,11 @@ MonoBehaviour:
   button2Click: {fileID: 352276158}
   button3Click: {fileID: 786270579}
   button4Click: {fileID: 1856095897}
+  audioManager: {fileID: 1389725658}
   _notice: {fileID: 775216609}
   plantsLevelChange: {fileID: 1734726752}
   diePanel: {fileID: 1015359963}
+  lastMusicState: 0
 --- !u!4 &1775791866
 Transform:
   m_ObjectHideFlags: 0

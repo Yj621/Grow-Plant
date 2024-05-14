@@ -19,9 +19,11 @@ public class GameManager : MonoBehaviour
     public Button2Click button2Click;
     public Button3Click button3Click;
     public Button4Click button4Click;
+    public AudioManager audioManager;
     public Notice _notice;
     public PlantsLevelChange plantsLevelChange;
     public DiePanel diePanel;
+    public bool lastMusicState; // 플레이어가 마지막으로 선택한 음악 상태를 저장할 변수
 
     void Start()
     {
@@ -97,6 +99,8 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
+        lastMusicState = FindAnyObjectByType<AudioManager>().isOn;
+        Debug.Log("lastMusicState gm"+lastMusicState);
         //변수 초기화
         ConditionUI.conditionPoint = 50;    //conditionPoint 초기화
         button1Click.initWaterCount();      //waterCount 초기화
@@ -113,5 +117,6 @@ public class GameManager : MonoBehaviour
         weatherUI.WeatherTextUpdate();
         weatherUI.WeatherLightUpdate();
         plantsLevelChange.CheckDate();
+        audioManager.IsOn();
     }
 }
