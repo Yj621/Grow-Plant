@@ -49,6 +49,8 @@ public class Button4Click : MonoBehaviour
         audioManager = FindAnyObjectByType<AudioManager>();
         dateCount = weatherUI.GetDateCount() + 1;
 
+        const bool isButtonInteractable = false;
+
         string[] button4Arr = {
             "지렁이를 심는다","일광욕을 즐긴다", "응원한다", "제습제를 설치한다",
             "직접 죽인다","피크닉을 간다","SNS에 업로드한다","칭찬이 부족했나? 칭찬해주자",
@@ -61,14 +63,24 @@ public class Button4Click : MonoBehaviour
 
         string textValue = button4Arr[dateCount - 1];
 
-        if (button4Text != null)
+        if (dateCount == 30)
+        {
+            textValue = string.Empty;
+            button4Text.text = textValue;
+            button4.interactable = isButtonInteractable;
+            button4.image.enabled = isButtonInteractable; //Source Image 비활성화
+            button4Text.enabled = isButtonInteractable;   //남아있는 text 비활성화
+        }
+        else if (button4Text != null)
         {
             button4Text.text = textValue;
-        }
+        }      
         else
         {
             Debug.LogError("button4Text가 할당되지 않았습니다.");
         }
+
+        
     }
 
     public void Button4OnClick()
