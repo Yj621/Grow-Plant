@@ -27,15 +27,15 @@ public class AudioManager : MonoBehaviour
     */
     void Awake()
     {
+        isOn = true;
+        Debug.Log("isOn : "+isOn);
+        // 처음에 음악 재생
+        if (isOn) { backgroundMusic[currentIndex].Play(); }
     }
     void Start()
     {
         soundManager = FindAnyObjectByType<SoundManager>();
         touchManager = FindObjectOfType<TouchManager>();
-        isOn = true;
-        Debug.Log("isOn : "+isOn);
-        // 처음에 음악 재생
-        if (isOn) { backgroundMusic[currentIndex].Play(); }
     }
 
     void Update()
@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour
     // 음악 재생을 처리하는 함수
     public void PlayMusic()
     {
-        if (!isMusicPlaying && isOn)
+        if (!isMusicPlaying)
         {
             // 음악 재생
             backgroundMusic[currentIndex].Play();
@@ -118,6 +118,6 @@ public class AudioManager : MonoBehaviour
     public void TurnOffAndOn()  //죽은 뒤 die_popup이 뜨고 confirm을 누르면 노래를 껐다 킴
     {
         StopMusic();
-        PlayMusic();
+        if(isOn){PlayMusic();}
     }
 }
