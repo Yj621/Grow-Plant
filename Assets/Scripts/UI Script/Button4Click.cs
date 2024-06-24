@@ -58,12 +58,12 @@ public class Button4Click : MonoBehaviour
             "식물을 옮긴다", "SNS에 업로드한다", "선글라스를 씌운다", "SNS에 업로드한다", "강아지에게 간식을 준다",
             "응원한다", "SNS에 업로드한다", "뿌리를 자른다", "창문을 열다", "SNS에 업로드한다",
             "벌을 잡는다", "눈을 구경해 볼까?", "눈사람을 만든다", "선물을 요구한다", "떨어진 꽃잎을 줍는다",
-            "SNS에 업로드한다", "SNS에 업로드한다"
+            "SNS에 업로드한다", "SNS에 업로드한다", "X"
         };
 
         string textValue = button4Arr[dateCount - 1];
 
-        if (dateCount == 30)
+        if (dateCount >= 30)
         {
             textValue = string.Empty;
             button4Text.text = textValue;

@@ -244,21 +244,29 @@ public class WeatherUI : MonoBehaviour
     {
         date += 1;
 
-        //일수가 늘어난 후 일차에 따라 식물 레벨 체크
-        plantsLevelChange.CheckDate();
+        if (date > 31)
+        {
+            date -= 1;
+        }
 
-        string[] textLines = new string[] {
-            "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
-            "맑음", "맑음", "흐림", "태풍", "태풍", "맑음", "맑음", "맑음", "습함",
-            "습함", "비", "맑음", "맑음", "흐림", "눈", "눈", "맑음", "맑음",
-            "흐림", "비", "맑음"
-        };
+        else 
+        { 
+            //일수가 늘어난 후 일차에 따라 식물 레벨 체크
+            plantsLevelChange.CheckDate();
 
-        WeatherTextUpdate();
+            string[] textLines = new string[] {
+                    "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
+                    "맑음", "맑음", "흐림", "태풍", "태풍", "맑음", "맑음", "맑음", "습함",
+                    "습함", "비", "맑음", "맑음", "흐림", "눈", "눈", "맑음", "맑음",
+                    "흐림", "비", "맑음"
+                };
 
-        dateUI.IncreaseDateCount();
+            WeatherTextUpdate();
 
-        WeatherLightUpdate();
+            dateUI.IncreaseDateCount();
+
+            WeatherLightUpdate();
+        }
     }
 
     private void TurnOnMusic0() //맑음 날씨
