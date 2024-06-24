@@ -118,5 +118,6 @@ public class GameManager : MonoBehaviour
         weatherUI.WeatherLightUpdate();
         plantsLevelChange.CheckDate();
         audioManager.IsOn();
+        audioManager.TurnOffAndOn();
     }
 }
