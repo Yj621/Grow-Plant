@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public Button2Click button2Click;
     public Button3Click button3Click;
     public Button4Click button4Click;
-    public AudioManager audioManager;
+    public SoundManager soundmanager;
     public Notice _notice;
     public PlantsLevelChange plantsLevelChange;
     public DiePanel diePanel;
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
-        lastMusicState = FindAnyObjectByType<AudioManager>().isOn;
+        lastMusicState = FindAnyObjectByType<SoundManager>().isMusicOn;
         Debug.Log("lastMusicState gm"+lastMusicState);
         //변수 초기화
         ConditionUI.conditionPoint = 50;    //conditionPoint 초기화
@@ -117,7 +117,23 @@ public class GameManager : MonoBehaviour
         weatherUI.WeatherTextUpdate();
         weatherUI.WeatherLightUpdate();
         plantsLevelChange.CheckDate();
-        audioManager.IsOn();
-        audioManager.TurnOffAndOn();
+        soundmanager.StopMusic();
+    
+        // Coroutine을 시작하여 1초 뒤에 특정 함수를 실행
+        StartCoroutine(Delay1s());
+    }
+
+    // 지연을 처리하는 Coroutine 함수
+    IEnumerator Delay1s()
+    {
+        yield return new WaitForSeconds(1f); // 1초 대기
+        AfterRestart(); // 1초 후 실행할 함수 호출
+    }
+
+    // 1초 후에 실행될 함수
+    void AfterRestart()
+    {
+        Debug.Log("Restart 함수 실행 후 1초 뒤에 실행될 함수");
+        soundmanager.IsOn();    
     }
 }
