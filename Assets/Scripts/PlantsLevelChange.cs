@@ -36,7 +36,7 @@ public class PlantsLevelChange : MonoBehaviour
     {
         dateCount = dateUI.dateCount + 1;
         condPoint = ConditionUI.conditionPoint;
-        if (dateCount >= 0 && dateCount < 3)        //Level_1
+        if (dateCount >= 0 && dateCount < 7)        //Level_1
         {
             level1.SetActive(true);
             level2.SetActive(false);
@@ -50,7 +50,7 @@ public class PlantsLevelChange : MonoBehaviour
             sickLevel5.SetActive(false);
             sickLevel6.SetActive(false);    
         }
-        else if (dateCount >= 3 && dateCount < 7)   //Level_2
+        else if (dateCount >= 7 && dateCount < 11)   //Level_2
         {
             level1.SetActive(false);
             level3.SetActive(false);
@@ -72,7 +72,7 @@ public class PlantsLevelChange : MonoBehaviour
                 sickLevel2.SetActive(true);
             }
         }
-        else if (dateCount >= 7 && dateCount < 11)  //Level_3
+        else if (dateCount >= 11 && dateCount < 22)  //Level_3
         {
             level1.SetActive(false);
             level2.SetActive(false);
@@ -94,7 +94,7 @@ public class PlantsLevelChange : MonoBehaviour
                 sickLevel3.SetActive(true);
             }
         }
-        else if (dateCount >= 11 && dateCount < 14) //Level_4
+        else if (dateCount >= 22 && dateCount < 28) //Level_4
         {
             level1.SetActive(false);
             level2.SetActive(false);
@@ -116,7 +116,7 @@ public class PlantsLevelChange : MonoBehaviour
                 sickLevel4.SetActive(true);
             }
         }
-        else if (dateCount >= 14 && dateCount < 16) //Level_5
+        else if (dateCount >= 28 && dateCount < 29) //Level_5
         {
             level1.SetActive(false);
             level2.SetActive(false);
@@ -138,7 +138,7 @@ public class PlantsLevelChange : MonoBehaviour
                 sickLevel5.SetActive(true);
             }
         }
-        else if (dateCount >= 16 && dateCount < 22) //Level_6
+        else if (dateCount >= 29 && dateCount < 30) //Level_6
         {
             level1.SetActive(false);
             level2.SetActive(false);

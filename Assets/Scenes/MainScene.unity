@@ -534,10 +534,10 @@ MonoBehaviour:
   - {fileID: 445015993}
   - {fileID: 9193673}
   - {fileID: 1352963657}
-  turnTableEffect: {fileID: 0}
-  SoundPanel: {fileID: 0}
-  musicSlider: {fileID: 0}
-  soundSlider: {fileID: 0}
+  turnTableEffect: {fileID: 129113426}
+  SoundPanel: {fileID: 1480161052}
+  musicSlider: {fileID: 768220530}
+  soundSlider: {fileID: 1679507009}
   currentIndex: 0
   isMusicOn: 1
 --- !u!4 &21000167
@@ -30010,7 +30010,7 @@ MonoBehaviour:
   button2Click: {fileID: 352276158}
   button3Click: {fileID: 786270579}
   button4Click: {fileID: 1856095897}
-  soundmanager: {fileID: 0}
+  soundmanager: {fileID: 21000166}
   _notice: {fileID: 775216609}
   plantsLevelChange: {fileID: 1734726752}
   diePanel: {fileID: 1015359963}
