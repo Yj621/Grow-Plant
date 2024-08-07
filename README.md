@@ -28,10 +28,3 @@
 
 출시하는 과정에서 aab 파일을 업로드하고 수정하고 콘솔에 등록하며 테스터들을 모집하는데 3개월 이상이 걸렸습니다. 이 기간 동안 테스터들을 모집하고, 그들의 피드백을 반영하며 소통하는 과정에서 출시에 관한 깊은 이해를 얻게 되었습니다. 이 경험을 통해 게임 개발에서의 중요한 요소들인 출시 절차, 테스터와의 소통, 피드백 반영의 중요성을 배우게 되었습니다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e1d9a61c-ab12-481e-9094-8916efe0a9d3/ab50da22-dde4-4f23-b3f9-14f498569e0a/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e1d9a61c-ab12-481e-9094-8916efe0a9d3/c60a44d2-813a-46ed-8284-b98056b117f3/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e1d9a61c-ab12-481e-9094-8916efe0a9d3/24410354-2445-466c-bb4a-314a3c39c30c/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e1d9a61c-ab12-481e-9094-8916efe0a9d3/aa2ee9a4-1983-42f9-a981-c6a9933a2840/Untitled.png)
