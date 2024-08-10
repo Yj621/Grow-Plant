@@ -1,3 +1,5 @@
+# 24-1 K-Project - Grow Plant
+
 # Grow Plant - 식물 키우기
 
 ## 🎮 게임 소개
@@ -9,6 +11,7 @@
 ## ⏰ 개발 기간
 
 24.01.26 ~ 23.05.13
+
 
 ## 👩‍💻 역할
 
@@ -28,4 +31,40 @@
 
 출시하는 과정에서 aab 파일을 업로드하고 수정하고 콘솔에 등록하며 테스터들을 모집하는데 3개월 이상이 걸렸습니다. 이 기간 동안 테스터들을 모집하고, 그들의 피드백을 반영하며 소통하는 과정에서 출시에 관한 깊은 이해를 얻게 되었습니다. 이 경험을 통해 게임 개발에서의 중요한 요소들인 출시 절차, 테스터와의 소통, 피드백 반영의 중요성을 배우게 되었습니다.
 
-!https://github.com/Yj621/Grow-Plant/blob/main/Grow_Plant.png/Grow_Plant_2.png
+![Grow_Plant_2.png](https://github.com/Yj621/Grow-Plant/tree/main/Grow_Plant.png/Grow_Plant_2.png)
+
+![Grow_Plant_3.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_3.png)
+
+![Grow_Plant_1.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_1.png)
+
+![Grow_Plant_4.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_4.png)
+
+![Grow_Plant_5.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_5.png)
+
+![Grow_Plant_6.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_6.png)
+
+![Grow_Plant_7.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_7.png)
+
+![Grow_Plant_8.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_8.png)
+
+![Grow_Plant_9.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_9.png)
+
+![Grow_Plant_10.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_10.png)
+
+![Grow_Plant_11.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_11.png)
+
+![Grow_Plant_12.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_12.png)
+
+![Grow_Plant_13.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_13.png)
+
+![Grow_Plant_14.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_14.png)
+
+![Grow_Plant_15.png](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Grow_Plant_15.png)
+
+![Untitled](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Untitled.png)
+
+![Untitled](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Untitled%201.png)
+
+![Untitled](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Untitled%202.png)
+
+![Untitled](24-1%20K-Project%20-%20Grow%20Plant%2077932305b32a4082bcd498a25b053d40/Untitled%203.png)
