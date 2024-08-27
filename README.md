@@ -1,4 +1,9 @@
-# Grow Plant - 식물 키우기(구글 심사중)
+# Grow Plant:식물 키우기(구글플레이스토어 출시)
+
+## [앱 링크]
+https://play.google.com/store/apps/details?id=com.beee.growplant
+
+<img width="1440" alt="스크린샷 2024-08-27 오후 5 07 50" src="https://github.com/user-attachments/assets/c0f744e5-5d33-4b6a-b2a8-bade35a0b992">
 
 ## 🎮 게임 소개
 
