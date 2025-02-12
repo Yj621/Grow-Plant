@@ -6,14 +6,15 @@
 > 
 > [2. 게임 소개](#게임-소개)
 > 
-> 
 > [3. 개발 기간](#개발-기간)
 > 
-> [4. 역할](#역할)
+> [4. 팀 구성원 및 역할](#팀-구성원-및-역할)
 > 
-> [5. 느낀점](#느낀점)
+> [5. 개발 환경](#개발-환경)
 > 
-> [6. 테스트 피드백](#테스트-피드백)
+> [6. 느낀점](#느낀점)
+> 
+> [7. 테스트 피드백](#테스트-피드백)
 
 </br>
 
@@ -41,18 +42,34 @@ https://play.google.com/store/apps/details?id=com.beee.growplant
 </br>
 </br>
 
-## 역할
-
-(팀장) 윤민우 : 3D 모델링 및 맵 디자인
-
-(팀원) 남기윤 : 날짜, 식물상태 개발
-
-(팀원) 백진인 : UI 및 사운드 디자인
-
-(팀원) 정윤지: UI 개발 및 사운드 개발
+## 팀 구성원 및 역할
+| 이름 | 윤민우 | 남기윤 | 정윤지 | 백진인 |
+| --- | --- | --- | --- | --- |
+| 역할1 | 3D 모델링 | 날짜 | UI | UI 디자인 |
+| 역할2 |  맵 디자인 | 식물상태 | 사운드 | 사운드 디자인 |
+| 코드 구현 |  |  |  |  |
+| GitHub |[@minuchan](https://github.com/minuchan) |[@namgy1](https://github.com/namgy1) | [@Yj621](https://github.com/Yj621) | [@Bjinin](https://github.com/Bjinin) |
 
 </br>
 </br>
+
+## 개발 환경
+
+---
+
+**언어 및 게임 엔진**
+
+https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white
+
+https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white
+
+**협업 툴**
+
+https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white
+
+https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white
+
+https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
 
 ## 느낀점
 
