@@ -55,21 +55,32 @@ https://play.google.com/store/apps/details?id=com.beee.growplant
 
 ## 개발 환경
 
----
+<div align="center">
 
-**언어 및 게임 엔진**
+### **언어 및 게임 엔진**
 
-https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white
+</div>
 
-https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white
+<br/>
+<p align="center">
+<img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white">
+<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white">
 
-**협업 툴**
+</p>
 
-https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white
+<div align="center">
 
-https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white
+### **협업 툴**
 
-https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+</div>
+
+<p align="center">
+<img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white">
+
+<img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white">
+
+<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+</p>
 
 ## 느낀점
 
