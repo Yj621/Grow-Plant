@@ -12,15 +12,11 @@ public class MemoPanel : MonoBehaviour
     public TextMeshProUGUI contentText;
 
     ConditionUI conditionUI;
-    WeatherUI weatherUI;
-    SoundManager soundManager;
     BlockingButton blockingButton;
     void Start()
     {
         memoPanel.SetActive(false);
-        weatherUI = FindAnyObjectByType<WeatherUI>();
         conditionUI = FindAnyObjectByType<ConditionUI>();
-        soundManager = FindAnyObjectByType<SoundManager>();
         blockingButton = FindAnyObjectByType<BlockingButton>();
     }
 
@@ -32,7 +28,7 @@ public class MemoPanel : MonoBehaviour
     public void MemoPanelOn()
     {
         memoPanel.SetActive(true);
-        soundManager.Sound(1);
+        SoundManager.Instance.Sound(1);
     }
     public void MemoPanelOff()
     {
@@ -41,13 +37,13 @@ public class MemoPanel : MonoBehaviour
 
     public void UpdateDayText()
     {
-        dateText.text = weatherUI.date + 1 + "일차";
-        weatherText.text = weatherUI.weatherText.text;
+        dateText.text = WeatherUI.Instance.date + 1 + "일차";
+        weatherText.text = WeatherUI.Instance.weatherText.text;
         //내용에 들어갈 텍스트
         if (conditionUI.isGood)
         {
             contentText.text = "식물이 호전되었습니다.";
-            soundManager.Sound(3);
+            SoundManager.Instance.Sound(3);
         }
         else if (conditionUI.isSoso)
         {
@@ -56,7 +52,7 @@ public class MemoPanel : MonoBehaviour
         else if (conditionUI.isBad)
         {
             contentText.text = "식물이 악화되었습니다.";
-            soundManager.Sound(4);
+            SoundManager.Instance.Sound(4);
         }
 
         conditionUI.isGood = false;

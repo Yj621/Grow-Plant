@@ -12,9 +12,7 @@ public class AudioManager : MonoBehaviour
     public Slider soundSlider;
     public int currentIndex;
     public bool isOn;
-    SoundManager soundManager;
 
-    TouchManager touchManager;
     /*
     0 배경음악
     1 비
@@ -34,8 +32,6 @@ public class AudioManager : MonoBehaviour
     }
     void Start()
     {
-        soundManager = FindAnyObjectByType<SoundManager>();
-        touchManager = FindObjectOfType<TouchManager>();
     }
 
     void Update()
@@ -62,13 +58,13 @@ public class AudioManager : MonoBehaviour
     public void OnPanelSound()
     {
         SoundPanel.SetActive(true);
-        touchManager.isPanelActive = true;
+        TouchManager.Instance.isPanelActive = true;
     }
 
     public void OffPanelSound()
     {
         SoundPanel.SetActive(false);
-        touchManager.isPanelActive = false;
+        TouchManager.Instance.isPanelActive = false;
     }
 
     // 음악 재생을 처리하는 함수
@@ -112,7 +108,7 @@ public class AudioManager : MonoBehaviour
     public void UpdateEffectVolume()
     {
         // SoundManager에서 효과음 볼륨 업데이트
-        soundManager.UpdateEffectsVolume(soundSlider.value);
+        SoundManager.Instance.UpdateEffectsVolume(soundSlider.value);
     }
 
     public void TurnOffAndOn()  //죽은 뒤 die_popup이 뜨고 confirm을 누르면 노래를 껐다 킴

@@ -10,7 +10,6 @@ public class Button4Click : MonoBehaviour
     public TextMeshProUGUI button4Text;
     public int dateCount = 0;
     public static int snsUpload = 0;
-    public WeatherUI weatherUI;
     public Button1Click button1Click;
     public Button2Click button2Click;
     private EventButtonUI eventButtonUI;
@@ -21,7 +20,6 @@ public class Button4Click : MonoBehaviour
     private AudioManager audioManager;
 
     EndingScenesManager endingScenesManager;
-    DiePanel diePanel;
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
 
@@ -45,9 +43,8 @@ public class Button4Click : MonoBehaviour
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         memoPanel = FindAnyObjectByType<MemoPanel>();
-        diePanel = FindAnyObjectByType<DiePanel>();
         audioManager = FindAnyObjectByType<AudioManager>();
-        dateCount = weatherUI.GetDateCount() + 1;
+        dateCount = WeatherUI.Instance.GetDateCount() + 1;
 
         const bool isButtonInteractable = false;
 
@@ -93,7 +90,7 @@ public class Button4Click : MonoBehaviour
         
         if (Array.IndexOf(specialDateCounts, dateCount) != -1)
         {
-            diePanel.Btn4SpecialDied(dateCount);
+            DiePanel.Instance.Btn4SpecialDied(dateCount);
         }
         
         eventButtonUI.ChangePopupInstancePosition();
@@ -112,7 +109,7 @@ public class Button4Click : MonoBehaviour
         //점수 더하기
         conditionUI.GetCondPoint(btn4ScoreArr[dateCount - 1]);
 
-        weatherUI.SetDateCount();
+        WeatherUI.Instance.SetDateCount();
 
         memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
         if (dateCount == 1)
@@ -153,7 +150,7 @@ public class Button4Click : MonoBehaviour
             memoPanel.contentText.text = button4MemoArr[8];
         }
 
-        if (diePanel.isDie == false && EndingScenesManager.isEnding == false)
+        if (DiePanel.Instance.isDie == false && EndingScenesManager.isEnding == false)
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();
@@ -178,7 +175,6 @@ public class Button4Click : MonoBehaviour
         if (Array.IndexOf(uploadToSNSDate, dateCount) != -1)
         {
             snsUpload++;
-            Debug.Log("snsUplaod : " + snsUpload);
             if (snsUpload >= 5) 
             {
                 endingScenesManager.printSNSEndingScene();

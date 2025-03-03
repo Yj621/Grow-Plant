@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : Singleton<SoundManager>
 {
     public AudioSource[] backgroundMusic;
     public AudioSource[] arrAudio;
@@ -17,10 +17,10 @@ public class SoundManager : MonoBehaviour
     public bool isMusicOn = true; 
     private bool[] soundStates;
 
-    TouchManager touchManager;
 
     void Awake()
     {
+
         isMusicOn = true;
         // 처음에 음악 재생
         if (isMusicOn) { backgroundMusic[currentIndex].Play(); }
@@ -28,7 +28,6 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        touchManager = FindObjectOfType<TouchManager>();
 
         // 효과음 상태 초기화
         soundStates = new bool[arrAudio.Length];
@@ -75,14 +74,14 @@ public class SoundManager : MonoBehaviour
     public void OnPanelSound()
     {
         SoundPanel.SetActive(true);
-        touchManager.isPanelActive = true;
+        TouchManager.Instance.isPanelActive = true;
         Sound(1); // 패널 온 효과음 재생
     }
 
     public void OffPanelSound()
     {
         SoundPanel.SetActive(false);
-        touchManager.isPanelActive = false;
+        TouchManager.Instance.isPanelActive = false;
         Sound(2); // 패널 오프 효과음 재생
     }
 

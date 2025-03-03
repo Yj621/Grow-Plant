@@ -4,20 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DiePanel : MonoBehaviour
+public class DiePanel : Singleton<DiePanel>
 {
     public TextMeshProUGUI diedText;
     public GameObject diePanel;
     public bool isPanelOn = false;
     public bool isDie = false;
-    SoundManager soundManager;
     public MemoPanel memoPanel;
     public BlockingButton blockingButton;
 
     void Start()
     {
         diePanel.SetActive(false);
-        soundManager = FindAnyObjectByType<SoundManager>();
     }
     public void Update()
     {
@@ -27,7 +25,7 @@ public class DiePanel : MonoBehaviour
     {
         diePanel.SetActive(true);
         isPanelOn = true;
-        soundManager.Sound(5);
+        SoundManager.Instance.Sound(5);
     }
 
     public void PanelOff()

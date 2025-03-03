@@ -16,12 +16,10 @@ public class ConditionUI : MonoBehaviour
     public bool isSoso = false;
     public bool isBad = false;
 
-    DiePanel diePanel;
 
     void Start()
     {   
         UpdateConditionText();
-        diePanel = FindAnyObjectByType<DiePanel>();
     }
     
     private void UpdateConditionText() //식물상태가 점수에 따라서 바뀌게 함.
@@ -29,7 +27,7 @@ public class ConditionUI : MonoBehaviour
         string currentCond = "";
         if (conditionPoint <= 0)
         {
-            diePanel.PanelOn(); //식물이 죽었을 때(점수가 0점 이하로 떨어짐)
+            DiePanel.Instance.PanelOn(); //식물이 죽었을 때(점수가 0점 이하로 떨어짐)
             blockingImg.SetActive(true);
         }
         else

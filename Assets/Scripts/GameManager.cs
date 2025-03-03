@@ -13,13 +13,10 @@ public class GameManager : MonoBehaviour
     public EventTextUI eventTextUI;
     public EventButtonUI eventButtonUI;
     public FadeInOut fadeInOut;
-    public TouchManager touchManager;
-    public WeatherUI weatherUI;
     public Button1Click button1Click;
     public Button2Click button2Click;
     public Button3Click button3Click;
     public Button4Click button4Click;
-    public SoundManager soundmanager;
     public Notice _notice;
     public PlantsLevelChange plantsLevelChange;
     public DiePanel diePanel;
@@ -37,8 +34,8 @@ public class GameManager : MonoBehaviour
         
         dateUI.UpdateDayText();
         conditionUI.ReturnCondPoint();
-        weatherUI.WeatherTextUpdate();
-        weatherUI.WeatherLightUpdate();
+        WeatherUI.Instance.WeatherTextUpdate();
+        WeatherUI.Instance.WeatherLightUpdate();
         blockingImg.SetActive(false);
         quitPanel.SetActive(false);       
     }
@@ -73,7 +70,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Button4Click", button4Click.dateCount);
         PlayerPrefs.SetInt("EventTextUI", eventTextUI.dateCount);  
         PlayerPrefs.SetInt("DateUI", dateUI.dateCount);  
-        PlayerPrefs.SetInt("WeatherUI", weatherUI.date);  
+        PlayerPrefs.SetInt("WeatherUI", WeatherUI.Instance.date);  
         PlayerPrefs.Save();
         _notice.SUB("저장되었습니다.");
     }
@@ -95,18 +92,17 @@ public class GameManager : MonoBehaviour
         button4Click.dateCount = dateCount4;
         eventTextUI.dateCount = dateCount5;
         dateUI.dateCount = dateCount6;
-        weatherUI.date = date;
+        WeatherUI.Instance.date = date;
     }
     public void Restart()
     {
-        lastMusicState = FindAnyObjectByType<SoundManager>().isMusicOn;
-        Debug.Log("lastMusicState gm"+lastMusicState);
+        lastMusicState = SoundManager.Instance.isMusicOn;
         //변수 초기화
         ConditionUI.conditionPoint = 50;    //conditionPoint 초기화
         button1Click.initWaterCount();      //waterCount 초기화
         button2Click.initNeglectCount();    //neglectCount 초기화
         dateUI.dateCount = 0;
-        weatherUI.date = 0;
+        WeatherUI.Instance.date = 0;
         DateUI.isExecuted = false;
         DateUI.isExecuted2 = false;
         EndingScenesManager.isEnding = false;
@@ -114,10 +110,10 @@ public class GameManager : MonoBehaviour
 
         dateUI.UpdateDayText();
         conditionUI.ReturnCondPoint();
-        weatherUI.WeatherTextUpdate();
-        weatherUI.WeatherLightUpdate();
+        WeatherUI.Instance.WeatherTextUpdate();
+        WeatherUI.Instance.WeatherLightUpdate();
         plantsLevelChange.CheckDate();
-        soundmanager.StopMusic();
+        SoundManager.Instance.StopMusic();
     
         // Coroutine을 시작하여 1초 뒤에 특정 함수를 실행
         StartCoroutine(Delay1s());
@@ -133,7 +129,6 @@ public class GameManager : MonoBehaviour
     // 1초 후에 실행될 함수
     void AfterRestart()
     {
-        Debug.Log("Restart 함수 실행 후 1초 뒤에 실행될 함수");
-        soundmanager.IsOn();    
+        SoundManager.Instance.IsOn();    
     }
 }

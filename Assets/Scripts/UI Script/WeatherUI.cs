@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System.IO;
 using TMPro;
 
-public class WeatherUI : MonoBehaviour
+public class WeatherUI : Singleton<WeatherUI>
 {
     public TextMeshProUGUI weatherText;
     public int date = 0; // 이벤트를 하나씩 넘길 때마다 date++
@@ -15,8 +15,6 @@ public class WeatherUI : MonoBehaviour
     public StormyLight stormyLight;
     public SnowyLight snowyLight;
     public PlantsLevelChange plantsLevelChange;
-    SoundManager soundManager;
-    DiePanel diePanel;
 
     private readonly string[] weatherArr = {
         "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
@@ -27,8 +25,6 @@ public class WeatherUI : MonoBehaviour
 
     void Start()
     {
-        soundManager = FindAnyObjectByType<SoundManager>();
-        diePanel = FindAnyObjectByType<DiePanel>();
         originWeatherText = weatherText.text;  // "날씨 : "를 저장하는 변수
 
         UpdateWeatherText();
@@ -61,9 +57,9 @@ public class WeatherUI : MonoBehaviour
 
     public void WeatherLightUpdate()
     {
-        if (diePanel.isDie)
+        if (DiePanel.Instance.isDie)
         {
-            soundManager.backgroundMusic[soundManager.currentIndex].Stop();
+            SoundManager.Instance.backgroundMusic[SoundManager.Instance.currentIndex].Stop();
             return;
         }
 
@@ -120,24 +116,24 @@ public class WeatherUI : MonoBehaviour
     }
     void PlayMusic(int musicIndex)
     {
-        soundManager.currentIndex = musicIndex;
+        SoundManager.Instance.currentIndex = musicIndex;
         
-        if (!soundManager.isMusicOn) return;
+        if (!SoundManager.Instance.isMusicOn) return;
 
-        for (int i = 0; i < soundManager.backgroundMusic.Length; i++)
+        for (int i = 0; i < SoundManager.Instance.backgroundMusic.Length; i++)
         {
             if (i == musicIndex)
             {
-                if (!soundManager.backgroundMusic[i].isPlaying)
+                if (!SoundManager.Instance.backgroundMusic[i].isPlaying)
                 {
-                    soundManager.backgroundMusic[i].Play();
+                    SoundManager.Instance.backgroundMusic[i].Play();
                 }
             }
             else
             {
-                if (soundManager.backgroundMusic[i].isPlaying)
+                if (SoundManager.Instance.backgroundMusic[i].isPlaying)
                 {
-                    soundManager.backgroundMusic[i].Stop();
+                    SoundManager.Instance.backgroundMusic[i].Stop();
                 }
             }
         }

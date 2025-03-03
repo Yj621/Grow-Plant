@@ -9,7 +9,6 @@ public class Button3Click : MonoBehaviour
 {
     public TextMeshProUGUI button3Text;
     public int dateCount = 0;
-    public WeatherUI weatherUI;
     public Button1Click button1Click;
     public Button2Click button2Click;
     private EventButtonUI eventButtonUI;
@@ -21,7 +20,6 @@ public class Button3Click : MonoBehaviour
     private AudioManager audioManager;
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
-    private DiePanel diePanel;
 
     string[] button3MemoArr =
         {
@@ -48,9 +46,8 @@ public class Button3Click : MonoBehaviour
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         memoPanel = FindAnyObjectByType<MemoPanel>();
-        diePanel = FindAnyObjectByType<DiePanel>();
         audioManager = FindAnyObjectByType<AudioManager>();
-        dateCount = weatherUI.GetDateCount() + 1;
+        dateCount = WeatherUI.Instance.GetDateCount() + 1;
 
         string[] button3Arr = {
             "흙을 파본다", "식물을 옮긴다", "식물을 따뜻한 곳으로 옮긴다",
@@ -86,7 +83,7 @@ public class Button3Click : MonoBehaviour
         
         if (Array.IndexOf(specialDateCounts, dateCount) != -1)
         {
-            diePanel.Btn3SpecialDied(dateCount);
+            DiePanel.Instance.Btn3SpecialDied(dateCount);
         }
         eventButtonUI.ChangePopupInstancePosition();
     }
@@ -105,7 +102,7 @@ public class Button3Click : MonoBehaviour
         //점수 더하기
         conditionUI.GetCondPoint(btn3ScoreArr[dateCount - 1]);
 
-        weatherUI.SetDateCount();
+        WeatherUI.Instance.SetDateCount();
 
         //메모패널 콘텐츠텍스트
         memoPanel.UpdateDayText(); // +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
@@ -181,7 +178,7 @@ public class Button3Click : MonoBehaviour
             audioManager.backgroundMusic[5].Play();
         }
 
-        if (diePanel.isDie == false && EndingScenesManager.isEnding == false)
+        if (DiePanel.Instance.isDie == false && EndingScenesManager.isEnding == false)
         {
             //메모패널 열기 
             memoPanel.MemoPanelOn();    
@@ -191,7 +188,6 @@ public class Button3Click : MonoBehaviour
         else
         {
             blockimg.SetActive(true);  
-            Debug.Log("close block");
             blockingBtn.CloseBlockingButton();
         }
               

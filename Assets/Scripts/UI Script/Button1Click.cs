@@ -9,7 +9,6 @@ public class Button1Click : MonoBehaviour
 {
     public TextMeshProUGUI button1Text;
     public int dateCount = 0;
-    public WeatherUI weatherUI;
     private EventButtonUI eventButtonUI;
     public Button2Click button2Click;
     public ConditionUI conditionUI;
@@ -36,7 +35,7 @@ public class Button1Click : MonoBehaviour
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
         diePanel = FindAnyObjectByType<DiePanel>();
-        dateCount = weatherUI.GetDateCount() + 1;
+        dateCount = WeatherUI.Instance.GetDateCount() + 1;
         gameManager = FindObjectOfType<GameManager>();
       
         string[] button1Arr = {
@@ -92,7 +91,6 @@ public class Button1Click : MonoBehaviour
 
         waterCount++;
 
-        Debug.Log("waterCount : "+waterCount);
         if (waterCount >= 5)
         {
             diePanel.PanelOn();
@@ -107,7 +105,7 @@ public class Button1Click : MonoBehaviour
         //점수 더하기
         conditionUI.GetCondPoint(btn1ScoreArr[dateCount - 1]);
 
-        weatherUI.SetDateCount();
+        WeatherUI.Instance.SetDateCount();
 
         memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
         if (dateCount == 4)
@@ -137,7 +135,7 @@ public class Button1Click : MonoBehaviour
         }
         else
         {
-            Debug.Log("close block");
+
             blockingBtn.CloseBlockingButton();
             blockimg.SetActive(true);
         }

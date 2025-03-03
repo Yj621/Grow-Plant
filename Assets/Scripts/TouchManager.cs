@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchManager : MonoBehaviour
+public class TouchManager: Singleton<TouchManager>
 {
     public Transform stageTransform; // 주변을 기준으로 회전할 Stage의 Transform
     public float rotateSpeed = 500.0f;
@@ -18,7 +18,6 @@ public class TouchManager : MonoBehaviour
 
     private Vector2 lastTouchPosition;
     public AndroidToast androidToast;
-
     void Update()
     {
         if(!isPanelActive)

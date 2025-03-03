@@ -10,7 +10,6 @@ public class Button2Click : MonoBehaviour
     public TextMeshProUGUI button2Text;
     public int dateCount = 0;
     private static int NeglectCount;
-    public WeatherUI weatherUI;
     public Button1Click button1Click;
     private EventButtonUI eventButtonUI;
     public ConditionUI conditionUI;
@@ -37,7 +36,7 @@ public class Button2Click : MonoBehaviour
         memoPanel = FindAnyObjectByType<MemoPanel>();
         diePanel = FindObjectOfType<DiePanel>();
         audioManager = FindAnyObjectByType<AudioManager>();
-        dateCount = weatherUI.GetDateCount() + 1;
+        dateCount = WeatherUI.Instance.GetDateCount() + 1;
         
         string[] button2Arr = {
             "냅둔다",          
@@ -101,7 +100,6 @@ public class Button2Click : MonoBehaviour
         
         
         NeglectCount++;
-        Debug.Log("NeglectCount : "+NeglectCount);
         if (NeglectCount >= 3)
         {
             diePanel.PanelOn();
@@ -116,7 +114,7 @@ public class Button2Click : MonoBehaviour
         //점수 더하기
         conditionUI.GetCondPoint(btn2ScoreArr[dateCount-1]);
 
-        weatherUI.SetDateCount();
+        WeatherUI.Instance.SetDateCount();
 
         memoPanel.UpdateDayText();// +점수인지 -점수인지에 따라 메모패널 텍스트 변경(GetCondPoint보다 아래에 있어야 제대로 표시 가능)
         if (dateCount == 11)
@@ -144,7 +142,6 @@ public class Button2Click : MonoBehaviour
         }
         else
         {
-            Debug.Log("close block");
             blockingBtn.CloseBlockingButton();
             blockimg.SetActive(true);
         }

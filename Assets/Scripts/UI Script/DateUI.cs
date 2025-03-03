@@ -8,20 +8,15 @@ public class DateUI : MonoBehaviour
 {
     public TextMeshProUGUI dayText;
     public int dateCount = 0;
-    public WeatherUI weatherUI;
     //8일차 강아지
     public static bool isExecuted = false;
     //21일차 강아지
     public static bool isExecuted2 = false;
 
-    DiePanel diePanel;
 
     void Start()
     {
         UpdateDayText();
-        diePanel = FindAnyObjectByType<DiePanel>();
-
-
     }
 
     void Update()
@@ -40,13 +35,12 @@ public class DateUI : MonoBehaviour
         {
             RandomFunction2();
         }
-        Debug.Log("엔딩"+EndingScenesManager.isEnding);
     }
 
     public void IncreaseDateCount()
     {
         // 일 수를 증가시키는 메서드
-        dateCount = weatherUI.GetDateCount();
+        dateCount = WeatherUI.Instance.GetDateCount();
         UpdateDayText();
     }
 
@@ -56,7 +50,7 @@ public class DateUI : MonoBehaviour
         // 10%의 확률로 실행
         if (Random.Range(0, 100) < 10)
         {
-            diePanel.SpecialDie(dateCount);
+            DiePanel.Instance.SpecialDie(dateCount);
         }
     }
     void RandomFunction2()
@@ -65,13 +59,13 @@ public class DateUI : MonoBehaviour
         // 15%의 확률로 실행
         if (Random.Range(0, 100) < 15)
         {
-            diePanel.SpecialDie(dateCount);
+            DiePanel.Instance.SpecialDie(dateCount);
         }
     }
 
     public void UpdateDayText()
     {
-        dateCount = weatherUI.GetDateCount() + 1;
+        dateCount = WeatherUI.Instance.GetDateCount() + 1;
         // UI에 현재 일 수를 표시하는 메서드
         dayText.text = dateCount.ToString() + "DAY";
     }

@@ -13,15 +13,12 @@ public class EventButtonUI : MonoBehaviour
     private GameObject popupInstance;    
     public GameObject selectPopupClone; 
     private Vector3 originalPosition; // 원래 위치를 저장하기 위함
-    SoundManager soundManager;
-    TouchManager touchManager;
+
 
     void Start()
     {
         if (popupWindow != null)
             popupWindow.SetActive(false);
-        soundManager = FindAnyObjectByType<SoundManager>();
-        touchManager = FindAnyObjectByType<TouchManager>();
         // 시작할 때 원래 위치를 저장
         if (selectPopupClone != null)
         {
@@ -49,7 +46,7 @@ public class EventButtonUI : MonoBehaviour
         {
             Debug.LogError("Null eventCanvas");
         }
-        touchManager.isPanelActive = true;
+        TouchManager.Instance.isPanelActive = true;
     }
 
     public void ClosePopupWindow()
@@ -63,8 +60,8 @@ public class EventButtonUI : MonoBehaviour
             Destroy(popupInstance);
         }
         isPopupOpen = false;
-        soundManager.Sound(2);
-        touchManager.isPanelActive = false;
+        SoundManager.Instance.Sound(2);
+        TouchManager.Instance.isPanelActive = false;
     }
 
     public void ChangePopupInstancePosition()

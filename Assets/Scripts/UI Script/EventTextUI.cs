@@ -8,7 +8,6 @@ public class EventTextUI : MonoBehaviour
 {
     public TextMeshProUGUI eventText;
     public int dateCount = 0;
-    public WeatherUI weatherUI;
 
     void Start()
     {
@@ -29,7 +28,7 @@ public class EventTextUI : MonoBehaviour
             "꽃이 졌다","열매가 생겼다","열매의 색이 진해진다","열매가 다 자랐다"
             };
 
-        dateCount = weatherUI.GetDateCount();
+        dateCount = WeatherUI.Instance.GetDateCount();
         string textValue = eventTextArr[dateCount];
 
         eventText.text = textValue;
