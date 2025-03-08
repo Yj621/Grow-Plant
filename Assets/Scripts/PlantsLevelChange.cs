@@ -22,6 +22,8 @@ public class PlantsLevelChange : MonoBehaviour
     public GameObject sickLevel5;
     public GameObject sickLevel6;
 
+    private int currentLevel = 1; // 현재 활성화된 레벨 번호
+
     void Start()
     {        
         level1.SetActive(true);
@@ -30,135 +32,133 @@ public class PlantsLevelChange : MonoBehaviour
         level4.SetActive(false);
         level5.SetActive(false);
         level6.SetActive(false);
+
+        currentLevel = 1; // 초기 레벨 설정
+    }
+
+    public int GetCurrentLevel()
+    {
+        return currentLevel; // 현재 레벨 번호 반환
     }
 
     public void CheckDate()
     {
         dateCount = dateUI.dateCount + 1;
         condPoint = ConditionUI.conditionPoint;
+
         if (dateCount >= 0 && dateCount < 7)        //Level_1
         {
-            level1.SetActive(true);
-            level2.SetActive(false);
-            level3.SetActive(false);
-            level4.SetActive(false);
-            level5.SetActive(false);
-            level6.SetActive(false);
-            sickLevel2.SetActive(false);
-            sickLevel3.SetActive(false);
-            sickLevel4.SetActive(false);
-            sickLevel5.SetActive(false);
-            sickLevel6.SetActive(false);    
+            SetActiveLevel(1);
         }
         else if (dateCount >= 7 && dateCount < 11)   //Level_2
         {
-            level1.SetActive(false);
-            level3.SetActive(false);
-            level4.SetActive(false);
-            level5.SetActive(false);
-            level6.SetActive(false);
-            sickLevel2.SetActive(false);
-            sickLevel3.SetActive(false);
-            sickLevel4.SetActive(false);
-            sickLevel5.SetActive(false);
-            sickLevel6.SetActive(false);
             if (condPoint > 40)
             {                
-                level2.SetActive(true);
+                SetActiveLevel(2);
             }
             else
             {
-                level2.SetActive(false);
-                sickLevel2.SetActive(true);
+                SetActiveSickLevel(2);
             }
         }
         else if (dateCount >= 11 && dateCount < 22)  //Level_3
         {
-            level1.SetActive(false);
-            level2.SetActive(false);
-            level4.SetActive(false);
-            level5.SetActive(false);
-            level6.SetActive(false);
-            sickLevel2.SetActive(false);
-            sickLevel3.SetActive(false);
-            sickLevel4.SetActive(false);
-            sickLevel5.SetActive(false);
-            sickLevel6.SetActive(false);
             if (condPoint > 40)
             {
-                level3.SetActive(true);
+                SetActiveLevel(3);
             }
             else
             {
-                level3.SetActive(false);
-                sickLevel3.SetActive(true);
+                SetActiveSickLevel(3);
             }
         }
         else if (dateCount >= 22 && dateCount < 28) //Level_4
         {
-            level1.SetActive(false);
-            level2.SetActive(false);
-            level3.SetActive(false);
-            level5.SetActive(false);
-            level6.SetActive(false);
-            sickLevel2.SetActive(false);
-            sickLevel3.SetActive(false);
-            sickLevel4.SetActive(false);
-            sickLevel5.SetActive(false);
-            sickLevel6.SetActive(false);
             if (condPoint > 40)
             {
-                level4.SetActive(true);
+                SetActiveLevel(4);
             }
             else
             {
-                level4.SetActive(false);
-                sickLevel4.SetActive(true);
+                SetActiveSickLevel(4);
             }
         }
         else if (dateCount >= 28 && dateCount < 29) //Level_5
         {
-            level1.SetActive(false);
-            level2.SetActive(false);
-            level3.SetActive(false);
-            level4.SetActive(false);
-            level6.SetActive(false);
-            sickLevel2.SetActive(false);
-            sickLevel3.SetActive(false);
-            sickLevel4.SetActive(false);
-            sickLevel5.SetActive(false);
-            sickLevel6.SetActive(false);
             if (condPoint > 40)
             {
-                level5.SetActive(true);
+                SetActiveLevel(5);
             }
             else
             {
-                level5.SetActive(false);
-                sickLevel5.SetActive(true);
+                SetActiveSickLevel(5);
             }
         }
         else if (dateCount >= 29 && dateCount < 30) //Level_6
         {
-            level1.SetActive(false);
-            level2.SetActive(false);
-            level3.SetActive(false);
-            level4.SetActive(false);
-            level5.SetActive(false);
-            sickLevel2.SetActive(false);
-            sickLevel3.SetActive(false);
-            sickLevel4.SetActive(false);
-            sickLevel5.SetActive(false);
-            sickLevel6.SetActive(false);
             if (condPoint > 40)
             {
-                level6.SetActive(true);
+                SetActiveLevel(6);
             }
             else
             {
-                level6.SetActive(false);
-                sickLevel6.SetActive(true);
+                SetActiveSickLevel(6);
             }
+        }
+    }
+
+    private void SetActiveLevel(int level)
+    {
+        // 모든 레벨과 병든 상태 비활성화
+        level1.SetActive(false);
+        level2.SetActive(false);
+        level3.SetActive(false);
+        level4.SetActive(false);
+        level5.SetActive(false);
+        level6.SetActive(false);
+        sickLevel2.SetActive(false);
+        sickLevel3.SetActive(false);
+        sickLevel4.SetActive(false);
+        sickLevel5.SetActive(false);
+        sickLevel6.SetActive(false);
+
+        // 현재 레벨 활성화
+        currentLevel = level; // 현재 레벨 업데이트
+        switch (level)
+        {
+            case 1: level1.SetActive(true); break;
+            case 2: level2.SetActive(true); break;
+            case 3: level3.SetActive(true); break;
+            case 4: level4.SetActive(true); break;
+            case 5: level5.SetActive(true); break;
+            case 6: level6.SetActive(true); break;
+        }
+    }
+
+    private void SetActiveSickLevel(int level)
+    {
+        // 모든 레벨과 병든 상태 비활성화
+        level1.SetActive(false);
+        level2.SetActive(false);
+        level3.SetActive(false);
+        level4.SetActive(false);
+        level5.SetActive(false);
+        level6.SetActive(false);
+        sickLevel2.SetActive(false);
+        sickLevel3.SetActive(false);
+        sickLevel4.SetActive(false);
+        sickLevel5.SetActive(false);
+        sickLevel6.SetActive(false);
+
+        // 병든 상태 레벨 활성화
+        currentLevel = level; // 병든 상태도 해당 레벨로 간주
+        switch (level)
+        {
+            case 2: sickLevel2.SetActive(true); break;
+            case 3: sickLevel3.SetActive(true); break;
+            case 4: sickLevel4.SetActive(true); break;
+            case 5: sickLevel5.SetActive(true); break;
+            case 6: sickLevel6.SetActive(true); break;
         }
     }
 }

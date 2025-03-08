@@ -18,6 +18,8 @@ public class TouchManager: Singleton<TouchManager>
 
     private Vector2 lastTouchPosition;
     public AndroidToast androidToast;
+
+    [SerializeField] private GameObject plantStatePopUp;
     void Update()
     {
         if(!isPanelActive)
@@ -28,6 +30,7 @@ public class TouchManager: Singleton<TouchManager>
                 switch (touch.phase)
                 {
                     case TouchPhase.Began:
+                        CheckPlantTouch(touch.position);
                         isRotating = true;
                         lastTouchPosition = touch.position;
                         break;
@@ -95,5 +98,24 @@ public class TouchManager: Singleton<TouchManager>
                 cameraPosition.y = Mathf.Max(cameraPosition.y, minYCoordinate);
                 transform.position = cameraPosition;
             }
+    }
+
+    private void CheckPlantTouch(Vector2 touchPos)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(touchPos);
+        RaycastHit hit;
+        if (Physics.Raycast(ray,out hit))
+        {
+            GameObject touchedObject = hit.collider.gameObject;
+
+            if(touchedObject.CompareTag("Plant"))
+            {
+                if(plantStatePopUp != null)
+                {
+                    Debug.Log("Plant");
+                    plantStatePopUp.SetActive(true);
+                }
+            }
         }
+    }
 }
