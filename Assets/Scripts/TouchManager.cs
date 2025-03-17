@@ -112,8 +112,8 @@ public class TouchManager: Singleton<TouchManager>
             {
                 if(plantStatePopUp != null)
                 {
-                    Debug.Log("Plant");
                     plantStatePopUp.SetActive(true);
+                    PlantStateUI.Instance.StateUpdate();
                 }
             }
         }
