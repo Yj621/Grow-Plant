@@ -29,10 +29,12 @@ public class MemoPanel : MonoBehaviour
     {
         memoPanel.SetActive(true);
         SoundManager.Instance.Sound(1);
+        TouchManager.Instance.isPanelActive = true;
     }
     public void MemoPanelOff()
     {
         memoPanel.SetActive(false);
+        TouchManager.Instance.isPanelActive = false;
     }
 
     public void UpdateDayText()

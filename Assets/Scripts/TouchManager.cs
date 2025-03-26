@@ -108,7 +108,7 @@ public class TouchManager: Singleton<TouchManager>
         {
             GameObject touchedObject = hit.collider.gameObject;
 
-            if(touchedObject.CompareTag("Plant"))
+            if(touchedObject.CompareTag("Plant")&&!isPanelActive)
             {
                 if(plantStatePopUp != null)
                 {
