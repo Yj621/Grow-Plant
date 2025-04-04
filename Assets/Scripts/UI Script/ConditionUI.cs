@@ -45,6 +45,7 @@ public class ConditionUI : MonoBehaviour
             }
             else if (conditionPoint > 70 && conditionPoint <= 80)
             {
+                currentCond = "좋음";
                 PlantStateUI.Instance.HPSlider.value = 75;
             }
             else if (conditionPoint > 60 && conditionPoint <= 70)
