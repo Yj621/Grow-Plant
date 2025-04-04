@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.109239645, g: 0.1674766, b: 0.30000815, a: 1}
+  m_IndirectSpecularColor: {r: 0.10911115, g: 0.16729368, b: 0.299853, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9854,7 +9854,7 @@ MonoBehaviour:
   m_text: HP
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0faf4d5e91f3944cba6570b1613b307c, type: 2}
-  m_sharedMaterial: {fileID: 1951731413483799604, guid: 92453d46e4ceb4e6bbc6a07c4e94a4fd, type: 2}
+  m_sharedMaterial: {fileID: 2005740826425667659, guid: 0faf4d5e91f3944cba6570b1613b307c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9917,7 +9917,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -66.065994, z: 0, w: -15.816872}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &354255906
@@ -11946,15 +11946,15 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1444384671}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -18848,7 +18848,7 @@ MonoBehaviour:
   m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0faf4d5e91f3944cba6570b1613b307c, type: 2}
-  m_sharedMaterial: {fileID: 1951731413483799604, guid: 92453d46e4ceb4e6bbc6a07c4e94a4fd, type: 2}
+  m_sharedMaterial: {fileID: 2005740826425667659, guid: 0faf4d5e91f3944cba6570b1613b307c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18911,7 +18911,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -1.2865334, z: 0, w: 6.2719116}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &951650756
@@ -29173,7 +29173,7 @@ MonoBehaviour:
   m_text: Lv.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0faf4d5e91f3944cba6570b1613b307c, type: 2}
-  m_sharedMaterial: {fileID: 1951731413483799604, guid: 92453d46e4ceb4e6bbc6a07c4e94a4fd, type: 2}
+  m_sharedMaterial: {fileID: 2005740826425667659, guid: 0faf4d5e91f3944cba6570b1613b307c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -29236,7 +29236,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -1.2865334, z: 0, w: 6.2719116}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1505987687
@@ -32016,7 +32016,7 @@ MonoBehaviour:
   m_text: PlantName
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0faf4d5e91f3944cba6570b1613b307c, type: 2}
-  m_sharedMaterial: {fileID: -8374128187393964374, guid: 9515040add52b4e258a4def6b1188305, type: 2}
+  m_sharedMaterial: {fileID: 2005740826425667659, guid: 0faf4d5e91f3944cba6570b1613b307c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -32079,7 +32079,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1741650518

@@ -11,6 +11,9 @@ public class PlantStateUI : Singleton<PlantStateUI>
     [SerializeField] private TextMeshProUGUI plantNameText;
     [SerializeField] private Slider hpSlider;
     [SerializeField] private TMP_InputField plantName;
+
+    public Slider HPSlider => hpSlider; //hpslider Getter
+
     void Start()
     {
         TouchManager.Instance.isPanelActive = true;
@@ -34,4 +37,7 @@ public class PlantStateUI : Singleton<PlantStateUI>
     {
 
     }
+
+    
+
 }

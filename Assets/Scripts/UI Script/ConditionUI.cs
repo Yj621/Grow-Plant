@@ -15,6 +15,7 @@ public class ConditionUI : MonoBehaviour
     public bool isGood = false;
     public bool isSoso = false;
     public bool isBad = false;
+    
 
 
     void Start()
@@ -32,41 +33,49 @@ public class ConditionUI : MonoBehaviour
         }
         else
         {
-            if (conditionPoint > 90 && conditionPoint <= 100)
+            if (conditionPoint > 90)
             {
                 currentCond = "정말 많이 좋음";
+                PlantStateUI.Instance.HPSlider.value = 100;
             }
             else if (conditionPoint > 80 && conditionPoint <= 90)
             {
                 currentCond = "매우 좋음";
+                PlantStateUI.Instance.HPSlider.value = 85;
             }
             else if (conditionPoint > 70 && conditionPoint <= 80)
             {
-                currentCond = "좋음";
+                PlantStateUI.Instance.HPSlider.value = 75;
             }
             else if (conditionPoint > 60 && conditionPoint <= 70)
             {
                 currentCond = "좋아지려 함";
+                PlantStateUI.Instance.HPSlider.value = 65;
             }
             else if (conditionPoint > 40 && conditionPoint <= 60)
             {
                 currentCond = "보통";
+                PlantStateUI.Instance.HPSlider.value = 50;
             }
             else if (conditionPoint > 30 && conditionPoint <= 40)
             {
                 currentCond = "나빠지려 함";
+                PlantStateUI.Instance.HPSlider.value = 35;
             }
             else if (conditionPoint > 20 && conditionPoint <= 30)
             {
                 currentCond = "나쁨";
+                PlantStateUI.Instance.HPSlider.value = 25;
             }
             else if (conditionPoint > 10 && conditionPoint <= 20)
             {
                 currentCond = "매우 나쁨";
+                PlantStateUI.Instance.HPSlider.value = 15;
             }
             else if (conditionPoint <= 10)
             {
                 currentCond = "죽으려 함";
+                PlantStateUI.Instance.HPSlider.value = 5;
             }
             conditionText.text = originConditionText;
             conditionText.text += currentCond;
