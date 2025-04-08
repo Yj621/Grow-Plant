@@ -59,6 +59,9 @@ Grow Plant
 | GitHub | [@minuchan](https://github.com/minuchan) | [@namgy1](https://github.com/namgy1) | [@Yj621](https://github.com/Yj621) | [@Bjinin](https://github.com/Bjinin) |
 
 ## 게임 설명
+| ![image](https://github.com/user-attachments/assets/41190c31-4a95-4aa7-a3ba-de3eabb9f245)|![image](https://github.com/user-attachments/assets/9b49158a-a684-41cc-a715-f2a89d5ef0f4)| ![image](https://github.com/user-attachments/assets/85ac5511-3594-4687-bf5c-e8de5d77e3ed) |
+| :---: | :---: | :---: | 
+|일차별 선택지|다음 날 식물 상태|죽었을 시| 
 
  🌱‘GrowPlant’는 매일 변화하는 선택지를 통해 식물을 키우며, 생명의 소중함을 느낄 수 있는 힐링 게임입니다.
 개복치 같은 식물을 성장시키며 책임감과 성취감을 경험해보세요!
@@ -96,6 +99,58 @@ GrowPlant를 플레이하며 함께 책임감 있게 식물을 키우고
 |  | 모든 상호작용 | 확대/축소 |
 | :---: | :---: | :---: |
 | 상호작용 | 클릭 | 줌 인/줌아웃 |
+
+- 게임 내 UI
+<table>
+  <tr>
+    <th>일차별로 달라지는 선택지</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/44a2f707-f834-4c6f-b610-17e811ee4748" alt="image1" width="250">
+      <img src="https://github.com/user-attachments/assets/aef1ca0f-c8bf-4d9f-bc94-a49796b567e0" alt="image2" width="250">
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>선택지에 따라 식물 상태를 보여줌</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/c63a6e89-d113-4e5b-a353-4eb2df68d93b" alt="image1" width="250">
+      <img src="https://github.com/user-attachments/assets/cfdb2fcc-f681-47af-b3da-5efdcb4e1c74" alt="image2" width="250">
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>죽었을 때 죽은 이유와 함께 창이 뜬다</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/4889322d-4397-404c-bcaf-7eb7a6b7032e" alt="image1" width="250">
+      <img src="https://github.com/user-attachments/assets/df682306-aa82-48ff-8b58-4d318c137334" alt="image2" width="250">
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>날씨에 따라 달라지는 배경</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/624ffba8-1767-4873-b1ac-2bc3ca144e5b" width="250">
+      <img src="https://github.com/user-attachments/assets/6c5ea6d1-69a3-4e81-8ee4-c587293fb45e" width="250">
+    </td>
+  </tr>
+</table>
+
+
+
 
 ## 느낀점
 
