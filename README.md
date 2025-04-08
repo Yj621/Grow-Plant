@@ -54,7 +54,7 @@ Grow Plant
 
 | 이름 | 윤민우 | 남기윤 | 정윤지 | 백진인 |
 | :---: | :---: | :---: | :---: | :---: |
-| 역할1 | 3D 모델링 | 날짜 | UI | UI 디자인 |
+| 역할1 | 3D 모델링 | 날짜 | 이벤트에 따른 UI | UI 디자인 |
 | 역할2 | 맵 디자인 | 식물상태 | 사운드 | 사운드 디자인 |
 | GitHub | [@minuchan](https://github.com/minuchan) | [@namgy1](https://github.com/namgy1) | [@Yj621](https://github.com/Yj621) | [@Bjinin](https://github.com/Bjinin) |
 
