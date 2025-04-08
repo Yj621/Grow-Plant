@@ -1,83 +1,101 @@
 # Grow Plant:식물 키우기(구글플레이스토어 출시)
 
-> ## 목차
-> 
->[ 1. 링크](#구글-플레이스토어-링크)
-> 
-> [2. 게임 소개](#게임-소개)
-> 
-> [3. 개발 기간](#개발-기간)
-> 
-> [4. 팀 구성원 및 역할](#팀-구성원-및-역할)
-> 
-> [5. 개발 환경](#개발-환경)
-> 
-> [6. 느낀점](#느낀점)
-> 
-> [7. 테스트 피드백](#테스트-피드백)
+# 📄 목차
+[1. 구글 플레이스토어 링크](#구글-플레이스토어-링크)
+
+[2. 개요](#개요)
+
+[3. 게임 설명](#게임-설명)
+
+[4. 테스트 피드백](#테스트-피드백)
 
 </br>
 
 ## 구글 플레이스토어 링크
-https://play.google.com/store/apps/details?id=com.beee.growplant
+<a href="https://play.google.com/store/apps/details?id=com.beee.growplant">
+    <img src="https://github.com/user-attachments/assets/72b98c57-4343-4d42-a404-9b42913166f2" alt="썸네일" width="150">
+</a>
 
-<img width="1440" alt="스크린샷 2024-08-27 오후 5 07 50" src="https://github.com/user-attachments/assets/c0f744e5-5d33-4b6a-b2a8-bade35a0b992">
-
-</br>
-</br>
-
-## 게임 소개
-
-요즘 아파트나 빌라와 같은 주거 공간에서는 직접 식물을 기르는 데 여러 가지 제한이 있다. 이러한 상황을 반영하여 플레이어들이 식물을 성공적으로 기르고 개화시키는 즐거움과 시드는 과정을 보며 느끼는 안타까움을 통해 생명의 소중함을 체험할 수 있는 게임입니다.
-
-실제로 생명을 기르는 것은 많은 책임감과 조건이 필요하기 때문에 게임을 통해 대리 만족과 힐링 효과를 제공하며, 식물이 열매를 맺고 시드는 과정을 함께 경험함으로써 생명의 소중함을 느낄 수 있습니다.
 
 </br>
-</br>
 
-## 개발 기간
+## 개요
+
+### 📌 프로젝트 이름
+
+Grow Plant
+
+플레이 영상
+
+
+### 💡 장르
+
+3D 시뮬레이션 힐링
+
+### ⏰ 개발 기간
 
 24.01.26 ~ 23.05.13
 
-</br>
-</br>
-
-## 팀 구성원 및 역할
-| 이름 | 윤민우 | 남기윤 | 정윤지 | 백진인 |
-| :---: | :---: | :---: | :---: | :---: |
-| 역할1 | 3D 모델링 | 날짜 | UI | UI 디자인 |
-| 역할2 |  맵 디자인 | 식물상태 | 사운드 | 사운드 디자인 |
-| 코드 구현 |  |  |  |  |
-| GitHub |[@minuchan](https://github.com/minuchan) |[@namgy1](https://github.com/namgy1) | [@Yj621](https://github.com/Yj621) | [@Bjinin](https://github.com/Bjinin) |
-
-</br>
-</br>
-
-## 개발 환경
-
-<div align="center">
-
-### **언어 및 게임 엔진**
-</div>
-<p align="center">
+### ⚙️ **언어 및 게임 엔진**
 <img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white">
 <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white">
 
-</p>
 
-<div align="center">
+### 🛠️ **협업 툴**
 
-### **협업 툴**
-
-</div>
-
-<p align="center">
 <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white">
 
 <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white">
 
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
-</p>
+
+
+### 👩‍💻  **팀 구성원 및 역할**
+
+| 이름 | 윤민우 | 남기윤 | 정윤지 | 백진인 |
+| :---: | :---: | :---: | :---: | :---: |
+| 역할1 | 3D 모델링 | 날짜 | UI | UI 디자인 |
+| 역할2 | 맵 디자인 | 식물상태 | 사운드 | 사운드 디자인 |
+| GitHub | [@minuchan](https://github.com/minuchan) | [@namgy1](https://github.com/namgy1) | [@Yj621](https://github.com/Yj621) | [@Bjinin](https://github.com/Bjinin) |
+
+## 게임 설명
+
+ 🌱‘GrowPlant’는 매일 변화하는 선택지를 통해 식물을 키우며, 생명의 소중함을 느낄 수 있는 힐링 게임입니다.
+개복치 같은 식물을 성장시키며 책임감과 성취감을 경험해보세요!
+
+- 📜 하루하루 달라지는 이벤트와 선택지
+    
+    게임 속 식물은 매일 새로운 이벤트와 함께 성장합니다. 이벤트에 따른 선택지를 통해 식물의 상태가 호전되거나 악화될 수 있습니다. 선택을 잘못하면 개복치처럼 식물에게 치명적일 수 있으니, 신중히 선택해야 합니다.
+    
+
+- 😊 대리 만족과 생명의 소중함
+    
+    현실에서는 아파트, 빌라 등에서 식물을 기르는 데 제약이 많습니다. GrowPlant는 이를 극복하고 **대리 만족**과 **힐링**을 제공합니다. 성공적으로 개화한 순간의 기쁨, 시드는 과정에서 느껴지는 안타까움을 통해,
+    생명의 소중함을 직접 경험할 수 있습니다.
+    
+    책임감과 조건의 중요성을 배우며, 열매 맺기까지의 여정을 함께하세요
+    
+- ☔ 날씨에 따라 달라지는 배경
+    
+    매일 **변화하는 날씨**와 그에 따른 **배경 연출**이 몰입감을 더해줍니다.
+    
+    - 햇빛이 쏟아지는 맑은 날,
+    - 촉촉한 비가 내리는 날,
+    - 쌀쌀한 바람이 부는 날까지
+    
+    날씨에 따른 다양한 분위기로 매일 새로운 환경에서 식물을 키워보세요!
+    
+
+GrowPlant를 플레이하며 함께 책임감 있게 식물을 키우고
+작은 생명의 소중함을 느껴보세요. 🌱✨
+
+## 게임 플레이 방식
+
+- 상호작용 키(모바일)
+
+|  | 모든 상호작용 | 확대/축소 |
+| :---: | :---: | :---: |
+| 상호작용 | 클릭 | 줌 인/줌아웃 |
 
 ## 느낀점
 
@@ -103,9 +121,6 @@ https://play.google.com/store/apps/details?id=com.beee.growplant
 
 
 ![Grow_Plant_2.png](Grow_Plant.png/Grow_Plant_2.png)
-
-![Grow_Plant_3.png](Grow_Plant.png/Grow_Plant_3.png)
-
 ![Grow_Plant_1.png](Grow_Plant.png/Grow_Plant_1.png)
 
 ![Grow_Plant_4.png](Grow_Plant.png/Grow_Plant_4.png)
@@ -113,16 +128,6 @@ https://play.google.com/store/apps/details?id=com.beee.growplant
 ![Grow_Plant_5.png](Grow_Plant.png/Grow_Plant_5.png)
 
 ![Grow_Plant_6.png](Grow_Plant.png/Grow_Plant_6.png)
-
-![Grow_Plant_7.png](Grow_Plant.png/Grow_Plant_7.png)
-
-![Grow_Plant_8.png](Grow_Plant.png/Grow_Plant_8.png)
-
-![Grow_Plant_9.png](Grow_Plant.png/Grow_Plant_9.png)
-
-![Grow_Plant_10.png](Grow_Plant.png/Grow_Plant_10.png)
-
-![Grow_Plant_11.png](Grow_Plant.png/Grow_Plant_11.png)
 
 ![Grow_Plant_12.png](Grow_Plant.png/Grow_Plant_12.png)
 
