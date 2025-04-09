@@ -27,6 +27,8 @@ Grow Plant
 
 플레이 영상
 
+[![썸네일](https://github.com/user-attachments/assets/0cdc1b33-004e-4094-9e3c-d01f2e27df47)](https://youtube.com/shorts/f95GZUOz3fY)
+
 
 ### 💡 장르
 
