@@ -21,12 +21,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Crop_Tomatoes
-  m_Shader: {fileID: -6465566751694194690, guid: af35ce6a9a8eb1245a7133462dec3d4a, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 225902e375b00314d8e5194824899e87, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _TILIG_MODE_NONE
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -78,7 +77,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_35766a1eb9114fd2842c86fefaf2eb99_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: f4970042e43c76349a0d91575a37b938, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1fbbce862652440ee85513f17626b5e9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
