@@ -109,7 +109,7 @@ public class Button2Click : MonoBehaviour
 
         //일차별 버튼2 점수
         int[] btn2ScoreArr = {0,0,0,10,-999,0,0,-999,0,0,        //-999는 즉사, 999는 히든엔딩
-            10,-999,-999,-999,5,-10,0,0,0,-5,
+            10,-999,-999,-999,5,-20,0,0,0,-25,
             -999,999,-999,-999,5,-999,0,0,0,-999};                                       //
         //점수 더하기
         conditionUI.GetCondPoint(btn2ScoreArr[dateCount-1]);

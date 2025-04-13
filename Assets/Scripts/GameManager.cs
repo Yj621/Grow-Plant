@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public PlantsLevelChange plantsLevelChange;
     public DiePanel diePanel;
     public bool lastMusicState; // 플레이어가 마지막으로 선택한 음악 상태를 저장할 변수
+    public GameObject SettingPanel;
 
     void Start()
     {
@@ -61,6 +62,18 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OpenSettingPanel()
+    {
+        SettingPanel.SetActive(true);
+        TouchManager.Instance.isPanelActive = true;
+    }
+    public void CloseSettingPanel()
+    {
+        SettingPanel.SetActive(false);
+        TouchManager.Instance.isPanelActive = false;
+    }
+
     public void GameSave()
     {
         PlayerPrefs.SetInt("ConditionPoint", ConditionUI.conditionPoint);
@@ -107,6 +120,7 @@ public class GameManager : MonoBehaviour
         DateUI.isExecuted2 = false;
         EndingScenesManager.isEnding = false;
         diePanel.isDie = false;
+        TouchManager.Instance.isPanelActive = false;
 
         dateUI.UpdateDayText();
         conditionUI.ReturnCondPoint();

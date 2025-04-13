@@ -22,7 +22,12 @@ public class ConditionUI : MonoBehaviour
     {   
         UpdateConditionText();
     }
-    
+
+    private void Update()
+    {
+        Debug.Log($" conditionPoint : {conditionPoint}");
+    }
+
     private void UpdateConditionText() //식물상태가 점수에 따라서 바뀌게 함.
     {
         string currentCond = "";
