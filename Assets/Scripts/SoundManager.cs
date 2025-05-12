@@ -5,166 +5,161 @@ using UnityEngine.UI;
 
 public class SoundManager : Singleton<SoundManager>
 {
+    [Header("배경음악 트랙들")]
     public AudioSource[] backgroundMusic;
+    [Header("효과음 클립들")]
     public AudioSource[] arrAudio;
+    [Header("턴테이블 이펙트")]
     public GameObject turnTableEffect;
-    public GameObject SoundPanel;
+    [Header("사운드 설정 패널")]
+    public GameObject soundPanel;
+    [Header("볼륨 슬라이더")]
     public Slider musicSlider;
     public Slider soundSlider;
-    public int currentIndex;
 
-    private bool isMusicPlaying = true;
-    public bool isMusicOn = true; 
-    private bool[] soundStates;
+    [HideInInspector] public int currentIndex = 0;     // 현재 재생 중인 배경음악 인덱스
+    [HideInInspector] public bool isMusicOn = true;    // 전체 음악 온/오프 플래그
+    [HideInInspector] public bool isEffectsOn = true;  // 전체 효과음 On/Off 플래그
 
+    private bool[] soundStates;    // 개별 효과음 온/오프
+    private bool isMusicPlaying = false;
 
     void Awake()
     {
-
-        isMusicOn = true;
-        // 처음에 음악 재생
-        if (isMusicOn) { backgroundMusic[currentIndex].Play(); }
+        // 게임 시작 시 음악이 켜져 있으면 초기 트랙 재생
+        if (isMusicOn)
+            PlayMusic(currentIndex);
     }
 
     void Start()
     {
-
-        // 효과음 상태 초기화
+        // 효과음 상태 초기화 (모두 켬)
         soundStates = new bool[arrAudio.Length];
-        for (int i = 0; i < arrAudio.Length; i++)
+        for (int i = 0; i < soundStates.Length; i++)
+            soundStates[i] = true;
+
+        // 슬라이더 이벤트 연결
+        musicSlider.onValueChanged.AddListener(UpdateMusicVolume);
+        soundSlider.onValueChanged.AddListener(UpdateEffectsVolume);
+
+        // 초기 볼륨 세팅
+        UpdateMusicVolume(musicSlider.value);
+        UpdateEffectsVolume(soundSlider.value);
+    }
+
+    /// <summary>
+    /// 음악 전체 On/Off 토글
+    /// </summary>
+    public void ToggleMusic(bool on)
+    {
+        isMusicOn = on;
+        if (isMusicOn)
         {
-            soundStates[i] = true; // 기본적으로 모든 효과음을 켭니다.
-        }
-    }
-
-    void Update()
-    {
-    }
-
-    public void IsOn()
-    {
-        Debug.Log("Ison () lastMusicState: "+FindAnyObjectByType<GameManager>().lastMusicState);
-
-        isMusicOn = FindAnyObjectByType<GameManager>().lastMusicState;
-
-        Debug.Log("isMusicOn : " + isMusicOn);
-        if (isMusicOn) 
-        { 
-            PlayMusic(); 
+            PlayMusic(currentIndex);
+            PlayEffect(0);
         }
         else
-        {
             StopMusic();
-        }
     }
 
-    // 모든 음악 정지를 처리하는 함수
-    // public void StopAllMusic()
-    // {
-    //     foreach (var musicSource in backgroundMusic)
-    //     {
-    //         musicSource.Stop();
-    //     }
-
-    //     isMusicOn = false;
-    //     // 모든 음악 재생 상태 업데이트
-    //     isMusicPlaying = false;
-    // }
-
-    public void OnPanelSound()
+    /// <summary>
+    /// 효과음 전체 On/Off 토글
+    /// </summary>
+    public void ToggleEffects(bool on)
     {
-        SoundPanel.SetActive(true);
-        TouchManager.Instance.isPanelActive = true;
-        Sound(1); // 패널 온 효과음 재생
+        isEffectsOn = on;
+        for (int i = 0; i < soundStates.Length; i++)
+            soundStates[i] = on;
     }
 
-    public void OffPanelSound()
+    /// <summary>
+    /// 배경음악 재생(인덱스 지정)
+    /// </summary>
+    public void PlayMusic(int index)
     {
-        SoundPanel.SetActive(false);
-        TouchManager.Instance.isPanelActive = false;
-        Sound(2); // 패널 오프 효과음 재생
-    }
+        if (!isMusicOn)
+            return;
 
-    // 음악 재생을 처리하는 함수
-    public void PlayMusic()
-    {
-        if (!isMusicPlaying)
+        currentIndex = index;
+
+        for (int i = 0; i < backgroundMusic.Length; i++)
         {
-            // 음악 재생
-            backgroundMusic[currentIndex].Play();
-            turnTableEffect.SetActive(true);
-            isMusicOn = true;
+            if (i == index)
+            {
+                if (!backgroundMusic[i].isPlaying)
+                {
+                    backgroundMusic[i].Play();
+                    turnTableEffect.SetActive(true);
+                }
+            }
+            else
+            {
+                if (backgroundMusic[i].isPlaying)
+                    backgroundMusic[i].Stop();
+            }
         }
-        // 음악 재생 상태 업데이트
         isMusicPlaying = true;
     }
 
-    // 음악 정지를 처리하는 함수
+    /// <summary>
+    /// 배경음악 완전 정지
+    /// </summary>
     public void StopMusic()
     {
-        if (isMusicPlaying)
-        {
-            // 음악 정지
-            backgroundMusic[currentIndex].Stop();
-            // 턴테이블 이펙트 없애기
-            turnTableEffect.SetActive(false);
-            isMusicOn = false;
-        }
-        // 음악 재생 상태 업데이트
+        for (int i = 0; i < backgroundMusic.Length; i++)
+            if (backgroundMusic[i].isPlaying)
+                backgroundMusic[i].Stop();
+
+        turnTableEffect.SetActive(false);
         isMusicPlaying = false;
     }
 
-    public void UpdateMusicVolume()
+    /// <summary>
+    /// 배경음악 볼륨 변경 (0~1)
+    /// </summary>
+    public void UpdateMusicVolume(float vol)
     {
-        // 현재 재생 중인 배경 음악의 볼륨을 조절
-        foreach (AudioSource musicSource in backgroundMusic)
-        {
-            musicSource.volume = musicSlider.value;
-        }
+        foreach (var src in backgroundMusic)
+            src.volume = vol;
     }
 
-    public void UpdateEffectVolume()
+    /// <summary>
+    /// 효과음 볼륨 변경 (0~1)
+    /// </summary>
+    public void UpdateEffectsVolume(float vol)
     {
-        // 효과음 볼륨 업데이트
-        foreach (AudioSource audioSource in arrAudio)
-        {
-            audioSource.volume = soundSlider.value;
-        }
+        foreach (var src in arrAudio)
+            src.volume = vol;
     }
 
-    public void Sound(int arr)
+    /// <summary>
+    /// 특정 효과음 재생
+    /// </summary>
+    public void PlayEffect(int idx)
     {
-        // 소리가 켜져 있는지 확인
-        if (soundStates[arr])
-        {
-            arrAudio[arr].Play();
-        }
+        if (idx < 0 || idx >= arrAudio.Length) return;
+        if (soundStates[idx] && arrAudio[idx] != null)
+            arrAudio[idx].Play();
     }
 
-    // 모든 효과음 켜기
-    public void TurnOnAllSounds()
+
+    /// <summary>
+    /// 사운드 설정 패널 열기 (효과음 idx=1)
+    /// </summary>
+    public void ShowSoundPanel()
     {
-        for (int i = 0; i < arrAudio.Length; i++)
-        {
-            soundStates[i] = true;
-        }
+        soundPanel.SetActive(true);
+        TouchManager.Instance.isPanelActive = true;
+        PlayEffect(1);
     }
 
-    // 모든 효과음 끄기
-    public void TurnOffAllSounds()
+    /// <summary>
+    /// 사운드 설정 패널 닫기 (효과음 idx=2)
+    /// </summary>
+    public void HideSoundPanel()
     {
-        for (int i = 0; i < arrAudio.Length; i++)
-        {
-            soundStates[i] = false;
-        }
-    }
-
-    // 효과음 볼륨 일괄 업데이트
-    public void UpdateEffectsVolume(float volume)
-    {
-        foreach (AudioSource audioSource in arrAudio)
-        {
-            audioSource.volume = volume;
-        }
+        soundPanel.SetActive(false);
+        TouchManager.Instance.isPanelActive = false;
+        PlayEffect(2);
     }
 }

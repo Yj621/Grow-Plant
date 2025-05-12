@@ -28,7 +28,7 @@ public class MemoPanel : MonoBehaviour
     public void MemoPanelOn()
     {
         memoPanel.SetActive(true);
-        SoundManager.Instance.Sound(1);
+        SoundManager.Instance.PlayEffect(1);
         TouchManager.Instance.isPanelActive = true;
     }
     public void MemoPanelOff()
@@ -45,7 +45,7 @@ public class MemoPanel : MonoBehaviour
         if (conditionUI.isGood)
         {
             contentText.text = "식물이 호전되었습니다.";
-            SoundManager.Instance.Sound(3);
+            SoundManager.Instance.PlayEffect(3);
         }
         else if (conditionUI.isSoso)
         {
@@ -54,7 +54,7 @@ public class MemoPanel : MonoBehaviour
         else if (conditionUI.isBad)
         {
             contentText.text = "식물이 악화되었습니다.";
-            SoundManager.Instance.Sound(4);
+            SoundManager.Instance.PlayEffect(4);
         }
 
         conditionUI.isGood = false;

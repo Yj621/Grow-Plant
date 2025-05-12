@@ -535,11 +535,12 @@ MonoBehaviour:
   - {fileID: 9193673}
   - {fileID: 1352963657}
   turnTableEffect: {fileID: 129113426}
-  SoundPanel: {fileID: 1480161052}
+  soundPanel: {fileID: 1480161052}
   musicSlider: {fileID: 768220530}
   soundSlider: {fileID: 1679507009}
   currentIndex: 0
   isMusicOn: 1
+  isEffectsOn: 1
 --- !u!4 &21000167
 Transform:
   m_ObjectHideFlags: 0
@@ -2698,7 +2699,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11076,7 +11077,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11589,7 +11590,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14777,7 +14778,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15514,7 +15515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 598971944506675459, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Sound
+      value: PlayEffect
       objectReference: {fileID: 0}
     - target: {fileID: 598971944506675459, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -15554,7 +15555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1869742440912094058, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Sound
+      value: PlayEffect
       objectReference: {fileID: 0}
     - target: {fileID: 1869742440912094058, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -15638,7 +15639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604748963087201229, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Sound
+      value: PlayEffect
       objectReference: {fileID: 0}
     - target: {fileID: 3604748963087201229, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -15842,7 +15843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6856073185949060363, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Sound
+      value: PlayEffect
       objectReference: {fileID: 0}
     - target: {fileID: 6856073185949060363, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -15998,7 +15999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696860344104769534, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Sound
+      value: PlayEffect
       objectReference: {fileID: 0}
     - target: {fileID: 8696860344104769534, guid: fe1633978c4a34f539c0db89e98b5c9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -16318,10 +16319,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1389725658}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 21000166}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: UpdateMusicVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17742,7 +17743,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19442,7 +19443,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19866,7 +19867,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20343,7 +20344,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20600,22 +20601,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1389725658}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: StopMusic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 3
+        m_MethodName: ToggleMusic
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23134,20 +23123,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: TurnOnAllSounds
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 21000166}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 3
+        m_MethodName: ToggleEffects
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23779,7 +23756,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24496,22 +24473,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1389725658}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlayMusic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 3
+        m_MethodName: ToggleMusic
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26442,7 +26407,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1389725657}
-  - component: {fileID: 1389725658}
   m_Layer: 5
   m_Name: Sound_PopUp
   m_TagString: Untagged
@@ -26470,33 +26434,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1120, y: 2364.4443}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1389725658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1389725656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4629d086b02a476ca709c618911dcc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundMusic:
-  - {fileID: 768453322}
-  - {fileID: 1427125638}
-  - {fileID: 1450114481}
-  - {fileID: 88087543}
-  - {fileID: 98874117}
-  - {fileID: 653192516}
-  - {fileID: 683042091}
-  - {fileID: 289549528}
-  turnTableEffect: {fileID: 129113426}
-  SoundPanel: {fileID: 1480161052}
-  musicSlider: {fileID: 768220530}
-  soundSlider: {fileID: 1679507009}
-  currentIndex: 0
-  isOn: 0
 --- !u!1 &1392464643
 GameObject:
   m_ObjectHideFlags: 0
@@ -26706,7 +26643,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26740,7 +26677,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1389725658}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: TurnOffAndOn
         m_Mode: 1
@@ -28352,18 +28289,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 21000166}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 565656483}
         m_TargetAssemblyTypeName: MemoPanel, Assembly-CSharp
         m_MethodName: MemoPanelOff
@@ -28376,9 +28301,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1389725658}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: OffPanelSound
+      - m_Target: {fileID: 21000166}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: HideSoundPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28651,20 +28576,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 21000166}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: TurnOffAllSounds
-        m_Mode: 1
+        m_MethodName: ToggleEffects
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -30064,7 +29977,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30659,19 +30572,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1389725658}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: OnPanelSound
+        m_MethodName: ShowSoundPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31578,10 +31479,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1389725658}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: UpdateEffectVolume
-        m_Mode: 1
+      - m_Target: {fileID: 21000166}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: UpdateEffectsVolume
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -32555,8 +32456,8 @@ MonoBehaviour:
   _notice: {fileID: 775216609}
   plantsLevelChange: {fileID: 1734726752}
   diePanel: {fileID: 1015359963}
-  lastMusicState: 0
   SettingPanel: {fileID: 1083986851}
+  lastMusicState: 0
 --- !u!4 &1775791866
 Transform:
   m_ObjectHideFlags: 0
@@ -45346,9 +45247,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1389725658}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: OffPanelSound
+      - m_Target: {fileID: 21000166}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: HideSoundPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45372,7 +45273,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51136,7 +51037,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51411,7 +51312,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 21000166}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: PlayEffect
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -60,7 +60,7 @@ public class EventButtonUI : MonoBehaviour
             Destroy(popupInstance);
         }
         isPopupOpen = false;
-        SoundManager.Instance.Sound(2);
+        SoundManager.Instance.PlayEffect(2);
         TouchManager.Instance.isPanelActive = false;
     }
 

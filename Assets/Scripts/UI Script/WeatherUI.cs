@@ -105,7 +105,7 @@ public class WeatherUI : Singleton<WeatherUI>
         }
     }
 
-    public void OnNextDay()
+    public void SetDateCount()
     {
         if (date >= weatherArr.Length - 1) return;
         date++;

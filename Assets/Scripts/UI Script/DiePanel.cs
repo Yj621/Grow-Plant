@@ -25,7 +25,7 @@ public class DiePanel : Singleton<DiePanel>
     {
         diePanel.SetActive(true);
         isPanelOn = true;
-        SoundManager.Instance.Sound(5);
+        SoundManager.Instance.PlayEffect(5);
         TouchManager.Instance.isPanelActive = true;
     }
 

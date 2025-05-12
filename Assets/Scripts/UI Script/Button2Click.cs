@@ -16,7 +16,6 @@ public class Button2Click : MonoBehaviour
     public BlockingButton blockingBtn;
     public EndingScenesManager endingScenesManager;
     public GameObject blockimg;
-    private AudioManager audioManager;
 
     FadeInOut fadeInOut;
     MemoPanel memoPanel;
@@ -35,7 +34,6 @@ public class Button2Click : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         memoPanel = FindAnyObjectByType<MemoPanel>();
         diePanel = FindObjectOfType<DiePanel>();
-        audioManager = FindAnyObjectByType<AudioManager>();
         dateCount = WeatherUI.Instance.GetDateCount() + 1;
         
         string[] button2Arr = {
@@ -129,8 +127,8 @@ public class Button2Click : MonoBehaviour
         {
             endingScenesManager.printHiddenEndingScene();
             EndingScenesManager.isEnding = true;
-            audioManager.StopAllMusic(); //모든 음악 정지
-            audioManager.backgroundMusic[6].Play();
+            SoundManager.Instance.StopMusic(); //모든 음악 정지
+            SoundManager.Instance.PlayMusic(6);
         }
 
         if (diePanel.isDie == false && EndingScenesManager.isEnding == false)
