@@ -145,4 +145,9 @@ public class GameManager : MonoBehaviour
     {
         SoundManager.Instance.IsOn();    
     }
+
+    public void ClosePanel()
+    {
+        TouchManager.Instance.isPanelActive = false;
+    }
 }

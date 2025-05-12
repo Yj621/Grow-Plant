@@ -1,14 +1,14 @@
-﻿using System.Collections;
+﻿// WeatherUI.cs
 using UnityEngine;
-using UnityEngine.UI;
-using System.IO;
 using TMPro;
 
 public class WeatherUI : Singleton<WeatherUI>
 {
     public TextMeshProUGUI weatherText;
-    public int date = 0; // 이벤트를 하나씩 넘길 때마다 date++
-    string originWeatherText;
+    private string originWeatherText;
+    public int date = 0;  // 이벤트 진행에 따라 증가
+
+    [Header("날씨별 라이트/이펙트")]
     public DateUI dateUI;
     public SunnyLight sunnyLight;
     public RainyLight rainyLight;
@@ -17,53 +17,43 @@ public class WeatherUI : Singleton<WeatherUI>
     public PlantsLevelChange plantsLevelChange;
 
     private readonly string[] weatherArr = {
-        "맑음", "맑음", "흐림", "비", "비", "맑음", "맑음", "맑음", "건조함",
-        "맑음", "맑음", "흐림", "태풍", "태풍", "맑음", "맑음", "맑음", "습함",
-        "습함", "비", "맑음", "맑음", "흐림", "눈", "눈", "맑음", "맑음",
-        "흐림", "비", "맑음", "맑음"
+        "맑음","맑음","흐림","비","비","맑음","맑음","맑음","건조함",
+        "맑음","맑음","흐림","태풍","태풍","맑음","맑음","맑음","습함",
+        "습함","비","맑음","맑음","흐림","눈","눈","맑음","맑음",
+        "흐림","비","맑음","맑음"
     };
 
     void Start()
     {
-        originWeatherText = weatherText.text;  // "날씨 : "를 저장하는 변수
-
-        UpdateWeatherText();
-    }
-
-    void UpdateWeatherText()
-    {
-        if (weatherText != null && date < weatherArr.Length)
-        {
-            weatherText.text = originWeatherText + weatherArr[date];
-        }
-        else
-        {
-            Debug.LogError("weatherText가 할당되지 않았거나 date가 범위를 초과했습니다.");
-        }
+        originWeatherText = weatherText.text;  // "날씨 : " 부분 저장
+        WeatherTextUpdate();
+        WeatherLightUpdate();
     }
 
     public void WeatherTextUpdate()
     {
-        // 이벤트를 하나씩 넘길 때마다 텍스트 업데이트
         if (date < weatherArr.Length)
-        {
             weatherText.text = originWeatherText + weatherArr[date];
-        }
-        else
-        {
-            Debug.LogWarning("더 이상 텍스트가 없습니다.");
-        }
     }
 
+    /// <summary>
+    /// 날씨별 라이트/음악 제어
+    /// </summary>
     public void WeatherLightUpdate()
     {
+        // 플레이어가 이미 죽었다면 음악만 정지
         if (DiePanel.Instance.isDie)
         {
-            SoundManager.Instance.backgroundMusic[SoundManager.Instance.currentIndex].Stop();
+            SoundManager.Instance.StopMusic();
             return;
         }
 
-        if (date >= weatherArr.Length) return;
+        // 음악이 꺼져 있을 땐 아예 처리 중단
+        if (!SoundManager.Instance.isMusicOn)
+            return;
+
+        if (date >= weatherArr.Length)
+            return;
 
         switch (weatherArr[date])
         {
@@ -74,7 +64,7 @@ public class WeatherUI : Singleton<WeatherUI>
                 stormyLight.DeactivateStormEffect();
                 stormyLight.DeactivateStormWindZone();
                 snowyLight.DeactivateSnowEffect();
-                PlayMusic(0);
+                SoundManager.Instance.PlayMusic(0);
                 break;
             case "흐림":
                 sunnyLight.DeactivateSunnyLight();
@@ -83,7 +73,7 @@ public class WeatherUI : Singleton<WeatherUI>
                 stormyLight.DeactivateStormEffect();
                 stormyLight.DeactivateStormWindZone();
                 snowyLight.DeactivateSnowEffect();
-                PlayMusic(4);
+                SoundManager.Instance.PlayMusic(4);
                 break;
             case "비":
                 sunnyLight.DeactivateSunnyLight();
@@ -92,7 +82,7 @@ public class WeatherUI : Singleton<WeatherUI>
                 stormyLight.DeactivateStormEffect();
                 stormyLight.DeactivateStormWindZone();
                 snowyLight.DeactivateSnowEffect();
-                PlayMusic(1);
+                SoundManager.Instance.PlayMusic(1);
                 break;
             case "태풍":
                 sunnyLight.DeactivateSunnyLight();
@@ -101,7 +91,7 @@ public class WeatherUI : Singleton<WeatherUI>
                 stormyLight.ActivateStormEffect();
                 stormyLight.ActivateStormWindZone();
                 snowyLight.DeactivateSnowEffect();
-                PlayMusic(2);
+                SoundManager.Instance.PlayMusic(2);
                 break;
             case "눈":
                 sunnyLight.DeactivateSunnyLight();
@@ -110,50 +100,22 @@ public class WeatherUI : Singleton<WeatherUI>
                 stormyLight.DeactivateStormEffect();
                 stormyLight.DeactivateStormWindZone();
                 snowyLight.ActivateSnowEffect();
-                PlayMusic(3);
+                SoundManager.Instance.PlayMusic(3);
                 break;
         }
     }
-    void PlayMusic(int musicIndex)
-    {
-        SoundManager.Instance.currentIndex = musicIndex;
-        
-        if (!SoundManager.Instance.isMusicOn) return;
 
-        for (int i = 0; i < SoundManager.Instance.backgroundMusic.Length; i++)
-        {
-            if (i == musicIndex)
-            {
-                if (!SoundManager.Instance.backgroundMusic[i].isPlaying)
-                {
-                    SoundManager.Instance.backgroundMusic[i].Play();
-                }
-            }
-            else
-            {
-                if (SoundManager.Instance.backgroundMusic[i].isPlaying)
-                {
-                    SoundManager.Instance.backgroundMusic[i].Stop();
-                }
-            }
-        }
-    }
-
-
-
-    public int GetDateCount()
-    {
-        return date;
-    }
-
-    public void SetDateCount()
+    public void OnNextDay()
     {
         if (date >= weatherArr.Length - 1) return;
-
         date++;
         plantsLevelChange.CheckDate();
         dateUI.IncreaseDateCount();
         WeatherTextUpdate();
         WeatherLightUpdate();
+    }
+    public int GetDateCount()
+    {
+        return date;
     }
 }

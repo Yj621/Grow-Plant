@@ -19,19 +19,21 @@ public class DiePanel : Singleton<DiePanel>
     }
     public void Update()
     {
-        Debug.Log("isDie : " + isDie);
+        Debug.Log(" TouchManager.Instance.isPanelActive : " + TouchManager.Instance.isPanelActive);
     }
     public void PanelOn()
     {
         diePanel.SetActive(true);
         isPanelOn = true;
         SoundManager.Instance.Sound(5);
+        TouchManager.Instance.isPanelActive = true;
     }
 
     public void PanelOff()
     {
         diePanel.SetActive(false);
         isPanelOn = false;
+        TouchManager.Instance.isPanelActive = false;
     }
 
     public void Btn1SpecialDied(int dateCount)

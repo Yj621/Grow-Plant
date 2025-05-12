@@ -25,7 +25,6 @@ public class ConditionUI : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($" conditionPoint : {conditionPoint}");
     }
 
     private void UpdateConditionText() //식물상태가 점수에 따라서 바뀌게 함.

@@ -20,17 +20,20 @@ public class EndingScenesManager : MonoBehaviour
     public void printEndingScene()
     {
         endingScene.gameObject.SetActive(true);
+        TouchManager.Instance.isPanelActive = true;
         isEnding = true;
     }
     public void printHiddenEndingScene()
     {
         hiddenEndingScene.gameObject.SetActive(true);
+        TouchManager.Instance.isPanelActive = true;
         isEnding = true;
     }
 
     public void printSNSEndingScene()
     {
         snsEndingScene.gameObject.SetActive(true);
+        TouchManager.Instance.isPanelActive = true;
         isEnding = true;
     }
 }
