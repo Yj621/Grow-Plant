@@ -27,6 +27,7 @@ public class DiePanel : Singleton<DiePanel>
         isPanelOn = true;
         SoundManager.Instance.PlayEffect(5);
         TouchManager.Instance.isPanelActive = true;
+        memoPanel.gameObject.SetActive(false);
     }
 
     public void PanelOff()
