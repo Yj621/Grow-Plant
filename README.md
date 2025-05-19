@@ -36,7 +36,7 @@ Grow Plant
 
 ### ⏰ 개발 기간
 
-24.01.26 ~ 23.05.13
+24.01.26 ~ 24.05.28
 
 ### ⚙️ **언어 및 게임 엔진**
 <img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white">
