@@ -11,6 +11,7 @@ public class DiePanel : Singleton<DiePanel>
     public bool isPanelOn = false;
     public bool isDie = false;
     public MemoPanel memoPanel;
+    public GameObject memoPanelGo;
     public BlockingButton blockingButton;
 
     void Start()
@@ -27,7 +28,7 @@ public class DiePanel : Singleton<DiePanel>
         isPanelOn = true;
         SoundManager.Instance.PlayEffect(5);
         TouchManager.Instance.isPanelActive = true;
-        memoPanel.gameObject.SetActive(false);
+        memoPanelGo.SetActive(false);
     }
 
     public void PanelOff()
