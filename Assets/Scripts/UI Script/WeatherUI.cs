@@ -65,6 +65,7 @@ public class WeatherUI : Singleton<WeatherUI>
                 stormyLight.DeactivateStormWindZone();
                 snowyLight.DeactivateSnowEffect();
                 SoundManager.Instance.PlayMusic(0);
+                Debug.Log("맑음");
                 break;
             case "흐림":
                 sunnyLight.DeactivateSunnyLight();
@@ -74,6 +75,7 @@ public class WeatherUI : Singleton<WeatherUI>
                 stormyLight.DeactivateStormWindZone();
                 snowyLight.DeactivateSnowEffect();
                 SoundManager.Instance.PlayMusic(4);
+                Debug.Log("흐림");
                 break;
             case "비":
                 sunnyLight.DeactivateSunnyLight();
@@ -83,6 +85,7 @@ public class WeatherUI : Singleton<WeatherUI>
                 stormyLight.DeactivateStormWindZone();
                 snowyLight.DeactivateSnowEffect();
                 SoundManager.Instance.PlayMusic(1);
+                Debug.Log("비");
                 break;
             case "태풍":
                 sunnyLight.DeactivateSunnyLight();
@@ -92,6 +95,7 @@ public class WeatherUI : Singleton<WeatherUI>
                 stormyLight.ActivateStormWindZone();
                 snowyLight.DeactivateSnowEffect();
                 SoundManager.Instance.PlayMusic(2);
+                Debug.Log("태풍");
                 break;
             case "눈":
                 sunnyLight.DeactivateSunnyLight();
@@ -101,6 +105,7 @@ public class WeatherUI : Singleton<WeatherUI>
                 stormyLight.DeactivateStormWindZone();
                 snowyLight.ActivateSnowEffect();
                 SoundManager.Instance.PlayMusic(3);
+                Debug.Log("눈");
                 break;
         }
     }

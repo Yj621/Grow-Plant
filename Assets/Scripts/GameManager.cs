@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
         conditionUI.ReturnCondPoint();
         WeatherUI.Instance.WeatherTextUpdate();
         WeatherUI.Instance.WeatherLightUpdate();
+        Debug.Log($"WeatherUI.Instance : {WeatherUI.Instance}");
         plantsLevelChange.CheckDate();
 
         // 리셋 직후엔 음악을 무조건 끔
