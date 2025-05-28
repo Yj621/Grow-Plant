@@ -48,9 +48,9 @@ public class WeatherUI : Singleton<WeatherUI>
             return;
         }
 
-        // 음악이 꺼져 있을 땐 아예 처리 중단
-        if (!SoundManager.Instance.isMusicOn)
-            return;
+        // // 음악이 꺼져 있을 땐 아예 처리 중단
+        // if (!SoundManager.Instance.isMusicOn)
+        //     return;
 
         if (date >= weatherArr.Length)
             return;
