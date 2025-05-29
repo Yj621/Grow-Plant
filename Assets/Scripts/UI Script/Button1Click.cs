@@ -30,7 +30,7 @@ public class Button1Click : MonoBehaviour
         };
 
     void Start()
-    {
+    {    
         memoPanel = FindAnyObjectByType<MemoPanel>();
         eventButtonUI = FindAnyObjectByType<EventButtonUI>();
         fadeInOut = GameObject.FindObjectOfType<FadeInOut>();
