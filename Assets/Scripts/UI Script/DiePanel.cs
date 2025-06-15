@@ -20,7 +20,6 @@ public class DiePanel : Singleton<DiePanel>
     }
     public void Update()
     {
-        Debug.Log(" TouchManager.Instance.isPanelActive : " + TouchManager.Instance.isPanelActive);
     }
     public void PanelOn()
     {

@@ -28,7 +28,6 @@ public class ConditionUI : MonoBehaviour
     private void UpdateConditionText() //식물상태가 점수에 따라서 바뀌게 함.
     {
         string currentCond = "";
-        Debug.Log($"currentCond : {currentCond}");
         if (conditionPoint <= 0)
         {
             DiePanel.Instance.PanelOn(); //식물이 죽었을 때(점수가 0점 이하로 떨어짐)
