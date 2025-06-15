@@ -3,7 +3,32 @@ guid: 820f0615c7aa4ec4d8c47f6cb7154dc0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Crop_Tomatoes
+    second: {fileID: 2100000, guid: 4bccd0bf76fc657469bf5ca74f1e0fae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Crop_Tomatoes.001
+    second: {fileID: 2100000, guid: 4bccd0bf76fc657469bf5ca74f1e0fae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Crop_Tomatoes.002
+    second: {fileID: 2100000, guid: 4bccd0bf76fc657469bf5ca74f1e0fae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Crop_Tomatoes.003
+    second: {fileID: 2100000, guid: 4bccd0bf76fc657469bf5ca74f1e0fae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Crop_Tomatoes.004
+    second: {fileID: 2100000, guid: 4bccd0bf76fc657469bf5ca74f1e0fae, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
