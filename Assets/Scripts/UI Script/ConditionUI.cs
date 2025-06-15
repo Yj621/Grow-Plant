@@ -13,7 +13,6 @@ public class ConditionUI : MonoBehaviour
     public bool isGood = false;
     public bool isSoso = false;
     public bool isBad = false;
-    
 
 
     void Start()

@@ -23,11 +23,11 @@ public class DiePanel : Singleton<DiePanel>
     }
     public void PanelOn()
     {
+        memoPanelGo.SetActive(false); //didiePanel.SetActive(true); 밑으로 내려가면 memopanel이 안 꺼진 상태로 diePaenl이 나옴
         diePanel.SetActive(true);
         isPanelOn = true;
         SoundManager.Instance.PlayEffect(5);
-        TouchManager.Instance.isPanelActive = true;
-        memoPanelGo.SetActive(false);
+        TouchManager.Instance.isPanelActive = true;   
     }
 
     public void PanelOff()
@@ -39,7 +39,7 @@ public class DiePanel : Singleton<DiePanel>
 
     public void Btn1SpecialDied(int dateCount)
     {
-        isDie = true;
+        
         switch(dateCount)
         {
             case 8:
@@ -54,12 +54,16 @@ public class DiePanel : Singleton<DiePanel>
             case 30:
                 diedText.text = "식물을 다 키웠습니다. 다시 시작하시겠습니까?";
                 break;
+            default:
+                diedText.text = "알 수 없는 이유로 죽었습니다.";
+                break;
         }
+        isDie = true;
     }
 
     public void Btn2SpecialDied(int dateCount)
     {
-        isDie = true;
+        
         switch(dateCount)
         {//5, 8, 12, 13, 14, 21, 23, 24, 26, 30
             case 5:
@@ -92,13 +96,17 @@ public class DiePanel : Singleton<DiePanel>
             case 30:
                 diedText.text = "새가 날아와 열매를 다 먹었습니다. 다시 시작하시겠습니까?";
                 break;
+            default:
+                diedText.text = "알 수 없는 이유로 죽었습니다.";
+                break;
         }
+        isDie = true;
     }
 
 
     public void Btn3SpecialDied(int dateCount)
     {
-        isDie = true;
+        
         switch(dateCount)
         {
             case 1:
@@ -125,12 +133,16 @@ public class DiePanel : Singleton<DiePanel>
             case 29:
                 diedText.text = "맛있어서 다 먹어버렸습니다. 다시 시작하시겠습니까?";
                 break;
+            default:
+                diedText.text = "알 수 없는 이유로 죽었습니다.";
+                break;
         }
+        isDie = true;
     }
     
     public void Btn4SpecialDied(int dateCount)
     {
-        isDie = true;
+        
         
         switch(dateCount)
         {
@@ -171,6 +183,7 @@ public class DiePanel : Singleton<DiePanel>
                 diedText.text = "알 수 없는 이유로 죽었습니다.";
                 break;
         }
+        isDie = true;
     }
 
     public void SpecialDie(int dateCount)
