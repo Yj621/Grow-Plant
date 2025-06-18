@@ -6,7 +6,7 @@ using TMPro;
 
 public class ConditionUI : MonoBehaviour
 {
-    public static int conditionPoint = 50;
+    public static int conditionPoint = 40;
     public GameObject blockingImg;
     private int newPoint = 0;
     private int maxPoint = 100;
@@ -29,6 +29,7 @@ public class ConditionUI : MonoBehaviour
         string currentCond = "";
         if (conditionPoint <= 0)
         {
+            DiePanel.Instance.isDie = true;
             DiePanel.Instance.PanelOn(); //식물이 죽었을 때(점수가 0점 이하로 떨어짐)
             blockingImg.SetActive(true);
         }
